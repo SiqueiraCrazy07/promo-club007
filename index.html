@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo.Club007 | Ofertas de Elite 🕵️‍♂️</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0056b3; /* Azul Autoridade */
+            --danger: #ff0000;  /* Vermelho Urgência */
+            --bg: #ffffff;      /* Branco Clean */
+            --text-main: #1a1a1a;
+            --text-sec: #666666;
+            --ml-yellow: #fff159;
+            --ml-blue: #3483fa;
+            --shopee-orange: #ee4d2d;
+            --border: #f0f0f0;
+            --safe-green: #00a650;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        /* CAPA DA VITRINE */
+        .header-hero {
+            background-color: #000;
+            background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=1200&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .header-hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .brand-name span { color: #ffd700; }
+
+        .brand-tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* FILTROS E BUSCA */
+        .filter-section {
+            padding: 20px 15px;
+            max-width: 1200px;
+            margin: -25px auto 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 14px 24px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            outline: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tab-btn {
+            background: #f5f5f5;
+            border: 1px solid transparent;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            cursor: pointer;
+            color: var(--text-sec);
+            transition: all 0.3s ease;
+        }
+
+        /* Cores Dinâmicas das Abas quando Ativas */
+        .tab-btn.active[data-loja="todas"] {
+            background: var(--text-main);
+            color: white;
+        }
+
+        .tab-btn.active[data-loja="ml"] {
+            background: var(--ml-yellow);
+            color: #111;
+            border-color: #e6d300;
+            box-shadow: 0 4px 12px rgba(255, 241, 89, 0.4);
+        }
+
+        .tab-btn.active[data-loja="shopee"] {
+            background: var(--shopee-orange);
+            color: white;
+            border-color: var(--shopee-orange);
+            box-shadow: 0 4px 12px rgba(238, 77, 45, 0.4);
+        }
+
+        /* GRELHA DE PRODUTOS */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px 100px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .container { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        }
+
+        @media (min-width: 1024px) {
+            .container { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        .offer-item {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .offer-item:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transform: translateY(-3px);
+        }
+
+        .store-label {
+            display: inline-block;
+            font-size: 9px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .label-ml { background: var(--ml-yellow); color: #111; }
+        .label-shopee { background: #fee8e3; color: var(--shopee-orange); }
+
+        .safe-tag {
+            font-size: 9px;
+            color: var(--safe-green);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            height: 2.8rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-desc {
+            font-size: 0.8rem;
+            color: var(--text-sec);
+            margin-bottom: 15px;
+            height: 2.4rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .pricing-section {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border);
+        }
+
+        .old-price {
+            font-size: 0.75rem;
+            color: #999;
+            text-decoration: line-through;
+            display: block;
+        }
+
+        .new-price {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--danger);
+            display: block;
+        }
+
+        .discount-pill {
+            background: #fff0f0;
+            color: var(--danger);
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 50px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 15px;
+            line-height: 1.2;
+            transition: 0.2s;
+        }
+
+        .offer-item:hover .cta-button {
+            background: #004494;
+        }
+
+        /* WHATSAPP */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25d366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-hero">
+        <div class="header-content">
+            <h1 class="brand-name">PROMO.CLUB<span>007</span></h1>
+            <p class="brand-tagline">🕵️‍♂️ A inteligência em ofertas que o seu bolso merece.</p>
+        </div>
+    </header>
+
+    <section class="filter-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="O que procuras hoje?" onkeyup="filterProducts()">
+        </div>
+        <div class="tabs">
+            <button class="tab-btn active" data-loja="todas" onclick="setTab('todas')">Tudo</button>
+            <button class="tab-btn" data-loja="ml" onclick="setTab('ml')">Mercado Livre</button>
+            <button class="tab-btn" data-loja="shopee" onclick="setTab('shopee')">Shopee</button>
+        </div>
+    </section>
+
+    <main class="container" id="productGrid">
+        <!-- Injetado via Script -->
+    </main>
+
+    <a href="https://wa.me/SEUNUMERO" class="whatsapp-btn" target="_blank">
+        <svg style="width:28px;height:28px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.66 20.15 9.3 19.81 8.1 19.14L7.81 18.97L4.69 19.79L5.53 16.74L5.34 16.44C4.61 15.27 4.22 13.93 4.22 12.54V11.91C4.22 7.66 7.73 4.15 11.97 4.15H12.05"/></svg>
+    </a>
+
+    <script>
+        const products = [
+            {
+                name: "Relógio Digital Masculino Esportivo à Prova D'água",
+                desc: "Acessório tático de alta resistência para missões diárias.",
+                oldPrice: "R$ 180,00",
+                newPrice: "R$ 145,90",
+                discount: "19% OFF",
+                loja: "ml",
+                link: "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMDOVuC6w6CjHgnwoujkBh9QzoiSXVz0kgUA4eF38k6ij4q3AY4HzWHJ006G855H22HBweDtt0PGW91woQynHZAINf%2B%2FDVuSqLvTrBMg642coFLm40gNJPIBXVrOrfF5cCESOyb4gs8iFn5sSK78R5qGOPG34q8xCj4LWwSor9%2FomLQ106zNzBXE5mBGob0BqkjXbQ%3D%3D"
+            },
+            {
+                name: "Mini Fritadeira Elétrica Sem Óleo Portátil",
+                desc: "Eficiência e saúde. Tecnologia de ar rápida para refeições em minutos.",
+                oldPrice: "R$ 399,00",
+                newPrice: "R$ 289,00",
+                discount: "27% OFF",
+                loja: "ml",
+                link: "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPylmWd%2BGTKzj5eyGNy1z8LbF%2FoRak18WrpxB7GzlLZFhAJNAxIloMSph6J%2Fp8d9tFnZWnND%2Fc9InXDoa0ahZWIrPI4D9a%2FCMwFaFOIIRYtbgrudTVrPWwNViy9moqddJC34Qp3LpH55cOTJbJNEwK9SqSr2EQh6Z%2FOS7K%2BBocv2LNHQM3mWfzWgDh5xkx7MOYsQMQ%3D%3D"
+            },
+            {
+                name: "Espelho quadrado com LED e touch",
+                desc: "Design lapidado premium. O segredo para um ambiente moderno.",
+                oldPrice: "R$ 862,40",
+                newPrice: "R$ 666,68",
+                discount: "22% OFF",
+                loja: "ml",
+                link: "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true"
+            },
+            {
+                name: "Capa Protetora de Silicone para AirPods",
+                desc: "Proteção ultra-slim contra impactos. Silicone premium.",
+                oldPrice: "R$ 19,01",
+                newPrice: "R$ 18,06",
+                discount: "5% OFF",
+                loja: "ml",
+                link: "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMBED4ruw45%2F7WHaza3t5SKUNpYkbwwTSCo3spUx9frocwXg9SDSOwZY2wb4RBPkeI8fBkWdCfxiM30h1hKYuYks5N75bKTF1Nt%2FhzieE8tZG0rLJFWfY6iOXgLikAZM81mqZtdcmPMuET%2BVVW9PmwMk0AagGKFZVPxAr5TEOhtUhOXHyEgbQjkg2jJRF9YKS80Lgg%3D%3D"
+            }
+        ];
+
+        let currentTab = 'todas';
+
+        function setTab(loja) {
+            currentTab = loja;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-loja') === loja) btn.classList.add('active');
+            });
+            filterProducts();
+        }
+
+        function displayProducts(productsToDisplay) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = "";
+            if (productsToDisplay.length === 0) {
+                grid.innerHTML = "<div style='grid-column: 1/-1; text-align:center; padding:40px; color:#999'>Sem ofertas encontradas... 🕵️‍♂️</div>";
+                return;
+            }
+            productsToDisplay.forEach(product => {
+                const labelClass = product.loja === 'ml' ? 'label-ml' : 'label-shopee';
+                const storeName = product.loja === 'ml' ? 'Mercado Livre' : 'Shopee';
+                const btnText = product.loja === 'ml' ? 'Confira no Mercado Livre' : 'Confira na Shopee';
+                
+                const card = `
+                    <a href="${product.link}" class="offer-item" target="_blank">
+                        <span class="store-label ${labelClass}">${storeName}</span>
+                        <div class="safe-tag">
+                            <svg style="width:12px;height:12px" viewBox="0 0 24 24"><path fill="currentColor" d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,11.91L14.59,14.5L15.41,13.67L12,10.25L8.59,13.67L9.41,14.5L12,11.91Z"/></svg>
+                            Compra Segura
+                        </div>
+                        <span class="product-title">${product.name}</span>
+                        <p class="product-desc">${product.desc}</p>
+                        <div class="pricing-section">
+                            <span class="old-price">${product.oldPrice}</span>
+                            <span class="new-price">${product.newPrice}</span>
+                            <span class="discount-pill">${product.discount}</span>
+                        </div>
+                        <div class="cta-button">${btnText}</div>
+                    </a>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = products.filter(product => {
+                const matchesSearch = product.name.toLowerCase().includes(searchTerm);
+                const matchesTab = currentTab === 'todas' || product.loja === currentTab;
+                return matchesSearch && matchesTab;
+            });
+            displayProducts(filtered);
+        }
+
+        window.onload = () => displayProducts(products);
+    </script>
+</body>
+</html>
