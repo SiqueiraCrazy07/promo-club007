@@ -1,486 +1,649 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promo.Club007 | Inteligência em Ofertas 🕵️‍♂️</title>
-    <!-- Google Fonts: Inter para máxima legibilidade -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-dark: #0f172a; /* Azul Navy Sofisticado */
-            --accent-blue: #3b82f6;  /* Azul Mercado Livre */
-            --danger: #ef4444;      /* Vermelho Urgência */
-            --bg: #ffffff;          /* Branco Puro (Foco Total) */
-            --text-main: #1e293b;
-            --text-sec: #64748b;
-            --ml-yellow: #fff159;
-            --ml-yellow-dark: #eab308;
-            --safe-green: #10b981;
-            --border-light: #f1f5f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promo.Club007 | Inteligência em Ofertas</title>
+  <meta name="description" content="Promo.Club007 - Seu clube exclusivo de ofertas, promoções e alertas de desconto." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
+  <style>
+    :root {
+      --primary-dark: #0f172a;
+      --accent-blue: #3b82f6;
+      --danger: #ef4444;
+      --bg: #ffffff;
+      --text-main: #1e293b;
+      --text-sec: #64748b;
+      --ml-yellow: #fff159;
+      --safe-green: #10b981;
+      --border-light: #e5e7eb;
+      --disabled: #94a3b8;
+    }
 
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.5;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* CABEÇALHO PREMIUM 007 - USANDO SUAS IMAGENS */
-        .header-hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('image_562b1f.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 50px 20px 70px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+    }
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
+    .header-hero {
+      background:
+        linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)),
+        url('./assets/exclusive_deals_in_style.png');
+      background-size: cover;
+      background-position: center;
+      padding: 50px 20px 70px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .profile-logo {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            border: 3px solid var(--ml-yellow);
-            margin: 0 auto 15px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(255, 241, 89, 0.3);
-            background: white;
-        }
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
 
-        .profile-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .profile-logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid var(--ml-yellow);
+      margin: 0 auto 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 241, 89, 0.3);
+      background: white;
+    }
 
-        .brand-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(8px);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    .profile-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .brand-name {
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
+    .brand-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-        .brand-name span { color: var(--ml-yellow); }
+    .brand-name {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
 
-        .brand-tagline {
-            font-size: 0.9rem;
-            color: #cbd5e1;
-            max-width: 500px;
-            margin: 0 auto;
-            font-weight: 500;
-        }
+    .brand-name span {
+      color: var(--ml-yellow);
+    }
 
-        /* FILTROS E PESQUISA */
-        .filter-section {
-            padding: 0 15px;
-            max-width: 1200px;
-            margin: -35px auto 30px;
-            position: relative;
-            z-index: 10;
-        }
+    .brand-tagline {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      max-width: 560px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
 
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 4px;
-            border-radius: 50px;
-            box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
-            display: flex;
-            align-items: center;
-            border: 1px solid #e2e8f0;
-        }
+    .filter-section {
+      padding: 0 15px;
+      max-width: 1200px;
+      margin: -35px auto 30px;
+      position: relative;
+      z-index: 10;
+    }
 
-        #searchInput {
-            flex: 1;
-            padding: 12px 20px;
-            border: none;
-            outline: none;
-            font-size: 1rem;
-            background: transparent;
-            color: var(--text-main);
-        }
+    .search-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 4px;
+      border-radius: 50px;
+      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
+      display: flex;
+      align-items: center;
+      border: 1px solid #e2e8f0;
+    }
 
-        /* GRELHA DE PRODUTOS */
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 20px 80px;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 20px;
-        }
+    #searchInput {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      background: transparent;
+      color: var(--text-main);
+    }
 
-        @media (min-width: 580px) { .container { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 900px) { .container { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 1200px) { .container { grid-template-columns: repeat(4, 1fr); } }
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: start;
+    }
 
-        .offer-card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 24px;
-            border: 1px solid var(--border-light);
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            min-height: 280px;
-        }
+    @media (min-width: 640px) {
+      .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
 
-        .offer-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-            border-color: var(--accent-blue);
-        }
+    @media (min-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
 
-        .store-badge {
-            font-size: 9px;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 6px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            align-self: flex-start;
-            background: var(--ml-yellow); 
-            color: #111;
-            letter-spacing: 0.5px;
-        }
+    .offer-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid var(--border-light);
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      color: inherit;
+      position: relative;
+      min-height: 100%;
+    }
 
-        .verify-badge {
-            font-size: 9px;
-            color: var(--safe-green);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
+    .offer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+      border-color: var(--accent-blue);
+    }
 
+    .store-badge {
+      font-size: 9px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      align-self: flex-start;
+      background: var(--ml-yellow);
+      color: #111;
+      letter-spacing: 0.5px;
+    }
 
-        .product-image-wrap {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background: #f8fafc;
-            border: 1px solid var(--border-light);
-            border-radius: 16px;
-            overflow: hidden;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .product-image-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f8fafc;
+      border: 1px solid var(--border-light);
+      margin-bottom: 14px;
+    }
 
-        .product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    .product-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-        .product-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 10px;
-            line-height: 1.4;
-            height: 2.8rem;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
+    .verify-badge {
+      font-size: 9px;
+      color: var(--safe-green);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
 
-        .product-desc {
-            font-size: 0.8rem;
-            color: var(--text-sec);
-            margin-bottom: 20px;
-            height: 4.8rem;
-            overflow: hidden;
-            line-height: 1.6;
-            display: -webkit-box;
-            -webkit-line-clamp: 4;
-            -webkit-box-orient: vertical;
-        }
+    .product-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.4;
+      min-height: 2.8rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
-        .pricing-area {
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-light);
-        }
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--text-sec);
+      margin-bottom: 18px;
+      min-height: 4.8rem;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
 
-        .price-row {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
+    .pricing-area {
+      margin-top: auto;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-light);
+    }
 
-        .old-price {
-            font-size: 0.8rem;
-            color: #94a3b8;
-            text-decoration: line-through;
-        }
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
 
-        .new-price {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--danger);
-        }
+    .old-price {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
 
-        .discount-pill {
-            background: #fef2f2;
-            color: var(--danger);
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 3px 12px;
-            border-radius: 50px;
-            margin-top: 8px;
-            display: inline-block;
-            border: 1px solid #fee2e2;
-        }
+    .new-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--danger);
+    }
 
-        .cta-button {
-            background: var(--primary-dark);
-            color: white;
-            padding: 14px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            text-align: center;
-            margin-top: 20px;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            border: none;
-            cursor: pointer;
-        }
+    .discount-pill {
+      background: #fef2f2;
+      color: var(--danger);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 50px;
+      margin-top: 8px;
+      display: inline-block;
+      border: 1px solid #fee2e2;
+    }
 
-        .offer-card:hover .cta-button {
-            background: var(--accent-blue);
-            transform: scale(1.02);
-        }
+    .cta-button {
+      background: var(--primary-dark);
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 20px;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
 
-        /* WHATSAPP */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-            z-index: 1000;
-            transition: 0.3s;
-        }
+    .cta-button:hover {
+      background: var(--accent-blue);
+      transform: scale(1.02);
+    }
 
-        .no-results {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 100px 20px;
-            color: var(--text-sec);
-            font-weight: 500;
-        }
-    </style>
+    .cta-button.disabled {
+      background: var(--disabled);
+      cursor: not-allowed;
+      pointer-events: none;
+      transform: none;
+    }
+
+    .instagram-float {
+      position: fixed;
+      bottom: 105px;
+      right: 30px;
+      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(221, 42, 123, 0.35);
+      z-index: 1000;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+      z-index: 1000;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .instagram-float:hover,
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 100px 20px;
+      color: var(--text-sec);
+      font-weight: 500;
+    }
+  </style>
 </head>
 <body>
 
-    <header class="header-hero">
-        <div class="header-content">
-            <div class="profile-logo">
-                <img src="image_562b3b.jpg" alt="Promo.Club007 Logo">
-            </div>
-            <div class="brand-badge">Operação Economia</div>
-            <h1 class="brand-name">PROMO.CLUB<span>007</span></h1>
-            <p class="brand-tagline">🕵️‍♂️ Analisamos os alvos, você aproveita os descontos de elite.</p>
-        </div>
-    </header>
+  <header class="header-hero">
+    <div class="header-content">
+      <div class="profile-logo">
+        <img src="./assets/exclusive_deals_in_style.png" alt="Promo.Club007 Logo">
+      </div>
+      <div class="brand-badge">Operação Economia</div>
+      <h1 class="brand-name">PROMO.CLUB<span>007</span></h1>
+      <p class="brand-tagline">🕵️‍♂️ Analisamos os alvos, você aproveita os descontos de elite.</p>
+    </div>
+  </header>
 
-    <section class="filter-section">
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="O que você está caçando hoje, agente?" onkeyup="filterProducts()">
-        </div>
-    </section>
+  <section class="filter-section">
+    <div class="search-container">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="O que você está caçando hoje, agente?"
+        onkeyup="filterProducts()"
+      >
+    </div>
+  </section>
 
-    <main class="container" id="productGrid">
-        <!-- Itens injetados dinamicamente -->
-    </main>
+  <main class="container" id="productGrid"></main>
 
-    <a href="https://wa.me/5500000000000" class="whatsapp-float">
-        <svg style="width:28px;height:28px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.66 20.15 9.3 19.81 8.1 19.14L7.81 18.97L4.69 19.79L5.53 16.74L5.34 16.44C4.61 15.27 4.22 13.93 4.22 12.54V11.91C4.22 7.66 7.73 4.15 11.97 4.15H12.05"/></svg>
-    </a>
+  <a
+    href="https://www.instagram.com/promo.club007/"
+    class="instagram-float"
+    aria-label="Instagram"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg style="width:28px;height:28px" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
+    </svg>
+  </a>
 
-    <script>
-        // Inventário atualizado do arquivo Pasta1.xlsx
-        const products = [
-            {
-                        "name": "Relógio Casio Masculino Digital Esportivo Preto",
-                        "desc": "Relógio masculino digital esportivo, preto, prova d'água.",
-                        "oldPrice": "R$ 299,00",
-                        "newPrice": "R$ 161,10",
-                        "discount": "46% OFF",
-                        "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMDOVuC6w6CjHgnwoujkBh9QzoiSXVz0kgUA4eF38k6ij4q3AY4HzWHJ006G855H22HBweDtt0PGW91woQynHZAINf%2B%2FDVuSqLvTrBMg642coFLm40gNJPIBXVrOrfF5cCESOyb4gs8iFn5sSK78R5qGOPG34q8xCj4LWwSor9%2FomLQ106zNzBXE5mBGob0BqkjXbQ%3D%3D",
-                        "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776684509/samples/ykqmaxdrchbdikawdpkg.png",
-                        "store": "Mercado Livre"
-            },
-            {
-                        "name": "Fritadeira Elétrica 1 Litro",
-                        "desc": "Fritadeira elétrica compacta de 1 litro, prática e rápida para fritar.",
-                        "oldPrice": "R$ 249,90",
-                        "newPrice": "R$ 249,90",
-                        "discount": "",
-                        "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPylmWd%2BGTKzj5eyGNy1z8LbF%2FoRak18WrpxB7GzlLZFhAJNAxIloMSph6J%2Fp8d9tFnZWnND%2Fc9InXDoa0ahZWIrPI4D9a%2FCMwFaFOIIRYtbgrudTVrPWwNViy9moqddJC34Qp3LpH55cOTJbJNEwK9SqSr2EQh6Z%2FOS7K%2BBocv2LNHQM3mWfzWgDh5xkx7MOYsQMQ%3D%3D",
-                        "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776684618/samples/npeiefio8m9xbsbttdlc.png",
-                        "store": "Mercado Livre"
-            },
-            {
-                        "name": "Espelho Quadrado Premium 120x120 Cm Led Fundo Touch Lapidado",
-                        "desc": "Espelho quadrado 120x120 cm com LED, touch e fundo lapidado premium.",
-                        "oldPrice": "R$ 862,40",
-                        "newPrice": "R$ 666,68",
-                        "discount": "22% OFF",
-                        "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPD8sl2f2CsCV8a7t4M3wXS%2FcGF7M%2F7smjo7%2Bl28qgthVQhgheK3lZ6RZjaVAY0OfaEWyALzhzQ4CBwXDcnnhPFwqxnA%2BfaFvYZPjPwcWLmmSDYWL03aabCT0cWxnMsRczuK7w932pQ6CNE%2FsagFWoYRJHPFOZoFvfCQk6CG%2BQ9bT2hy5EiiEgUa7TpA%2FOEDmuF%2BIA%3D%3D",
-                        "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776695306/samples/myoouuq4ixdt8wcmiaaq.png",
-                        "store": "Mercado Livre"
-            },
-            {
-                        "name": "Capa Case Protetora Anti Impacto Silicone AirPods 1 2",
-                        "desc": "Capa protetora de silicone contra impactos para AirPods 1 e 2.",
-                        "oldPrice": "R$ 19,01",
-                        "newPrice": "R$ 19,01",
-                        "discount": "",
-                        "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMBED4ruw45%2F7WHaza3t5SKUNpYkbwwTSCo3spUx9frocwXg9SDSOwZY2wb4RBPkeI8fBkWdCfxiM30h1hKYuYks5N75bKTF1Nt%2FhzieE8tZG0rLJFWfY6iOXgLikAZM81mqZtdcmPMuET%2BVVW9PmwMk0AagGKFZVPxAr5TEOhtUhOXHyEgbQjkg2jJRF9YKS80Lgg%3D%3D",
-                        "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776711316/samples/okmoqeido3mtelyi7ygk.png",
-                        "store": "Mercado Livre"
-            },
-            {
-                        "name": "Copo Térmico Aço Inox Vácuo 350ml",
-                        "desc": "Copo térmico inox 350ml com isolamento a vácuo para bebidas quentes e frias.",
-                        "oldPrice": "R$ 87,89",
-                        "newPrice": "R$ 87,89",
-                        "discount": "",
-                        "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BK8Hv8OZUchs8EY173swy9CzinslhRC3w0Hj2MeY87IZt96GQjm6bFBI1vB%2FEvBnwq0%2FFXT229duLWtKr%2BE81vuh9t8SoXap1LFKsPPAMx3DjirCIHiEv2BqmzGPwNqvPkSw8Gz09Ig6Y6W20Vv2L32uOqGYJMkJvVkyQvFceqqMVLQHuwsGkplL2dz%2FJ0lUs06tzQ%3D%3D",
-                        "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776722093/samples/uody8n1sg7xzoaxxwuuf.png",
-                        "store": "Mercado Livre"
-            },
-            {
-                        "name": "Smart Tv LG 43 Full Hd",
-                        "desc": "Smart TV LG 43\" Full HD com processador A5, AI, Alexa e WebOS 23",
-                        "oldPrice": "R$ 1.999,00",
-                        "newPrice": "R$ 1.471,00",
-                        "discount": "26% OFF",
-                        "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPBf5uCxynxQNt6zMxbYb2iZh6BJljmBQKDU2%2Bfn8tEOy6SkCFkQGLC8pLhUAqRMX3tnPf%2F1KA20xR6whrUk2iuMml61JZ6CHfaXA%2FrN6RDPoCcUHcOoPlitBMOUWSNfNTyvYqCjsJe1mQWl4Er5CoKzYmHpygQvlXiIgvseoLhGB3PTsVp%2B3EsZoKSP5TEfttYRtlQ%3D",
-                        "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776732898/samples/ztmcwmptb7ha5x2rhni6.png",
-                        "store": "Mercado Livre"
-            },
-            {
-                        "name": "Radiador P/ Palio Siena Strada Idea Fire",
-                        "desc": "Radiador para carros Palio, Siena, Strada e Idea Fire 1.0 1.3 1.4.",
-                        "oldPrice": "R$ 322,35",
-                        "newPrice": "R$ 199,99",
-                        "discount": "38% OFF",
-                        "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BB7SMgJXnbLtw%2B%2FoOi4WuSJ%2FAjxGQFVzj79eduBODh%2FKRqsxd4zw8d0t6OiUf37uJhhyacWwGKHQJ%2BRzqGaYBRZtW%2FCiL0EGGNXTpsvRXXQ%2FVxhpxrH6ZCtxJFVngBN4YywmBte0D4ssNVdDUMNwyy9OZVo7Qw2YzvYo3IrSxJtx6XTMR%2BKeRLx8BL1bAxfqqWVseTwTx52zHSUkog%3D%3D",
-                        "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776743689/samples/cisdqgqao3gomxqcc3jf.png",
-                        "store": "Mercado Livre"
-            },
-            {
-                        "name": "Maquina Cafe Expresso Portatil Cinza 12v",
-                        "desc": "Máquina portátil para café expresso que usa pó e cápsulas, na cor cinza.",
-                        "oldPrice": "R$ 399,00",
-                        "newPrice": "R$ 387,03",
-                        "discount": "3% OFF",
-                        "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BKP4su0biseoUIuNHCI6IgVVBFpw8Gd5lZaFTNrtRFkuLrCkrGKTQx9pxl%2FgYz6fJ92DdbbWhC1bEZHetWD8V1zEq6gar%2FYj%2Bdy0B02uwzjfSGdD0rf2r55MUh%2BFqdMicSVhw8NbqovWflEus0OLBNrLtEaYnnyXr5wPsrnSgW0fRyif9c48FNt00VJBFzG5f7SHnYWPaBLLSekqEw%3D%3D",
-                        "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776859128/samples/xzwdus8mqy4hcpoqzaez.png",
-                        "store": "Mercado Livre"
-            }
+  <a
+    href="https://wa.me/5500000000000"
+    class="whatsapp-float"
+    aria-label="WhatsApp"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg style="width:28px;height:28px" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.66 20.15 9.3 19.81 8.1 19.14L7.81 18.97L4.69 19.79L5.53 16.74L5.34 16.44C4.61 15.27 4.22 13.93 4.22 12.54V11.91C4.22 7.66 7.73 4.15 11.97 4.15H12.05"/>
+    </svg>
+  </a>
+
+  <script>
+    const products = [
+  {
+    "name": "Relógio Casio Masculino Digital Esportivo Preto",
+    "desc": "Relógio masculino digital esportivo, preto, prova d'água.",
+    "oldPrice": "R$ 299,00",
+    "newPrice": "R$ 161,10",
+    "discount": "46% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776684509/samples/ykqmaxdrchbdikawdpkg.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Fritadeira Elétrica 1 Litro",
+    "desc": "Fritadeira elétrica compacta de 1 litro, prática e rápida para fritar.",
+    "oldPrice": "R$ 249,90",
+    "newPrice": "R$ 249,90",
+    "discount": "",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776684618/samples/npeiefio8m9xbsbttdlc.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Espelho Quadrado Premium 120x120 Cm Led Fundo Touch Lapidado",
+    "desc": "Espelho quadrado 120x120 cm com LED, touch e fundo lapidado premium.",
+    "oldPrice": "R$ 862,40",
+    "newPrice": "R$ 666,68",
+    "discount": "22% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776695306/samples/myoouuq4ixdt8wcmiaaq.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Capa Case Protetora Anti Impacto Silicone AirPods 1 2",
+    "desc": "Capa protetora de silicone contra impactos para AirPods 1 e 2.",
+    "oldPrice": "R$ 19,01",
+    "newPrice": "R$ 19,01",
+    "discount": "",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776711316/samples/okmoqeido3mtelyi7ygk.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Copo Térmico Aço Inox Vácuo 350ml",
+    "desc": "Copo térmico inox 350ml com isolamento a vácuo para bebidas quentes e frias.",
+    "oldPrice": "R$ 87,89",
+    "newPrice": "R$ 87,89",
+    "discount": "",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776722093/samples/uody8n1sg7xzoaxxwuuf.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Smart Tv LG 43 Full Hd",
+    "desc": "Smart TV LG 43\" Full HD com processador A5, AI, Alexa e WebOS 23",
+    "oldPrice": "R$ 1.999,00",
+    "newPrice": "R$ 1.471,00",
+    "discount": "26% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776732898/samples/ztmcwmptb7ha5x2rhni6.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Radiador P/ Palio Siena Strada Idea Fire",
+    "desc": "Radiador para carros Palio, Siena, Strada e Idea Fire 1.0 1.3 1.4.",
+    "oldPrice": "R$ 322,35",
+    "newPrice": "R$ 199,99",
+    "discount": "38% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776743689/samples/cisdqgqao3gomxqcc3jf.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Maquina Cafe Expresso Portatil Cinza 12v",
+    "desc": "Máquina portátil para café expresso que usa pó e cápsulas, na cor cinza.",
+    "oldPrice": "R$ 399,00",
+    "newPrice": "R$ 387,03",
+    "discount": "3% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776859128/samples/xzwdus8mqy4hcpoqzaez.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Fritadeira Elétrica Air Fryer Kian 3,5L Preto 127v",
+    "desc": "Fritadeira elétrica air fryer antiaderente 1200w com capacidade de 3,5 litros.",
+    "oldPrice": "R$ 304,60",
+    "newPrice": "R$ 304,60",
+    "discount": "",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776949004/samples/ht6jjmzh45u2jgxtnpm3.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Esteira Elétrica Portátil Planeta Tech",
+    "desc": "Esteira elétrica portátil para uso residencial até 120kg, velocidade 0-6km/h.",
+    "oldPrice": "R$ 798,00",
+    "newPrice": "R$ 798,00",
+    "discount": "",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776949417/samples/eakugyz5aqombjwbm1wn.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Kit 5 Faixa Elástica Super Mini Band",
+    "desc": "Kit com 5 faixas elásticas para treino funcional, ginástica e yoga, coloridas e com marcações.",
+    "oldPrice": "R$ 39,90",
+    "newPrice": "R$ 33,90",
+    "discount": "15% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777232784/samples/shoihlk2wquy99h2npbm.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Livro Noites Brancas",
+    "desc": "Livro Noites Brancas do autor Fiódor Dostoiévski, capa mole, edição de 2009.",
+    "oldPrice": "R$ 48,69",
+    "newPrice": "R$ 48,69",
+    "discount": "",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777243579/samples/xnyez4rjkx6tq47dhrzp.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Rolo Massagem Foam Roller Preto",
+    "desc": "Rolo para liberação miofascial, massagem e soltura, cor preta.",
+    "oldPrice": "R$ 78,00",
+    "newPrice": "R$ 51,51",
+    "discount": "34% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777254382/samples/qfoifvc9sfmovcge2phu.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Kit Manicure Portátil Estojo 12 Pç",
+    "desc": "Kit manicure portátil com 12 peças para cuidados profissionais das unhas.",
+    "oldPrice": "R$ 35,90",
+    "newPrice": "R$ 22,21",
+    "discount": "38% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777289659/samples/f1x88r6cb4uftj22j8sv.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Ninja Blast Liquidificador Portátil",
+    "desc": "Liquidificador portátil mini, sem fio e recarregável, na cor preta.",
+    "oldPrice": "R$ 479,00",
+    "newPrice": "R$ 479,00",
+    "discount": "",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777289762/samples/dwicezk1jajjjq0lstum.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Relógio Inteligente Smartwatch GPS 3atm Bluetooth Preto",
+    "desc": "Smartwatch GPS 3atm com chamadas Bluetooth, display 240x296 IPS.",
+    "oldPrice": "R$ 239,00",
+    "newPrice": "R$ 188,45",
+    "discount": "21% OFF",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777311232/samples/smqtzytzd8sjjxnar4vi.png",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "Torneira Elétrica Loren Easy",
+    "desc": "Torneira elétrica móvel para cozinha com acabamento branco.",
+    "oldPrice": "R$ 189,90",
+    "newPrice": "R$ 189,90",
+    "discount": "",
+    "link": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777332827/samples/mkpsc99nsaebvalgeb05.png",
+    "store": "Mercado Livre"
+  }
 ];
 
-        function displayProducts(productsToDisplay) {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = "";
-            if (productsToDisplay.length === 0) {
-                grid.innerHTML = "<div class='no-results'>Nenhum alvo detetado no radar... 🕵️‍♂️</div>";
-                return;
-            }
-            productsToDisplay.forEach(product => {
-                const card = `
-                    <div class="offer-card">
-                        <span class="store-badge">${product.store || 'Mercado Livre'}</span>
-                        <div class="product-image-wrap">
-                            <img class="product-image" src="${product.image || 'https://via.placeholder.com/600x600?text=Oferta'}" alt="${product.name}">
-                        </div>
-                        <div class="verify-badge">
-                            <svg style="width:12px;height:12px" viewBox="0 0 24 24"><path fill="currentColor" d="M12,2L4,5V11C4,16.55 7.84,21.74 12,23C16.16,21.74 20,16.55 20,11V5L12,2M12,11.91L14.59,14.5L15.41,13.67L12,10.25L8.59,13.67L9.41,14.5L12,11.91Z"/></svg>
-                            Oferta Verificada
-                        </div>
-                        <h2 class="product-title">${product.name}</h2>
-                        <p class="product-desc">${product.desc}</p>
-                        <div class="pricing-area">
-                            <div class="price-row">
-                                ${product.oldPrice ? `<span class="old-price">${product.oldPrice}</span>` : ''}
-                                <span class="new-price">${product.newPrice}</span>
-                            </div>
-                            ${product.discount ? `<span class="discount-pill">${product.discount}</span>` : ''}
-                        </div>
-                        <a href="${product.link}" class="cta-button" target="_blank" rel="noopener noreferrer">
-                            Confira a oferta no Mercado Livre
-                        </a>
-                    </div>
-                `;
-                grid.innerHTML += card;
-            });
-        }
+    function displayProducts(productsToDisplay) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = "";
 
-        function filterProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const filtered = products.filter(product => 
-                product.name.toLowerCase().includes(searchTerm) || 
-                product.desc.toLowerCase().includes(searchTerm)
-            );
-            displayProducts(filtered);
-        }
+      if (!productsToDisplay.length) {
+        grid.innerHTML = "<div class='no-results'>Nenhum alvo detectado no radar... 🕵️‍♂️</div>";
+        return;
+      }
 
-        window.onload = () => displayProducts(products);
-    </script>
+      productsToDisplay.forEach(product => {
+        const hasLink = !!(product.link && product.link.trim());
+        const ctaClass = hasLink ? "cta-button" : "cta-button disabled";
+        const ctaHref = hasLink ? product.link : "#";
+        const ctaText = hasLink ? "Confira a oferta no Mercado Livre" : "Link indisponível";
+
+        const card = `
+          <div class="offer-card">
+            <span class="store-badge">${product.store || 'Mercado Livre'}</span>
+            ${product.image ? `<div class="product-image-wrap"><img class="product-image" src="${product.image}" alt="${product.name}" loading="lazy"></div>` : ''}
+            <div class="verify-badge">
+              <svg style="width:12px;height:12px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12,2L4,5V11C4,16.55 7.84,21.74 12,23C16.16,21.74 20,16.55 20,11V5L12,2M12,11.91L14.59,14.5L15.41,13.67L12,10.25L8.59,13.67L9.41,14.5L12,11.91Z"/>
+              </svg>
+              Oferta Verificada
+            </div>
+            <h2 class="product-title">${product.name}</h2>
+            <p class="product-desc">${product.desc}</p>
+            <div class="pricing-area">
+              <div class="price-row">
+                ${product.oldPrice ? `<span class="old-price">${product.oldPrice}</span>` : ''}
+                ${product.newPrice ? `<span class="new-price">${product.newPrice}</span>` : ''}
+              </div>
+              ${product.discount ? `<span class="discount-pill">${product.discount}</span>` : ''}
+            </div>
+            <a href="${ctaHref}" class="${ctaClass}" target="_blank" rel="noopener noreferrer">
+              ${ctaText}
+            </a>
+          </div>
+        `;
+        grid.insertAdjacentHTML('beforeend', card);
+      });
+    }
+
+    function filterProducts() {
+      const searchInput = document.getElementById('searchInput');
+      const searchTerm = searchInput.value.toLowerCase().trim();
+
+      const filtered = products.filter(product =>
+        (product.name || '').toLowerCase().includes(searchTerm) ||
+        (product.desc || '').toLowerCase().includes(searchTerm)
+      );
+
+      displayProducts(filtered);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      displayProducts(products);
+    });
+  </script>
 </body>
 </html>
