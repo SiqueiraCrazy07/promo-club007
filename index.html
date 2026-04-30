@@ -8,19 +8,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --primary-dark: #0f172a;
       --accent-blue: #3b82f6;
       --danger: #ef4444;
-      --bg: #ffffff;
+      --bg: #f8fafc;
+      --card: #ffffff;
       --text-main: #1e293b;
       --text-sec: #64748b;
       --ml-yellow: #fff159;
       --safe-green: #10b981;
       --border-light: #e5e7eb;
       --disabled: #94a3b8;
+      --chip-bg: #eef2ff;
+      --chip-active: #0f172a;
+      --chip-text: #334155;
     }
 
     * {
@@ -32,18 +35,18 @@
     }
 
     body {
-      background-color: var(--bg);
+      background: var(--bg);
       color: var(--text-main);
       line-height: 1.5;
     }
 
     .header-hero {
       background:
-        linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)),
+        linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.86)),
         url('./assets/exclusive_deals_in_style.png');
       background-size: cover;
       background-position: center;
-      padding: 50px 20px 70px;
+      padding: 28px 16px 88px;
       text-align: center;
       color: white;
       position: relative;
@@ -53,151 +56,193 @@
     .header-content {
       position: relative;
       z-index: 2;
-    }
-
-    .profile-logo {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 3px solid var(--ml-yellow);
-      margin: 0 auto 15px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(255, 241, 89, 0.3);
-      background: white;
-    }
-
-    .profile-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .brand-badge {
       display: inline-block;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(8px);
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.65rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .brand-name {
-      font-size: 2rem;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.68rem;
       font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
       text-transform: uppercase;
+      letter-spacing: 1.8px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .brand-name span {
-      color: var(--ml-yellow);
+    .brand-logo {
+      width: min(100%, 420px);
+      max-height: 150px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,0.22));
     }
 
     .brand-tagline {
       font-size: 0.95rem;
-      color: #cbd5e1;
-      max-width: 560px;
+      color: #dbe4ef;
+      max-width: 620px;
       margin: 0 auto;
       font-weight: 500;
     }
 
-    .filter-section {
-      padding: 0 15px;
+    .control-panel {
       max-width: 1200px;
-      margin: -35px auto 30px;
+      margin: -56px auto 24px;
+      padding: 0 14px;
       position: relative;
       z-index: 10;
     }
 
+    .panel-card {
+      background: rgba(255,255,255,0.96);
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+      padding: 14px;
+    }
+
     .search-container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: white;
-      padding: 4px;
-      border-radius: 50px;
-      box-shadow: 0 15px 40px rgba(15, 23, 42, 0.15);
       display: flex;
       align-items: center;
       border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      background: #fff;
+      margin-bottom: 12px;
+      padding: 0 12px;
     }
 
     #searchInput {
-      flex: 1;
-      padding: 12px 20px;
+      width: 100%;
+      padding: 14px 8px;
       border: none;
       outline: none;
-      font-size: 1rem;
+      font-size: 0.98rem;
       background: transparent;
       color: var(--text-main);
     }
 
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      border: 1px solid #dbe3ee;
+      background: var(--chip-bg);
+      color: var(--chip-text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .filter-tab.active {
+      background: var(--chip-active);
+      color: white;
+      border-color: var(--chip-active);
+      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.14);
+    }
+
+    .results-meta {
+      max-width: 1200px;
+      margin: 0 auto 8px;
+      padding: 0 20px;
+      color: var(--text-sec);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
     .container {
-      max-width: 1240px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px 80px;
+      padding: 0 14px 90px;
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
       align-items: start;
     }
 
-    @media (min-width: 640px) {
+    @media (min-width: 700px) {
       .container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
       }
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 1080px) {
       .container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
       }
     }
 
     .offer-card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 20px;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 12px;
       border: 1px solid var(--border-light);
-      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: 0.25s ease;
       display: flex;
       flex-direction: column;
       color: inherit;
-      position: relative;
       min-height: 100%;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
     }
 
     .offer-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-      border-color: var(--accent-blue);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px rgba(15, 23, 42, 0.10);
+      border-color: #cbd5e1;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
     .store-badge {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
       text-transform: uppercase;
-      margin-bottom: 12px;
-      align-self: flex-start;
       background: var(--ml-yellow);
       color: #111;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+    }
+
+    .verify-badge {
+      font-size: 9px;
+      color: var(--safe-green);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .product-image-wrap {
       width: 100%;
       aspect-ratio: 1 / 1;
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
       background: #f8fafc;
       border: 1px solid var(--border-light);
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     .product-image {
@@ -207,24 +252,13 @@
       display: block;
     }
 
-    .verify-badge {
-      font-size: 9px;
-      color: var(--safe-green);
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
-
     .product-title {
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 0.92rem;
+      font-weight: 800;
       color: var(--text-main);
-      margin-bottom: 10px;
-      line-height: 1.4;
-      min-height: 2.8rem;
+      margin-bottom: 8px;
+      line-height: 1.35;
+      min-height: 2.45rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -232,38 +266,38 @@
     }
 
     .product-desc {
-      font-size: 0.85rem;
+      font-size: 0.77rem;
       color: var(--text-sec);
-      margin-bottom: 18px;
-      min-height: 4.8rem;
-      line-height: 1.6;
+      margin-bottom: 12px;
+      min-height: 3.4rem;
+      line-height: 1.45;
       display: -webkit-box;
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
     .pricing-area {
       margin-top: auto;
-      padding-top: 15px;
+      padding-top: 10px;
       border-top: 1px solid var(--border-light);
     }
 
     .price-row {
       display: flex;
       align-items: baseline;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
 
     .old-price {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #94a3b8;
       text-decoration: line-through;
     }
 
     .new-price {
-      font-size: 1.4rem;
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--danger);
     }
@@ -271,11 +305,11 @@
     .discount-pill {
       background: #fef2f2;
       color: var(--danger);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 800;
-      padding: 3px 12px;
-      border-radius: 50px;
-      margin-top: 8px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-top: 7px;
       display: inline-block;
       border: 1px solid #fee2e2;
     }
@@ -283,68 +317,65 @@
     .cta-button {
       background: var(--primary-dark);
       color: white;
-      padding: 14px;
+      padding: 11px;
       border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.72rem;
+      font-weight: 800;
+      font-size: 0.7rem;
       text-transform: uppercase;
       text-align: center;
-      margin-top: 20px;
-      transition: 0.3s;
+      margin-top: 14px;
+      transition: 0.25s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
       border: none;
-      cursor: pointer;
       text-decoration: none;
+      min-height: 42px;
     }
 
     .cta-button:hover {
       background: var(--accent-blue);
-      transform: scale(1.02);
     }
 
     .cta-button.disabled {
       background: var(--disabled);
       cursor: not-allowed;
       pointer-events: none;
-      transform: none;
     }
 
     .instagram-float {
       position: fixed;
-      bottom: 105px;
-      right: 30px;
+      bottom: 98px;
+      right: 18px;
       background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
       color: white;
-      width: 60px;
-      height: 60px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 30px rgba(221, 42, 123, 0.35);
       z-index: 1000;
-      transition: 0.3s;
+      transition: 0.25s;
       text-decoration: none;
     }
 
     .whatsapp-float {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 28px;
+      right: 18px;
       background: #25d366;
       color: white;
-      width: 60px;
-      height: 60px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
       z-index: 1000;
-      transition: 0.3s;
+      transition: 0.25s;
       text-decoration: none;
     }
 
@@ -356,58 +387,97 @@
     .no-results {
       grid-column: 1 / -1;
       text-align: center;
-      padding: 100px 20px;
+      padding: 70px 20px;
       color: var(--text-sec);
-      font-weight: 500;
+      font-weight: 600;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+    }
+
+    @media (max-width: 480px) {
+      .header-hero {
+        padding: 22px 12px 82px;
+      }
+
+      .brand-logo {
+        width: min(100%, 320px);
+        max-height: 110px;
+      }
+
+      .brand-tagline {
+        font-size: 0.85rem;
+      }
+
+      .panel-card {
+        padding: 12px;
+        border-radius: 18px;
+      }
+
+      .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .offer-card {
+        padding: 10px;
+        border-radius: 16px;
+      }
+
+      .product-title {
+        font-size: 0.85rem;
+        min-height: 2.25rem;
+      }
+
+      .product-desc {
+        font-size: 0.72rem;
+        min-height: 3rem;
+      }
+
+      .new-price {
+        font-size: 1rem;
+      }
+
+      .filter-tab {
+        font-size: 0.82rem;
+        padding: 9px 12px;
+      }
     }
   </style>
 </head>
 <body>
-
   <header class="header-hero">
     <div class="header-content">
-      <div class="profile-logo">
-        <img src="./assets/exclusive_deals_in_style.png" alt="Promo.Club007 Logo">
-      </div>
       <div class="brand-badge">Operação Economia</div>
-      <h1 class="brand-name">PROMO.CLUB<span>007</span></h1>
-      <p class="brand-tagline">🕵️‍♂️ Analisamos os alvos, você aproveita os descontos de elite.</p>
+      <img class="brand-logo" src="./assets/exclusive_deals_in_style.png" alt="Promo.Club007">
+      <p class="brand-tagline">Ofertas selecionadas com visual mais rápido, filtros por loja e navegação melhor para mobile.</p>
     </div>
   </header>
 
-  <section class="filter-section">
-    <div class="search-container">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="O que você está caçando hoje, agente?"
-        onkeyup="filterProducts()"
-      >
+  <section class="control-panel">
+    <div class="panel-card">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar produto, categoria ou palavra-chave...">
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-store="all">Mostrar todos</button>
+        <button class="filter-tab" data-store="Mercado Livre">Mercado Livre</button>
+        <button class="filter-tab" data-store="Shopee">Shopee</button>
+      </div>
     </div>
   </section>
 
+  <div class="results-meta" id="resultsMeta">Carregando ofertas...</div>
   <main class="container" id="productGrid"></main>
 
-  <a
-    href="https://www.instagram.com/promo.club007/"
-    class="instagram-float"
-    aria-label="Instagram"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <svg style="width:28px;height:28px" viewBox="0 0 24 24">
+  <a href="https://www.instagram.com/promo.club007/" class="instagram-float" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+    <svg style="width:26px;height:26px" viewBox="0 0 24 24">
       <path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
     </svg>
   </a>
 
-  <a
-    href="https://wa.me/5500000000000"
-    class="whatsapp-float"
-    aria-label="WhatsApp"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <svg style="width:28px;height:28px" viewBox="0 0 24 24">
+  <a href="https://wa.me/5500000000000" class="whatsapp-float" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg style="width:26px;height:26px" viewBox="0 0 24 24">
       <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.66 20.15 9.3 19.81 8.1 19.14L7.81 18.97L4.69 19.79L5.53 16.74L5.34 16.44C4.61 15.27 4.22 13.93 4.22 12.54V11.91C4.22 7.66 7.73 4.15 11.97 4.15H12.05"/>
     </svg>
   </a>
@@ -415,183 +485,290 @@
   <script>
     const products = [
   {
-    "name": "Relógio Casio Masculino Digital Esportivo Preto",
-    "desc": "Relógio masculino digital esportivo, preto, prova d'água.",
-    "oldPrice": "R$ 299,00",
-    "newPrice": "R$ 161,10",
-    "discount": "46% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776684509/samples/ykqmaxdrchbdikawdpkg.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Fritadeira Elétrica 1 Litro",
-    "desc": "Fritadeira elétrica compacta de 1 litro, prática e rápida para fritar.",
-    "oldPrice": "R$ 249,90",
-    "newPrice": "R$ 249,90",
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
     "discount": "",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776684618/samples/npeiefio8m9xbsbttdlc.png",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMDOVuC6w6CjHgnwoujkBh9QzoiSXVz0kgUA4eF38k6ij4q3AY4HzWHJ006G855H22HBweDtt0PGW91woQynHZAINf%2B%2FDVuSqLvTrBMg642coFLm40gNJPIBXVrOrfF5cCESOyb4gs8iFn5sSK78R5qGOPG34q8xCj4LWwSor9%2FomLQ106zNzBXE5mBGob0BqkjXbQ%3D%3D",
+    "image": "",
     "store": "Mercado Livre"
   },
   {
-    "name": "Espelho Quadrado Premium 120x120 Cm Led Fundo Touch Lapidado",
-    "desc": "Espelho quadrado 120x120 cm com LED, touch e fundo lapidado premium.",
-    "oldPrice": "R$ 862,40",
-    "newPrice": "R$ 666,68",
-    "discount": "22% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776695306/samples/myoouuq4ixdt8wcmiaaq.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Capa Case Protetora Anti Impacto Silicone AirPods 1 2",
-    "desc": "Capa protetora de silicone contra impactos para AirPods 1 e 2.",
-    "oldPrice": "R$ 19,01",
-    "newPrice": "R$ 19,01",
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
     "discount": "",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776711316/samples/okmoqeido3mtelyi7ygk.png",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPylmWd%2BGTKzj5eyGNy1z8LbF%2FoRak18WrpxB7GzlLZFhAJNAxIloMSph6J%2Fp8d9tFnZWnND%2Fc9InXDoa0ahZWIrPI4D9a%2FCMwFaFOIIRYtbgrudTVrPWwNViy9moqddJC34Qp3LpH55cOTJbJNEwK9SqSr2EQh6Z%2FOS7K%2BBocv2LNHQM3mWfzWgDh5xkx7MOYsQMQ%3D%3D",
+    "image": "",
     "store": "Mercado Livre"
   },
   {
-    "name": "Copo Térmico Aço Inox Vácuo 350ml",
-    "desc": "Copo térmico inox 350ml com isolamento a vácuo para bebidas quentes e frias.",
-    "oldPrice": "R$ 87,89",
-    "newPrice": "R$ 87,89",
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
     "discount": "",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776722093/samples/uody8n1sg7xzoaxxwuuf.png",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPD8sl2f2CsCV8a7t4M3wXS%2FcGF7M%2F7smjo7%2Bl28qgthVQhgheK3lZ6RZjaVAY0OfaEWyALzhzQ4CBwXDcnnhPFwqxnA%2BfaFvYZPjPwcWLmmSDYWL03aabCT0cWxnMsRczuK7w932pQ6CNE%2FsagFWoYRJHPFOZoFvfCQk6CG%2BQ9bT2hy5EiiEgUa7TpA%2FOEDmuF%2BIA%3D%3D",
+    "image": "",
     "store": "Mercado Livre"
   },
   {
-    "name": "Smart Tv LG 43 Full Hd",
-    "desc": "Smart TV LG 43\" Full HD com processador A5, AI, Alexa e WebOS 23",
-    "oldPrice": "R$ 1.999,00",
-    "newPrice": "R$ 1.471,00",
-    "discount": "26% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776732898/samples/ztmcwmptb7ha5x2rhni6.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Radiador P/ Palio Siena Strada Idea Fire",
-    "desc": "Radiador para carros Palio, Siena, Strada e Idea Fire 1.0 1.3 1.4.",
-    "oldPrice": "R$ 322,35",
-    "newPrice": "R$ 199,99",
-    "discount": "38% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776743689/samples/cisdqgqao3gomxqcc3jf.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Maquina Cafe Expresso Portatil Cinza 12v",
-    "desc": "Máquina portátil para café expresso que usa pó e cápsulas, na cor cinza.",
-    "oldPrice": "R$ 399,00",
-    "newPrice": "R$ 387,03",
-    "discount": "3% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776859128/samples/xzwdus8mqy4hcpoqzaez.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Fritadeira Elétrica Air Fryer Kian 3,5L Preto 127v",
-    "desc": "Fritadeira elétrica air fryer antiaderente 1200w com capacidade de 3,5 litros.",
-    "oldPrice": "R$ 304,60",
-    "newPrice": "R$ 304,60",
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
     "discount": "",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776949004/samples/ht6jjmzh45u2jgxtnpm3.png",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMBED4ruw45%2F7WHaza3t5SKUNpYkbwwTSCo3spUx9frocwXg9SDSOwZY2wb4RBPkeI8fBkWdCfxiM30h1hKYuYks5N75bKTF1Nt%2FhzieE8tZG0rLJFWfY6iOXgLikAZM81mqZtdcmPMuET%2BVVW9PmwMk0AagGKFZVPxAr5TEOhtUhOXHyEgbQjkg2jJRF9YKS80Lgg%3D%3D",
+    "image": "",
     "store": "Mercado Livre"
   },
   {
-    "name": "Esteira Elétrica Portátil Planeta Tech",
-    "desc": "Esteira elétrica portátil para uso residencial até 120kg, velocidade 0-6km/h.",
-    "oldPrice": "R$ 798,00",
-    "newPrice": "R$ 798,00",
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
     "discount": "",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776949417/samples/eakugyz5aqombjwbm1wn.png",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BK8Hv8OZUchs8EY173swy9CzinslhRC3w0Hj2MeY87IZt96GQjm6bFBI1vB%2FEvBnwq0%2FFXT229duLWtKr%2BE81vuh9t8SoXap1LFKsPPAMx3DjirCIHiEv2BqmzGPwNqvPkSw8Gz09Ig6Y6W20Vv2L32uOqGYJMkJvVkyQvFceqqMVLQHuwsGkplL2dz%2FJ0lUs06tzQ%3D%3D",
+    "image": "",
     "store": "Mercado Livre"
   },
   {
-    "name": "Kit 5 Faixa Elástica Super Mini Band",
-    "desc": "Kit com 5 faixas elásticas para treino funcional, ginástica e yoga, coloridas e com marcações.",
-    "oldPrice": "R$ 39,90",
-    "newPrice": "R$ 33,90",
-    "discount": "15% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777232784/samples/shoihlk2wquy99h2npbm.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Livro Noites Brancas",
-    "desc": "Livro Noites Brancas do autor Fiódor Dostoiévski, capa mole, edição de 2009.",
-    "oldPrice": "R$ 48,69",
-    "newPrice": "R$ 48,69",
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
     "discount": "",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777243579/samples/xnyez4rjkx6tq47dhrzp.png",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPBf5uCxynxQNt6zMxbYb2iZh6BJljmBQKDU2%2Bfn8tEOy6SkCFkQGLC8pLhUAqRMX3tnPf%2F1KA20xR6whrUk2iuMml61JZ6CHfaXA%2FrN6RDPoCcUHcOoPlitBMOUWSNfNTyvYqCjsJe1mQWl4Er5CoKzYmHpygQvlXiIgvseoLhGB3PTsVp%2B3EsZoKSP5TEfttYRtlQ%3D",
+    "image": "",
     "store": "Mercado Livre"
   },
   {
-    "name": "Rolo Massagem Foam Roller Preto",
-    "desc": "Rolo para liberação miofascial, massagem e soltura, cor preta.",
-    "oldPrice": "R$ 78,00",
-    "newPrice": "R$ 51,51",
-    "discount": "34% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777254382/samples/qfoifvc9sfmovcge2phu.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Kit Manicure Portátil Estojo 12 Pç",
-    "desc": "Kit manicure portátil com 12 peças para cuidados profissionais das unhas.",
-    "oldPrice": "R$ 35,90",
-    "newPrice": "R$ 22,21",
-    "discount": "38% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777289659/samples/f1x88r6cb4uftj22j8sv.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Ninja Blast Liquidificador Portátil",
-    "desc": "Liquidificador portátil mini, sem fio e recarregável, na cor preta.",
-    "oldPrice": "R$ 479,00",
-    "newPrice": "R$ 479,00",
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
     "discount": "",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777289762/samples/dwicezk1jajjjq0lstum.png",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BB7SMgJXnbLtw%2B%2FoOi4WuSJ%2FAjxGQFVzj79eduBODh%2FKRqsxd4zw8d0t6OiUf37uJhhyacWwGKHQJ%2BRzqGaYBRZtW%2FCiL0EGGNXTpsvRXXQ%2FVxhpxrH6ZCtxJFVngBN4YywmBte0D4ssNVdDUMNwyy9OZVo7Qw2YzvYo3IrSxJtx6XTMR%2BKeRLx8BL1bAxfqqWVseTwTx52zHSUkog%3D%3D",
+    "image": "",
     "store": "Mercado Livre"
   },
   {
-    "name": "Relógio Inteligente Smartwatch GPS 3atm Bluetooth Preto",
-    "desc": "Smartwatch GPS 3atm com chamadas Bluetooth, display 240x296 IPS.",
-    "oldPrice": "R$ 239,00",
-    "newPrice": "R$ 188,45",
-    "discount": "21% OFF",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777311232/samples/smqtzytzd8sjjxnar4vi.png",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "Torneira Elétrica Loren Easy",
-    "desc": "Torneira elétrica móvel para cozinha com acabamento branco.",
-    "oldPrice": "R$ 189,90",
-    "newPrice": "R$ 189,90",
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
     "discount": "",
-    "link": "",
-    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777332827/samples/mkpsc99nsaebvalgeb05.png",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BKP4su0biseoUIuNHCI6IgVVBFpw8Gd5lZaFTNrtRFkuLrCkrGKTQx9pxl%2FgYz6fJ92DdbbWhC1bEZHetWD8V1zEq6gar%2FYj%2Bdy0B02uwzjfSGdD0rf2r55MUh%2BFqdMicSVhw8NbqovWflEus0OLBNrLtEaYnnyXr5wPsrnSgW0fRyif9c48FNt00VJBFzG5f7SHnYWPaBLLSekqEw%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BF9Iy2so0jtZJzw43ySiBLdviQJBeYlO3TzpgaD1YjnKoftz1SdL9PoU2%2FIzR0mq5UrIBjTNE1wEhdfNfutFCWBDFXntw9TgEHoBMe%2BYHnnkgccgrojGzOMalC8JTtx5xFkLpps0sfip2czL3MQHmCa5ty7tFZzClFfVh8haLAPnFdDPP9EZX3dVWqz0KhIH53M8Qis%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BApNt6ptCB97zyj%2FTuSPkfaRyHQIFTs4pPPIj7xqS%2FZAHuXAWI8%2Becf9HhW5490tR8KhiId7MWsZSnTNUOKkqzxqWupFQpFfkJuT33uof95ULf7gNaFlpIdQRAlctoa7NSUMaONU5OKn3w6IkuhSQ66pik2ZDxOrpGracBdKBsudMKrLl6l%2Fxs7g1nvNYZfT%2BoCzuQ%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BFMqHf13O2NO7vKAUoXSnTcICw7i2iFORwA4yHa7JII4S00773OYPLum2kdFegiSTQMoABpx0aS7iJP1%2ByNu%2FvDEv47Ospz5MSdIWtdRglSoyr8XB3Y5A1eCcGCtHxoxMrh%2F4y%2BhOWOWi49rN%2F%2F2xW7yNgyqnVqxQ4FNabFs6Z2kwstf%2BOn2jlzHnrClB6D2hMhugC0%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMt6n0PHRdFLO%2F6g8XM%2BDVBD9KSkMCsrSjJYy27E3%2Fs7Hv8jz%2BQlxAnlesrAomskIRjY%2BPlQpPc0ovwzTuwsl5gcRgCeL8%2FTLgjKq02GPyhRhJGupHR3z7iLGwqmzuGoMDYYMgAOOD%2BK4C%2FtU%2BLCsS3J35nu8Qm%2BcnQzTPeQGfpdpMK%2FNmJGOqoFG0XhIxUf0t1vyA%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BGt9zphmtZxqKhAhsj2tsUnE8n1Cl%2Fm1Pl7qVhhHIhPuu2rCeROW%2FuX3OgscU9hksXL5yFYeAkCSn%2FhuVDA8fG%2B9f7EyTCqlY6ZmwVqhoAyLFR0f96P2MWXhIPi7r2qUvmpwmpI6Q2JOUMMF8gsKMl9C6DYm9PEupTQ4%2BvmzmdVmEAhCJchybdIN%2F2u2XRctlYq4bw%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BL06HcO%2F2I3REcp1r0F3kRqCvuEOA05En%2FmCiZ8L3D76V4rUKfNVztadiAZQy0uXiQ%2Btjfj%2Fj6pJPZAKmTLVNNuf5Va8PdJqlglvSsAFRn7NmmlG8OqtFmXp88dq1fmzfUoZEUBnAOj4WnAXtdQQE9PlKyWFetbp9s8Wb1eCD8b5yczVnXWcDuOYUmWr3o1f8xjp6g%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMeRltrqD3h3JWT03VcW08GBI8IyXvJa5ZC5iWyF2nnqb219%2F2zYU25sATF8KNMmTKrwHthskRcHYmMnjIMIO30QbNvg%2BhiHJe4uZmcvULNWWiMtjH7532bhmKZrMv91ir%2BNY98UCjCTXkvJAJfSRHV9ll67IemSJj4Bq%2F9w2UF4z9beixbH6QEU0QWzVJqoT9q9L0o%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPQ9OWaR3E7Q6479a5B9KMQI%2FCCKaxPypL3vlJwPDWQQ7VoEYSixYWY9%2BYiBU7LzvTpBOUKR3EC6emC0NMzZD%2FXpy4dfXkpUrdUZ7UOUqw%2BEKGIQrmItqpexlUMV21dOdzxrMEMUDkhWrURKpEh5HrdmCQj2AuEmSNPF7TfZLixly4qSSdalLNFJju1AiUb9E%2Bw5cA%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BEXG6TZTdYdryjdwI%2FxJSn50MVwORUFxJiCIpgaR00V7VuUqiuLyF4HGhChMCONn83WgLxVj6ezFWBhLSPf7E6Ca7tpZ2B7ED7T4JgdjOHCHBDZDCZB4T8XeERLoLHzMSoDzBczjNGacqAjgNAKOJPElVfZhuHalCkm24fTFdCjnawFRDhS5HbofKsJE1lKS9%2Bcvyj3kie7QgxF34Q%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMThEknOZ9rWJOGhaYWvmszXPBI9SC3cEFun9%2F8iwvWNy1Cs2fGo3c32jYQwwFfe3g9Vyzj5g9ZKPJ7dWUpyRauBE%2FEsJMUI7avqaEwYg6tc3I2m5nsvc3NOSJ5kvOkViGhG5DHBAz8G1vjcIpxvZyNeuQuDdcDUSVaEZAECL794rUyvvvz%2BCV5gh6BgO0DEzPncmHA%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BGYr6cF8i8FTC%2FgosMbS2B0fCwu9zJGP5MvAjlN5XP3f2Fw33X8i8lzCDszkVal%2F8POcyXBVzTMgn%2BEJ52rVYc5BCWiAlfteD2Y9r%2B6IBEdweJnNSiZUxTRRFt%2FfnajE2tSABO0iQQQyPZNf8yFnDJ2mextjAqd6MFoXgq3cONPbRhppIMofxlOhe%2BWQmR6mFIP0jgQ%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPubMs%2F%2BFUT%2B8zTJKXghhV2rrz8UT3Sd36qiAiJNeBGpItOW%2F9TdX0sDOsoU7RbbOOOB9W5DkSy28jFvjU1HsXgSG2OznGxKEFRjxO91P2S%2F%2F16TxWik32z7sVXslm4qWOLxWBycwT6M1dVzsfkfhtJofiUocirOvwK9msdOf0cSw2J1mSTGqrmFtQsVg3NTR8f3TA%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BLJPJwHRcOcY9OHFIGuDI7JKdOBjDtSk3MVM44X2Z4LiLgFMCl1EC3uTqO74kXlt9QNvKQz6dnxJFop%2BBa8RvPbCLFG8Fsfr4yluBKR3uvUIZEGa962aWlX4LLAkmUHzr1Jg5A2I59MrECaVvnJXLES8JGs%2FPQmB1rVCZ%2BzYH%2FhNXBc81Fc7BROzlvNLr76fxmY%2FF1I%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BNeDbf2YIPqfvGE9d5FTvk1H%2F3bSdvDPZ%2FQDo3dC2fbMw7pp2ow6M3A7fnoEK33ZsjdgRZKR4enL33UQyH7MmtnKuE9LB%2BSG667n9uwv%2FhkQ8mCL5A5s%2BXZyuOSj474cyxHedlUB8d3eA4TSl5Iy%2BiMIg7EoWtHUyGtb4unzJxEfG0fZPKsoTWG0iPjQRh%2BbjMalWk8%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BE6zU%2F21E8NwEMGIcvoPQKKeDjjD%2Bk0gbtP%2BQ%2FeeeEu%2BN3DSlwhf6fJ8BufdIwdQwOteXIZzG0i%2FmQ1p6LW6pEInGEYxYbngX4JEuauKZquKo0pp0SICfd97IqZbKUWNbZF3IoNkytcXluMrzUp0Sb8xXY9mS%2FkkgG94aV1BW5kC4D42U91XaNg7ZLwD%2FfWdWrzxZA%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BNKHyEyBg0TFuEAc8xgw%2B09aBpAwRe998T2hVfirYT6%2FVzInNDfoy1KuOu8%2BbZ%2BvamM3CbzmR8wqEdd5NJBDsLVixCwlFZla%2FeB2hUPpSa9507pIosuOarwVCnZBhzg1xNC1GaPekxBX%2FsL8BBGfFMy1BYSeEtT0i%2F1WFF25GIhRC2uf5iA1jMTLIhFi18S2IsGgCg%3D%3D",
+    "image": "",
+    "store": "Mercado Livre"
+  },
+  {
+    "name": "",
+    "desc": "",
+    "oldPrice": "",
+    "newPrice": "",
+    "discount": "",
+    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BDy6pDf6tOu0dXtQ5dZE7D23m61TnbzzNC5UXU5BydoWsT8HYkO0SvItAIC53fRwrQNtlG9GyZrHKlE5nUjJ0BRAMxfZX6gajuHpIXOYk1pYDatjkyL2qrmsrGuA1lmsS0JSx%2BEvAwFOmmLrDLlh8SpoWQVHZJZxEgi2bTW1HbP0lPrGtydE1145uapyESEWAej4ZmU%3D",
+    "image": "",
     "store": "Mercado Livre"
   }
 ];
+    let activeStore = 'all';
+
+    function normalizeStore(store) {
+      return (store || '').toLowerCase().trim();
+    }
+
+    function getFilteredProducts() {
+      const term = document.getElementById('searchInput').value.toLowerCase().trim();
+      return products.filter(product => {
+        const matchesStore = activeStore === 'all'
+          ? true
+          : normalizeStore(product.store) === normalizeStore(activeStore);
+
+        const matchesSearch =
+          (product.name || '').toLowerCase().includes(term) ||
+          (product.desc || '').toLowerCase().includes(term) ||
+          (product.store || '').toLowerCase().includes(term);
+
+        return matchesStore && matchesSearch;
+      });
+    }
+
+    function updateMeta(count) {
+      const label = activeStore === 'all' ? 'todas as lojas' : activeStore;
+      document.getElementById('resultsMeta').textContent = `${count} oferta(s) encontrada(s) em ${label}`;
+    }
 
     function displayProducts(productsToDisplay) {
       const grid = document.getElementById('productGrid');
       grid.innerHTML = "";
 
       if (!productsToDisplay.length) {
-        grid.innerHTML = "<div class='no-results'>Nenhum alvo detectado no radar... 🕵️‍♂️</div>";
+        grid.innerHTML = "<div class='no-results'>Nenhum produto encontrado para esse filtro.</div>";
+        updateMeta(0);
         return;
       }
 
@@ -599,20 +776,25 @@
         const hasLink = !!(product.link && product.link.trim());
         const ctaClass = hasLink ? "cta-button" : "cta-button disabled";
         const ctaHref = hasLink ? product.link : "#";
-        const ctaText = hasLink ? "Confira a oferta no Mercado Livre" : "Link indisponível";
+        const ctaText = hasLink ? "Ver oferta" : "Link indisponível";
 
         const card = `
           <div class="offer-card">
-            <span class="store-badge">${product.store || 'Mercado Livre'}</span>
-            ${product.image ? `<div class="product-image-wrap"><img class="product-image" src="${product.image}" alt="${product.name}" loading="lazy"></div>` : ''}
-            <div class="verify-badge">
-              <svg style="width:12px;height:12px" viewBox="0 0 24 24">
-                <path fill="currentColor" d="M12,2L4,5V11C4,16.55 7.84,21.74 12,23C16.16,21.74 20,16.55 20,11V5L12,2M12,11.91L14.59,14.5L15.41,13.67L12,10.25L8.59,13.67L9.41,14.5L12,11.91Z"/>
-              </svg>
-              Oferta Verificada
+            <div class="card-top">
+              <span class="store-badge">${product.store || 'Loja'}</span>
+              <div class="verify-badge">
+                <svg style="width:11px;height:11px" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12,2L4,5V11C4,16.55 7.84,21.74 12,23C16.16,21.74 20,16.55 20,11V5L12,2M12,11.91L14.59,14.5L15.41,13.67L12,10.25L8.59,13.67L9.41,14.5L12,11.91Z"/>
+                </svg>
+                Verificada
+              </div>
             </div>
+
+            ${product.image ? `<div class="product-image-wrap"><img class="product-image" src="${product.image}" alt="${product.name}" loading="lazy"></div>` : ''}
+
             <h2 class="product-title">${product.name}</h2>
             <p class="product-desc">${product.desc}</p>
+
             <div class="pricing-area">
               <div class="price-row">
                 ${product.oldPrice ? `<span class="old-price">${product.oldPrice}</span>` : ''}
@@ -620,6 +802,7 @@
               </div>
               ${product.discount ? `<span class="discount-pill">${product.discount}</span>` : ''}
             </div>
+
             <a href="${ctaHref}" class="${ctaClass}" target="_blank" rel="noopener noreferrer">
               ${ctaText}
             </a>
@@ -627,22 +810,27 @@
         `;
         grid.insertAdjacentHTML('beforeend', card);
       });
+
+      updateMeta(productsToDisplay.length);
     }
 
-    function filterProducts() {
-      const searchInput = document.getElementById('searchInput');
-      const searchTerm = searchInput.value.toLowerCase().trim();
-
-      const filtered = products.filter(product =>
-        (product.name || '').toLowerCase().includes(searchTerm) ||
-        (product.desc || '').toLowerCase().includes(searchTerm)
-      );
-
-      displayProducts(filtered);
+    function refreshView() {
+      displayProducts(getFilteredProducts());
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      displayProducts(products);
+      document.getElementById('searchInput').addEventListener('input', refreshView);
+
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          activeStore = tab.dataset.store;
+          refreshView();
+        });
+      });
+
+      refreshView();
     });
   </script>
 </body>
