@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Promo.Club007 | Inteligência em Ofertas</title>
-  <meta name="description" content="Promo.Club007 - Seu clube exclusivo de ofertas, promoções e alertas de desconto." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promo.Club007 | Vitrine de Ofertas</title>
+  <meta name="description" content="Vitrine profissional de ofertas do Promo.Club007 com busca, filtros por loja e visual otimizado para mobile.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob:; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta name="referrer" content="no-referrer">
+  <meta name="color-scheme" content="light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --primary-dark: #0f172a;
-      --accent-blue: #3b82f6;
-      --danger: #ef4444;
-      --bg: #f8fafc;
+      --bg: #f4f7fb;
       --card: #ffffff;
-      --text-main: #1e293b;
-      --text-sec: #64748b;
-      --ml-yellow: #fff159;
-      --safe-green: #10b981;
-      --border-light: #e5e7eb;
-      --disabled: #94a3b8;
-      --chip-bg: #eef2ff;
-      --chip-active: #0f172a;
-      --chip-text: #334155;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --line-strong: #cbd5e1;
+      --primary: #0f172a;
+      --primary-2: #1e293b;
+      --accent: #2563eb;
+      --success: #059669;
+      --danger: #dc2626;
+      --warning: #fff159;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --hero-gradient: linear-gradient(135deg, #0f172a 0%, #111827 48%, #1e293b 100%);
     }
 
     * {
@@ -34,253 +39,294 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--bg);
-      color: var(--text-main);
+      color: var(--text);
       line-height: 1.5;
     }
 
-    .header-hero {
-      background:
-        linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.86)),
-        url('./assets/exclusive_deals_in_style.png');
-      background-size: cover;
-      background-position: center;
-      padding: 28px 16px 88px;
-      text-align: center;
-      color: white;
+    a {
+      color: inherit;
+    }
+
+    .hero {
       position: relative;
+      background: var(--hero-gradient);
+      color: #fff;
       overflow: hidden;
     }
 
-    .header-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(255, 241, 89, 0.12), transparent 32%),
+        radial-gradient(circle at left center, rgba(37, 99, 235, 0.18), transparent 28%);
+      pointer-events: none;
     }
 
-    .brand-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(10px);
-      padding: 6px 14px;
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 32px 16px 96px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
       border-radius: 999px;
-      font-size: 0.68rem;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.12);
+      font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.2px;
       margin-bottom: 14px;
-      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .brand-logo {
-      width: min(100%, 420px);
-      max-height: 150px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 10px;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,0.22));
+    .brand-title {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
     }
 
-    .brand-tagline {
-      font-size: 0.95rem;
-      color: #dbe4ef;
-      max-width: 620px;
+    .brand-title span {
+      color: var(--warning);
+    }
+
+    .hero-subtitle {
+      max-width: 740px;
       margin: 0 auto;
+      color: #dbe4ef;
+      font-size: 1rem;
       font-weight: 500;
     }
 
-    .control-panel {
-      max-width: 1200px;
-      margin: -56px auto 24px;
+    .toolbar-wrap {
+      max-width: 1220px;
+      margin: -58px auto 18px;
       padding: 0 14px;
       position: relative;
-      z-index: 10;
+      z-index: 3;
     }
 
-    .panel-card {
-      background: rgba(255,255,255,0.96);
-      border: 1px solid #e2e8f0;
+    .toolbar {
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(226,232,240,0.95);
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
       border-radius: 24px;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
       padding: 14px;
+      backdrop-filter: blur(8px);
     }
 
-    .search-container {
+    .toolbar-top {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .search-box {
       display: flex;
       align-items: center;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
+      gap: 10px;
       background: #fff;
-      margin-bottom: 12px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
       padding: 0 12px;
+      min-height: 50px;
+    }
+
+    .search-box svg {
+      flex: 0 0 auto;
+      color: var(--muted);
     }
 
     #searchInput {
       width: 100%;
-      padding: 14px 8px;
       border: none;
       outline: none;
-      font-size: 0.98rem;
       background: transparent;
-      color: var(--text-main);
+      color: var(--text);
+      font-size: 0.98rem;
+      padding: 14px 4px;
     }
 
-    .filter-tabs {
+    .filters {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .filter-tab {
-      border: 1px solid #dbe3ee;
-      background: var(--chip-bg);
-      color: var(--chip-text);
+    .chip {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #eef2ff;
+      color: #334155;
       border-radius: 999px;
       padding: 10px 14px;
       font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: 800;
       cursor: pointer;
-      transition: 0.25s ease;
+      transition: 180ms ease;
     }
 
-    .filter-tab.active {
-      background: var(--chip-active);
-      color: white;
-      border-color: var(--chip-active);
-      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.14);
+    .chip:hover {
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
     }
 
-    .results-meta {
-      max-width: 1200px;
-      margin: 0 auto 8px;
-      padding: 0 20px;
-      color: var(--text-sec);
+    .chip.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      box-shadow: 0 10px 20px rgba(15,23,42,0.12);
+    }
+
+    .meta {
+      max-width: 1220px;
+      margin: 0 auto 12px;
+      padding: 0 18px;
+      color: var(--muted);
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    .container {
-      max-width: 1200px;
+    .catalog {
+      max-width: 1220px;
       margin: 0 auto;
-      padding: 0 14px 90px;
+      padding: 0 14px 96px;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
       align-items: start;
     }
 
-    @media (min-width: 700px) {
-      .container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 16px;
-      }
-    }
-
-    @media (min-width: 1080px) {
-      .container {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 18px;
-      }
-    }
-
-    .offer-card {
-      background: var(--card);
-      border-radius: 18px;
-      padding: 12px;
-      border: 1px solid var(--border-light);
-      transition: 0.25s ease;
+    .card {
+      background: linear-gradient(180deg, #ffffff 0%, #fcfdff 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      color: inherit;
       min-height: 100%;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
     }
 
-    .offer-card:hover {
+    .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 35px rgba(15, 23, 42, 0.10);
-      border-color: #cbd5e1;
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
+      border-color: var(--line-strong);
     }
 
-    .card-top {
+    .card-image {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      background:
+        linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      padding: 10px;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .card-body {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-height: 100%;
+    }
+
+    .card-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 10px;
     }
 
-    .store-badge {
-      font-size: 10px;
-      font-weight: 800;
-      padding: 4px 9px;
-      border-radius: 999px;
-      text-transform: uppercase;
-      background: var(--ml-yellow);
-      color: #111;
-      letter-spacing: 0.4px;
+    .badge-store {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       white-space: nowrap;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: #fff159;
+      color: #111827;
+      border: 1px solid rgba(0,0,0,0.05);
     }
 
-    .verify-badge {
-      font-size: 9px;
-      color: var(--safe-green);
-      font-weight: 800;
-      display: flex;
+    .badge-store.shopee {
+      background: #ff6a3d;
+      color: #fff;
+    }
+
+    .badge-verified {
+      display: inline-flex;
       align-items: center;
       gap: 4px;
+      font-size: 10px;
+      font-weight: 800;
       text-transform: uppercase;
+      color: var(--success);
       white-space: nowrap;
     }
 
-    .product-image-wrap {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #f8fafc;
-      border: 1px solid var(--border-light);
-      margin-bottom: 10px;
-    }
-
-    .product-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .product-title {
-      font-size: 0.92rem;
+    .title {
+      font-size: 0.94rem;
       font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 8px;
       line-height: 1.35;
-      min-height: 2.45rem;
+      color: var(--text);
+      min-height: 2.54rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    .product-desc {
+    .desc {
       font-size: 0.77rem;
-      color: var(--text-sec);
-      margin-bottom: 12px;
-      min-height: 3.4rem;
-      line-height: 1.45;
+      line-height: 1.5;
+      color: var(--muted);
+      min-height: 3.45rem;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    .pricing-area {
+    .price-box {
       margin-top: auto;
       padding-top: 10px;
-      border-top: 1px solid var(--border-light);
+      border-top: 1px solid var(--line);
     }
 
     .price-row {
@@ -291,154 +337,179 @@
     }
 
     .old-price {
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       color: #94a3b8;
       text-decoration: line-through;
     }
 
     .new-price {
-      font-size: 1.15rem;
-      font-weight: 800;
+      font-size: 1.12rem;
+      font-weight: 900;
       color: var(--danger);
+      letter-spacing: -0.02em;
     }
 
-    .discount-pill {
+    .discount {
+      display: inline-flex;
+      margin-top: 8px;
+      padding: 4px 10px;
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: var(--danger);
       background: #fef2f2;
-      color: var(--danger);
-      font-size: 0.7rem;
-      font-weight: 800;
-      padding: 3px 10px;
-      border-radius: 999px;
-      margin-top: 7px;
-      display: inline-block;
       border: 1px solid #fee2e2;
+      border-radius: 999px;
     }
 
-    .cta-button {
-      background: var(--primary-dark);
-      color: white;
-      padding: 11px;
-      border-radius: 12px;
-      font-weight: 800;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      text-align: center;
-      margin-top: 14px;
-      transition: 0.25s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .actions {
+      display: grid;
+      margin-top: 12px;
+    }
+
+    .btn {
+      appearance: none;
       border: none;
-      text-decoration: none;
+      border-radius: 12px;
       min-height: 42px;
-    }
-
-    .cta-button:hover {
-      background: var(--accent-blue);
-    }
-
-    .cta-button.disabled {
-      background: var(--disabled);
-      cursor: not-allowed;
-      pointer-events: none;
-    }
-
-    .instagram-float {
-      position: fixed;
-      bottom: 98px;
-      right: 18px;
-      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
-      color: white;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 30px rgba(221, 42, 123, 0.35);
-      z-index: 1000;
-      transition: 0.25s;
-      text-decoration: none;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 28px;
-      right: 18px;
-      background: #25d366;
-      color: white;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
-      z-index: 1000;
-      transition: 0.25s;
-      text-decoration: none;
-    }
-
-    .instagram-float:hover,
-    .whatsapp-float:hover {
-      transform: translateY(-4px) scale(1.04);
-    }
-
-    .no-results {
-      grid-column: 1 / -1;
+      padding: 10px 12px;
       text-align: center;
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      background: var(--primary);
+      color: #fff;
+      transition: 180ms ease;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+    }
+
+    .btn[aria-disabled="true"] {
+      background: #94a3b8;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    .empty {
+      grid-column: 1 / -1;
       padding: 70px 20px;
-      color: var(--text-sec);
-      font-weight: 600;
-      background: white;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+      background: #fff;
+      border: 1px solid var(--line);
       border-radius: 20px;
-      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow);
+    }
+
+    .footer {
+      padding: 20px 14px 108px;
+    }
+
+    .footer-card {
+      max-width: 1220px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-card p + p {
+      margin-top: 6px;
+    }
+
+    .fab {
+      position: fixed;
+      right: 18px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-decoration: none;
+      z-index: 30;
+      box-shadow: 0 14px 34px rgba(15,23,42,0.18);
+      transition: transform 180ms ease;
+    }
+
+    .fab:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .fab.instagram {
+      bottom: 98px;
+      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+    }
+
+    .fab.whatsapp {
+      bottom: 28px;
+      background: #25d366;
+    }
+
+    @media (min-width: 760px) {
+      .toolbar-top {
+        grid-template-columns: 1.2fr auto;
+        align-items: center;
+      }
+
+      .catalog {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .catalog {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
     }
 
     @media (max-width: 480px) {
-      .header-hero {
-        padding: 22px 12px 82px;
+      .hero-inner {
+        padding: 24px 12px 92px;
       }
 
-      .brand-logo {
-        width: min(100%, 320px);
-        max-height: 110px;
+      .hero-subtitle {
+        font-size: 0.9rem;
       }
 
-      .brand-tagline {
-        font-size: 0.85rem;
-      }
-
-      .panel-card {
+      .toolbar {
+        border-radius: 20px;
         padding: 12px;
-        border-radius: 18px;
       }
 
-      .container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .catalog {
         gap: 10px;
       }
 
-      .offer-card {
+      .card-body {
         padding: 10px;
-        border-radius: 16px;
       }
 
-      .product-title {
-        font-size: 0.85rem;
-        min-height: 2.25rem;
+      .title {
+        font-size: 0.86rem;
+        min-height: 2.35rem;
       }
 
-      .product-desc {
-        font-size: 0.72rem;
-        min-height: 3rem;
+      .desc {
+        font-size: 0.73rem;
+        min-height: 3.15rem;
       }
 
       .new-price {
-        font-size: 1rem;
+        font-size: 1.02rem;
       }
 
-      .filter-tab {
+      .chip {
         font-size: 0.82rem;
         padding: 9px 12px;
       }
@@ -446,312 +517,356 @@
   </style>
 </head>
 <body>
-  <header class="header-hero">
-    <div class="header-content">
-      <div class="brand-badge">Operação Economia</div>
-      <img class="brand-logo" src="./assets/exclusive_deals_in_style.png" alt="Promo.Club007">
-      <p class="brand-tagline">Ofertas selecionadas com visual mais rápido, filtros por loja e navegação melhor para mobile.</p>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">Vitrine Oficial • Promo.Club007</div>
+      <h1 class="brand-title">PROMO.CLUB<span>007</span></h1>
+      <p class="hero-subtitle">Vitrine profissional com busca, filtros por loja, imagens tratadas para não deformar e navegação otimizada para celular.</p>
     </div>
   </header>
 
-  <section class="control-panel">
-    <div class="panel-card">
-      <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Buscar produto, categoria ou palavra-chave...">
-      </div>
-      <div class="filter-tabs">
-        <button class="filter-tab active" data-store="all">Mostrar todos</button>
-        <button class="filter-tab" data-store="Mercado Livre">Mercado Livre</button>
-        <button class="filter-tab" data-store="Shopee">Shopee</button>
+  <section class="toolbar-wrap">
+    <div class="toolbar">
+      <div class="toolbar-top">
+        <label class="search-box" aria-label="Buscar produtos">
+          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.58 3.09-1.54 4.24l5.4 5.41l-1.42 1.41l-5.41-5.4A6.47 6.47 0 0 1 9.5 16A6.5 6.5 0 1 1 9.5 3m0 2A4.5 4.5 0 1 0 14 9.5A4.5 4.5 0 0 0 9.5 5"/></svg>
+          <input type="text" id="searchInput" placeholder="Buscar produto, categoria ou palavra-chave...">
+        </label>
+
+        <div class="filters" role="tablist" aria-label="Filtrar por loja">
+          <button class="chip active" data-store="all" type="button">Mostrar todos</button>
+          <button class="chip" data-store="Mercado Livre" type="button">Mercado Livre</button>
+          <button class="chip" data-store="Shopee" type="button">Shopee</button>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="results-meta" id="resultsMeta">Carregando ofertas...</div>
-  <main class="container" id="productGrid"></main>
+  <div class="meta" id="resultsMeta">Carregando ofertas...</div>
+  <main class="catalog" id="catalog"></main>
 
-  <a href="https://www.instagram.com/promo.club007/" class="instagram-float" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-    <svg style="width:26px;height:26px" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
-    </svg>
+  <footer class="footer">
+    <div class="footer-card">
+      <p><strong>Promo.Club007</strong> • Vitrine de ofertas com visual profissional e foco em usabilidade mobile.</p>
+      <p>Segurança: links externos com proteção, CSP configurada, imagens tratadas com fallback e renderização segura via DOM.</p>
+    </div>
+  </footer>
+
+  <a href="https://www.instagram.com/promo.club007/" class="fab instagram" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram">
+    <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
   </a>
 
-  <a href="https://wa.me/5500000000000" class="whatsapp-float" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-    <svg style="width:26px;height:26px" viewBox="0 0 24 24">
-      <path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.66 20.15 9.3 19.81 8.1 19.14L7.81 18.97L4.69 19.79L5.53 16.74L5.34 16.44C4.61 15.27 4.22 13.93 4.22 12.54V11.91C4.22 7.66 7.73 4.15 11.97 4.15H12.05"/>
-    </svg>
+  <a href="https://wa.me/5500000000000" class="fab whatsapp" target="_blank" rel="noopener noreferrer nofollow" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.66 20.15 9.3 19.81 8.1 19.14L7.81 18.97L4.69 19.79L5.53 16.74L5.34 16.44C4.61 15.27 4.22 13.93 4.22 12.54V11.91C4.22 7.66 7.73 4.15 11.97 4.15H12.05"/></svg>
   </a>
 
   <script>
     const products = [
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
-    "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMDOVuC6w6CjHgnwoujkBh9QzoiSXVz0kgUA4eF38k6ij4q3AY4HzWHJ006G855H22HBweDtt0PGW91woQynHZAINf%2B%2FDVuSqLvTrBMg642coFLm40gNJPIBXVrOrfF5cCESOyb4gs8iFn5sSK78R5qGOPG34q8xCj4LWwSor9%2FomLQ106zNzBXE5mBGob0BqkjXbQ%3D%3D",
-    "image": "",
-    "store": "Mercado Livre"
-  },
-  {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Relógio Casio Masculino Digital Esportivo Preto",
+    "desc": "Relógio masculino digital esportivo, preto, prova d'água.",
+    "oldPrice": "R$ 299,00",
+    "newPrice": "R$ 161,10",
+    "discount": "46% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPylmWd%2BGTKzj5eyGNy1z8LbF%2FoRak18WrpxB7GzlLZFhAJNAxIloMSph6J%2Fp8d9tFnZWnND%2Fc9InXDoa0ahZWIrPI4D9a%2FCMwFaFOIIRYtbgrudTVrPWwNViy9moqddJC34Qp3LpH55cOTJbJNEwK9SqSr2EQh6Z%2FOS7K%2BBocv2LNHQM3mWfzWgDh5xkx7MOYsQMQ%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776684509/samples/ykqmaxdrchbdikawdpkg.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
+    "name": "Fritadeira Elétrica 1 Litro",
+    "desc": "Fritadeira elétrica compacta de 1 litro, prática e rápida para fritar.",
+    "oldPrice": "R$ 249,90",
+    "newPrice": "R$ 249,90",
     "discount": "",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPD8sl2f2CsCV8a7t4M3wXS%2FcGF7M%2F7smjo7%2Bl28qgthVQhgheK3lZ6RZjaVAY0OfaEWyALzhzQ4CBwXDcnnhPFwqxnA%2BfaFvYZPjPwcWLmmSDYWL03aabCT0cWxnMsRczuK7w932pQ6CNE%2FsagFWoYRJHPFOZoFvfCQk6CG%2BQ9bT2hy5EiiEgUa7TpA%2FOEDmuF%2BIA%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776684618/samples/npeiefio8m9xbsbttdlc.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Espelho Quadrado Premium 120x120 Cm Led Fundo Touch Lapidado",
+    "desc": "Espelho quadrado 120x120 cm com LED, touch e fundo lapidado premium.",
+    "oldPrice": "R$ 862,40",
+    "newPrice": "R$ 666,68",
+    "discount": "22% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMBED4ruw45%2F7WHaza3t5SKUNpYkbwwTSCo3spUx9frocwXg9SDSOwZY2wb4RBPkeI8fBkWdCfxiM30h1hKYuYks5N75bKTF1Nt%2FhzieE8tZG0rLJFWfY6iOXgLikAZM81mqZtdcmPMuET%2BVVW9PmwMk0AagGKFZVPxAr5TEOhtUhOXHyEgbQjkg2jJRF9YKS80Lgg%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776695306/samples/myoouuq4ixdt8wcmiaaq.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
+    "name": "Capa Case Protetora Anti Impacto Silicone AirPods 1 2",
+    "desc": "Capa protetora de silicone contra impactos para AirPods 1 e 2.",
+    "oldPrice": "R$ 19,01",
+    "newPrice": "R$ 19,01",
     "discount": "",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BK8Hv8OZUchs8EY173swy9CzinslhRC3w0Hj2MeY87IZt96GQjm6bFBI1vB%2FEvBnwq0%2FFXT229duLWtKr%2BE81vuh9t8SoXap1LFKsPPAMx3DjirCIHiEv2BqmzGPwNqvPkSw8Gz09Ig6Y6W20Vv2L32uOqGYJMkJvVkyQvFceqqMVLQHuwsGkplL2dz%2FJ0lUs06tzQ%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776711316/samples/okmoqeido3mtelyi7ygk.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
+    "name": "Copo Térmico Aço Inox Vácuo 350ml",
+    "desc": "Copo térmico inox 350ml com isolamento a vácuo para bebidas quentes e frias.",
+    "oldPrice": "R$ 87,89",
+    "newPrice": "R$ 87,89",
     "discount": "",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPBf5uCxynxQNt6zMxbYb2iZh6BJljmBQKDU2%2Bfn8tEOy6SkCFkQGLC8pLhUAqRMX3tnPf%2F1KA20xR6whrUk2iuMml61JZ6CHfaXA%2FrN6RDPoCcUHcOoPlitBMOUWSNfNTyvYqCjsJe1mQWl4Er5CoKzYmHpygQvlXiIgvseoLhGB3PTsVp%2B3EsZoKSP5TEfttYRtlQ%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776722093/samples/uody8n1sg7xzoaxxwuuf.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Smart Tv LG 43 Full Hd",
+    "desc": "Smart TV LG 43\" Full HD com processador A5, AI, Alexa e WebOS 23",
+    "oldPrice": "R$ 1.999,00",
+    "newPrice": "R$ 1.471,00",
+    "discount": "26% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BB7SMgJXnbLtw%2B%2FoOi4WuSJ%2FAjxGQFVzj79eduBODh%2FKRqsxd4zw8d0t6OiUf37uJhhyacWwGKHQJ%2BRzqGaYBRZtW%2FCiL0EGGNXTpsvRXXQ%2FVxhpxrH6ZCtxJFVngBN4YywmBte0D4ssNVdDUMNwyy9OZVo7Qw2YzvYo3IrSxJtx6XTMR%2BKeRLx8BL1bAxfqqWVseTwTx52zHSUkog%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776732898/samples/ztmcwmptb7ha5x2rhni6.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Radiador P/ Palio Siena Strada Idea Fire",
+    "desc": "Radiador para carros Palio, Siena, Strada e Idea Fire 1.0 1.3 1.4.",
+    "oldPrice": "R$ 322,35",
+    "newPrice": "R$ 199,99",
+    "discount": "38% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BKP4su0biseoUIuNHCI6IgVVBFpw8Gd5lZaFTNrtRFkuLrCkrGKTQx9pxl%2FgYz6fJ92DdbbWhC1bEZHetWD8V1zEq6gar%2FYj%2Bdy0B02uwzjfSGdD0rf2r55MUh%2BFqdMicSVhw8NbqovWflEus0OLBNrLtEaYnnyXr5wPsrnSgW0fRyif9c48FNt00VJBFzG5f7SHnYWPaBLLSekqEw%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776743689/samples/cisdqgqao3gomxqcc3jf.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Maquina Cafe Expresso Portatil Cinza 12v",
+    "desc": "Máquina portátil para café expresso que usa pó e cápsulas, na cor cinza.",
+    "oldPrice": "R$ 399,00",
+    "newPrice": "R$ 387,03",
+    "discount": "3% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BF9Iy2so0jtZJzw43ySiBLdviQJBeYlO3TzpgaD1YjnKoftz1SdL9PoU2%2FIzR0mq5UrIBjTNE1wEhdfNfutFCWBDFXntw9TgEHoBMe%2BYHnnkgccgrojGzOMalC8JTtx5xFkLpps0sfip2czL3MQHmCa5ty7tFZzClFfVh8haLAPnFdDPP9EZX3dVWqz0KhIH53M8Qis%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776859128/samples/xzwdus8mqy4hcpoqzaez.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
+    "name": "Fritadeira Elétrica Air Fryer Kian 3,5L Preto 127v",
+    "desc": "Fritadeira elétrica air fryer antiaderente 1200w com capacidade de 3,5 litros.",
+    "oldPrice": "R$ 304,60",
+    "newPrice": "R$ 304,60",
     "discount": "",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BApNt6ptCB97zyj%2FTuSPkfaRyHQIFTs4pPPIj7xqS%2FZAHuXAWI8%2Becf9HhW5490tR8KhiId7MWsZSnTNUOKkqzxqWupFQpFfkJuT33uof95ULf7gNaFlpIdQRAlctoa7NSUMaONU5OKn3w6IkuhSQ66pik2ZDxOrpGracBdKBsudMKrLl6l%2Fxs7g1nvNYZfT%2BoCzuQ%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776949004/samples/ht6jjmzh45u2jgxtnpm3.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
+    "name": "Esteira Elétrica Portátil Planeta Tech",
+    "desc": "Esteira elétrica portátil para uso residencial até 120kg, velocidade 0-6km/h.",
+    "oldPrice": "R$ 798,00",
+    "newPrice": "R$ 798,00",
     "discount": "",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BFMqHf13O2NO7vKAUoXSnTcICw7i2iFORwA4yHa7JII4S00773OYPLum2kdFegiSTQMoABpx0aS7iJP1%2ByNu%2FvDEv47Ospz5MSdIWtdRglSoyr8XB3Y5A1eCcGCtHxoxMrh%2F4y%2BhOWOWi49rN%2F%2F2xW7yNgyqnVqxQ4FNabFs6Z2kwstf%2BOn2jlzHnrClB6D2hMhugC0%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1776949417/samples/eakugyz5aqombjwbm1wn.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Kit 5 Faixa Elástica Super Mini Band",
+    "desc": "Kit com 5 faixas elásticas para treino funcional, ginástica e yoga, coloridas e com marcações.",
+    "oldPrice": "R$ 39,90",
+    "newPrice": "R$ 33,90",
+    "discount": "15% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMt6n0PHRdFLO%2F6g8XM%2BDVBD9KSkMCsrSjJYy27E3%2Fs7Hv8jz%2BQlxAnlesrAomskIRjY%2BPlQpPc0ovwzTuwsl5gcRgCeL8%2FTLgjKq02GPyhRhJGupHR3z7iLGwqmzuGoMDYYMgAOOD%2BK4C%2FtU%2BLCsS3J35nu8Qm%2BcnQzTPeQGfpdpMK%2FNmJGOqoFG0XhIxUf0t1vyA%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777232784/samples/shoihlk2wquy99h2npbm.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
+    "name": "Livro Noites Brancas",
+    "desc": "Livro Noites Brancas do autor Fiódor Dostoiévski, capa mole, edição de 2009.",
+    "oldPrice": "R$ 48,69",
+    "newPrice": "R$ 48,69",
     "discount": "",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BGt9zphmtZxqKhAhsj2tsUnE8n1Cl%2Fm1Pl7qVhhHIhPuu2rCeROW%2FuX3OgscU9hksXL5yFYeAkCSn%2FhuVDA8fG%2B9f7EyTCqlY6ZmwVqhoAyLFR0f96P2MWXhIPi7r2qUvmpwmpI6Q2JOUMMF8gsKMl9C6DYm9PEupTQ4%2BvmzmdVmEAhCJchybdIN%2F2u2XRctlYq4bw%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777243579/samples/xnyez4rjkx6tq47dhrzp.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Rolo Massagem Foam Roller Preto",
+    "desc": "Rolo para liberação miofascial, massagem e soltura, cor preta.",
+    "oldPrice": "R$ 78,00",
+    "newPrice": "R$ 51,51",
+    "discount": "34% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BL06HcO%2F2I3REcp1r0F3kRqCvuEOA05En%2FmCiZ8L3D76V4rUKfNVztadiAZQy0uXiQ%2Btjfj%2Fj6pJPZAKmTLVNNuf5Va8PdJqlglvSsAFRn7NmmlG8OqtFmXp88dq1fmzfUoZEUBnAOj4WnAXtdQQE9PlKyWFetbp9s8Wb1eCD8b5yczVnXWcDuOYUmWr3o1f8xjp6g%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777254382/samples/qfoifvc9sfmovcge2phu.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Kit Manicure Portátil Estojo 12 Pç",
+    "desc": "Kit manicure portátil com 12 peças para cuidados profissionais das unhas.",
+    "oldPrice": "R$ 35,90",
+    "newPrice": "R$ 22,21",
+    "discount": "38% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMeRltrqD3h3JWT03VcW08GBI8IyXvJa5ZC5iWyF2nnqb219%2F2zYU25sATF8KNMmTKrwHthskRcHYmMnjIMIO30QbNvg%2BhiHJe4uZmcvULNWWiMtjH7532bhmKZrMv91ir%2BNY98UCjCTXkvJAJfSRHV9ll67IemSJj4Bq%2F9w2UF4z9beixbH6QEU0QWzVJqoT9q9L0o%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777289659/samples/f1x88r6cb4uftj22j8sv.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
+    "name": "Ninja Blast Liquidificador Portátil",
+    "desc": "Liquidificador portátil mini, sem fio e recarregável, na cor preta.",
+    "oldPrice": "R$ 479,00",
+    "newPrice": "R$ 479,00",
     "discount": "",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPQ9OWaR3E7Q6479a5B9KMQI%2FCCKaxPypL3vlJwPDWQQ7VoEYSixYWY9%2BYiBU7LzvTpBOUKR3EC6emC0NMzZD%2FXpy4dfXkpUrdUZ7UOUqw%2BEKGIQrmItqpexlUMV21dOdzxrMEMUDkhWrURKpEh5HrdmCQj2AuEmSNPF7TfZLixly4qSSdalLNFJju1AiUb9E%2Bw5cA%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777289762/samples/dwicezk1jajjjq0lstum.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Relógio Inteligente Smartwatch GPS 3atm Bluetooth Preto",
+    "desc": "Smartwatch GPS 3atm com chamadas Bluetooth, display 240x296 IPS.",
+    "oldPrice": "R$ 239,00",
+    "newPrice": "R$ 188,45",
+    "discount": "21% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BEXG6TZTdYdryjdwI%2FxJSn50MVwORUFxJiCIpgaR00V7VuUqiuLyF4HGhChMCONn83WgLxVj6ezFWBhLSPf7E6Ca7tpZ2B7ED7T4JgdjOHCHBDZDCZB4T8XeERLoLHzMSoDzBczjNGacqAjgNAKOJPElVfZhuHalCkm24fTFdCjnawFRDhS5HbofKsJE1lKS9%2Bcvyj3kie7QgxF34Q%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777311232/samples/smqtzytzd8sjjxnar4vi.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Smart TV Aiwa 43\"",
+    "desc": "Smart TV 43 polegadas, Full HD, Android, HDR10, Dolby Áudio.",
+    "oldPrice": "R$ 1.899,00",
+    "newPrice": "R$ 1.454,00",
+    "discount": "23% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BMThEknOZ9rWJOGhaYWvmszXPBI9SC3cEFun9%2F8iwvWNy1Cs2fGo3c32jYQwwFfe3g9Vyzj5g9ZKPJ7dWUpyRauBE%2FEsJMUI7avqaEwYg6tc3I2m5nsvc3NOSJ5kvOkViGhG5DHBAz8G1vjcIpxvZyNeuQuDdcDUSVaEZAECL794rUyvvvz%2BCV5gh6BgO0DEzPncmHA%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777386826/samples/jcpsjwprjqk8bpjirwbt.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Fone De Ouvido In-ear Bluetooth Sem Fio Tws Branco Air",
+    "desc": "Fone de ouvido in-ear Bluetooth sem fio com case de recarga wireless.",
+    "oldPrice": "R$ 48,13",
+    "newPrice": "R$ 41,39",
+    "discount": "14% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BGYr6cF8i8FTC%2FgosMbS2B0fCwu9zJGP5MvAjlN5XP3f2Fw33X8i8lzCDszkVal%2F8POcyXBVzTMgn%2BEJ52rVYc5BCWiAlfteD2Y9r%2B6IBEdweJnNSiZUxTRRFt%2FfnajE2tSABO0iQQQyPZNf8yFnDJ2mextjAqd6MFoXgq3cONPbRhppIMofxlOhe%2BWQmR6mFIP0jgQ%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777397206/samples/bqsnzdo0u2im1ybil8jc.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Cadeira Escritório Gamer Ergonômica Reclinável Vermelha Giratória",
+    "desc": "Cadeira gamer ergonômica vermelha reclinável com apoio para os pés.",
+    "oldPrice": "R$ 694,07",
+    "newPrice": "R$ 414,86",
+    "discount": "40% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BPubMs%2F%2BFUT%2B8zTJKXghhV2rrz8UT3Sd36qiAiJNeBGpItOW%2F9TdX0sDOsoU7RbbOOOB9W5DkSy28jFvjU1HsXgSG2OznGxKEFRjxO91P2S%2F%2F16TxWik32z7sVXslm4qWOLxWBycwT6M1dVzsfkfhtJofiUocirOvwK9msdOf0cSw2J1mSTGqrmFtQsVg3NTR8f3TA%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777398004/samples/kwgdinu5ijpktdnkloff.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
+    "name": "Torneira Elétrica Loren Easy Branca",
+    "desc": "Torneira elétrica móvel Loren Easy na cor branca, fácil instalação.",
+    "oldPrice": "R$ 189,90",
+    "newPrice": "R$ 189,90",
     "discount": "",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BLJPJwHRcOcY9OHFIGuDI7JKdOBjDtSk3MVM44X2Z4LiLgFMCl1EC3uTqO74kXlt9QNvKQz6dnxJFop%2BBa8RvPbCLFG8Fsfr4yluBKR3uvUIZEGa962aWlX4LLAkmUHzr1Jg5A2I59MrECaVvnJXLES8JGs%2FPQmB1rVCZ%2BzYH%2FhNXBc81Fc7BROzlvNLr76fxmY%2FF1I%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777398618/samples/mgophnxjej8so2f55bs7.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Tv Box Aquário Plus Stv-3000 4k 16gb Preto 2gb RAM",
+    "desc": "Tv Box 4k com 16GB e 2GB de RAM, alta performance visual.",
+    "oldPrice": "R$ 236,00",
+    "newPrice": "R$ 206,90",
+    "discount": "12% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BNeDbf2YIPqfvGE9d5FTvk1H%2F3bSdvDPZ%2FQDo3dC2fbMw7pp2ow6M3A7fnoEK33ZsjdgRZKR4enL33UQyH7MmtnKuE9LB%2BSG667n9uwv%2FhkQ8mCL5A5s%2BXZyuOSj474cyxHedlUB8d3eA4TSl5Iy%2BiMIg7EoWtHUyGtb4unzJxEfG0fZPKsoTWG0iPjQRh%2BbjMalWk8%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777399058/samples/pvlgqu0r8yeu73yqyfhu.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Whey Protein Feminino 1kg",
+    "desc": "Suplemento de whey protein feminino isolado e concentrado em pó, 1 kg.",
+    "oldPrice": "R$ 197,49",
+    "newPrice": "R$ 69,00",
+    "discount": "65% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BE6zU%2F21E8NwEMGIcvoPQKKeDjjD%2Bk0gbtP%2BQ%2FeeeEu%2BN3DSlwhf6fJ8BufdIwdQwOteXIZzG0i%2FmQ1p6LW6pEInGEYxYbngX4JEuauKZquKo0pp0SICfd97IqZbKUWNbZF3IoNkytcXluMrzUp0Sb8xXY9mS%2FkkgG94aV1BW5kC4D42U91XaNg7ZLwD%2FfWdWrzxZA%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777471286/samples/jarpllrkl2qehfwr0z5d.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Garrafa Térmica 850ml Inox Fitness Academia Hiddra",
+    "desc": "Garrafa térmica inox de 850ml ideal para fitness e academia.",
+    "oldPrice": "R$ 69,99",
+    "newPrice": "R$ 69,99",
+    "discount": "30% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BNKHyEyBg0TFuEAc8xgw%2B09aBpAwRe998T2hVfirYT6%2FVzInNDfoy1KuOu8%2BbZ%2BvamM3CbzmR8wqEdd5NJBDsLVixCwlFZla%2FeB2hUPpSa9507pIosuOarwVCnZBhzg1xNC1GaPekxBX%2FsL8BBGfFMy1BYSeEtT0i%2F1WFF25GIhRC2uf5iA1jMTLIhFi18S2IsGgCg%3D%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777556955/samples/vpkqxc9acb1xp9svn3eq.png",
     "store": "Mercado Livre"
   },
   {
-    "name": "",
-    "desc": "",
-    "oldPrice": "",
-    "newPrice": "",
-    "discount": "",
+    "name": "Tapete Yoga Mat Pilates PVC Ecológico 6mm com Bolsa Yangfit Rainbow Azul",
+    "desc": "Tapete de yoga e pilates ecológico com 6mm de espessura e bolsa inclusa.",
+    "oldPrice": "R$ 170,90",
+    "newPrice": "R$ 131,59",
+    "discount": "23% OFF",
     "link": "https://www.mercadolivre.com.br/social/sira1230319?matt_word=sira1230319&matt_tool=22706473&forceInApp=true&ref=BDy6pDf6tOu0dXtQ5dZE7D23m61TnbzzNC5UXU5BydoWsT8HYkO0SvItAIC53fRwrQNtlG9GyZrHKlE5nUjJ0BRAMxfZX6gajuHpIXOYk1pYDatjkyL2qrmsrGuA1lmsS0JSx%2BEvAwFOmmLrDLlh8SpoWQVHZJZxEgi2bTW1HbP0lPrGtydE1145uapyESEWAej4ZmU%3D",
-    "image": "",
+    "image": "https://res.cloudinary.com/djyovwpl5/image/upload/v1777557642/samples/olljm8v9wsp7nzko8riw.png",
     "store": "Mercado Livre"
   }
 ];
     let activeStore = 'all';
 
-    function normalizeStore(store) {
-      return (store || '').toLowerCase().trim();
+    const PLACEHOLDER =
+      'data:image/svg+xml;charset=UTF-8,' +
+      encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop stop-color="#f8fafc"/>
+              <stop offset="1" stop-color="#e2e8f0"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="800" fill="url(#g)"/>
+          <g fill="#94a3b8">
+            <path d="M238 522h324v30H238zM291 300c0-60 49-109 109-109s109 49 109 109c0 24-8 47-22 65l-26 32h74c27 0 49 22 49 49v63H216v-63c0-27 22-49 49-49h74l-26-32c-14-18-22-41-22-65zm109-59c-32 0-59 27-59 59c0 13 4 26 12 36l47 61l47-61c8-10 12-23 12-36c0-32-27-59-59-59z"/>
+          </g>
+          <text x="400" y="610" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#64748b">Imagem indisponível</text>
+        </svg>
+      `);
+
+    function escapeText(value) {
+      return String(value ?? '');
+    }
+
+    function normalizeStore(value) {
+      return escapeText(value).trim().toLowerCase();
+    }
+
+    function safeUrl(value) {
+      const raw = escapeText(value).trim();
+      if (!raw) return '';
+      try {
+        const url = new URL(raw, window.location.origin);
+        if (url.protocol === 'http:' || url.protocol === 'https:') {
+          return url.href;
+        }
+      } catch (e) {
+        return '';
+      }
+      return '';
+    }
+
+    function imageUrl(value) {
+      const url = safeUrl(value);
+      return url || PLACEHOLDER;
+    }
+
+    function cardStoreClass(store) {
+      const s = normalizeStore(store).replace(/\s+/g, '-');
+      return s;
     }
 
     function getFilteredProducts() {
       const term = document.getElementById('searchInput').value.toLowerCase().trim();
-      return products.filter(product => {
+
+      return products.filter((product) => {
         const matchesStore = activeStore === 'all'
           ? true
           : normalizeStore(product.store) === normalizeStore(activeStore);
 
         const matchesSearch =
-          (product.name || '').toLowerCase().includes(term) ||
-          (product.desc || '').toLowerCase().includes(term) ||
-          (product.store || '').toLowerCase().includes(term);
+          escapeText(product.name).toLowerCase().includes(term) ||
+          escapeText(product.desc).toLowerCase().includes(term) ||
+          escapeText(product.store).toLowerCase().includes(term);
 
         return matchesStore && matchesSearch;
       });
@@ -759,73 +874,143 @@
 
     function updateMeta(count) {
       const label = activeStore === 'all' ? 'todas as lojas' : activeStore;
-      document.getElementById('resultsMeta').textContent = `${count} oferta(s) encontrada(s) em ${label}`;
+      const text = `${count} oferta(s) disponíveis em ${label}`;
+      document.getElementById('resultsMeta').textContent = text;
     }
 
-    function displayProducts(productsToDisplay) {
-      const grid = document.getElementById('productGrid');
-      grid.innerHTML = "";
+    function buildCard(product) {
+      const hasLink = !!safeUrl(product.link);
+      const card = document.createElement('article');
+      card.className = 'card';
 
-      if (!productsToDisplay.length) {
-        grid.innerHTML = "<div class='no-results'>Nenhum produto encontrado para esse filtro.</div>";
+      const imageWrap = document.createElement('div');
+      imageWrap.className = 'card-image';
+
+      const img = document.createElement('img');
+      img.src = imageUrl(product.image);
+      img.alt = escapeText(product.name) || 'Produto';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
+      img.onerror = () => {
+        img.onerror = null;
+        img.src = PLACEHOLDER;
+      };
+      imageWrap.appendChild(img);
+
+      const body = document.createElement('div');
+      body.className = 'card-body';
+
+      const head = document.createElement('div');
+      head.className = 'card-head';
+
+      const store = document.createElement('span');
+      store.className = `badge-store ${cardStoreClass(product.store)}`;
+      store.textContent = escapeText(product.store) || 'Loja';
+
+      const verified = document.createElement('span');
+      verified.className = 'badge-verified';
+      verified.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12,2L4,5V11C4,16.55 7.84,21.74 12,23C16.16,21.74 20,16.55 20,11V5L12,2M12,11.91L14.59,14.5L15.41,13.67L12,10.25L8.59,13.67L9.41,14.5L12,11.91Z"/></svg>Verificada';
+
+      head.appendChild(store);
+      head.appendChild(verified);
+
+      const title = document.createElement('h2');
+      title.className = 'title';
+      title.textContent = escapeText(product.name);
+
+      const desc = document.createElement('p');
+      desc.className = 'desc';
+      desc.textContent = escapeText(product.desc);
+
+      const priceBox = document.createElement('div');
+      priceBox.className = 'price-box';
+
+      const priceRow = document.createElement('div');
+      priceRow.className = 'price-row';
+
+      if (product.oldPrice) {
+        const oldPrice = document.createElement('span');
+        oldPrice.className = 'old-price';
+        oldPrice.textContent = escapeText(product.oldPrice);
+        priceRow.appendChild(oldPrice);
+      }
+
+      if (product.newPrice) {
+        const newPrice = document.createElement('span');
+        newPrice.className = 'new-price';
+        newPrice.textContent = escapeText(product.newPrice);
+        priceRow.appendChild(newPrice);
+      }
+
+      priceBox.appendChild(priceRow);
+
+      if (product.discount) {
+        const discount = document.createElement('span');
+        discount.className = 'discount';
+        discount.textContent = escapeText(product.discount);
+        priceBox.appendChild(discount);
+      }
+
+      const actions = document.createElement('div');
+      actions.className = 'actions';
+
+      const btn = document.createElement('a');
+      btn.className = 'btn';
+      btn.textContent = hasLink ? 'Ver oferta' : 'Link indisponível';
+      btn.href = hasLink ? safeUrl(product.link) : '#';
+      btn.target = '_blank';
+      btn.rel = 'noopener noreferrer nofollow';
+      if (!hasLink) {
+        btn.setAttribute('aria-disabled', 'true');
+      }
+
+      actions.appendChild(btn);
+
+      body.appendChild(head);
+      body.appendChild(title);
+      body.appendChild(desc);
+      body.appendChild(priceBox);
+      body.appendChild(actions);
+
+      card.appendChild(imageWrap);
+      card.appendChild(body);
+
+      return card;
+    }
+
+    function renderCatalog(list) {
+      const catalog = document.getElementById('catalog');
+      catalog.innerHTML = '';
+
+      if (!list.length) {
+        const empty = document.createElement('div');
+        empty.className = 'empty';
+        empty.textContent = 'Nenhum produto encontrado para esse filtro.';
+        catalog.appendChild(empty);
         updateMeta(0);
         return;
       }
 
-      productsToDisplay.forEach(product => {
-        const hasLink = !!(product.link && product.link.trim());
-        const ctaClass = hasLink ? "cta-button" : "cta-button disabled";
-        const ctaHref = hasLink ? product.link : "#";
-        const ctaText = hasLink ? "Ver oferta" : "Link indisponível";
-
-        const card = `
-          <div class="offer-card">
-            <div class="card-top">
-              <span class="store-badge">${product.store || 'Loja'}</span>
-              <div class="verify-badge">
-                <svg style="width:11px;height:11px" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M12,2L4,5V11C4,16.55 7.84,21.74 12,23C16.16,21.74 20,16.55 20,11V5L12,2M12,11.91L14.59,14.5L15.41,13.67L12,10.25L8.59,13.67L9.41,14.5L12,11.91Z"/>
-                </svg>
-                Verificada
-              </div>
-            </div>
-
-            ${product.image ? `<div class="product-image-wrap"><img class="product-image" src="${product.image}" alt="${product.name}" loading="lazy"></div>` : ''}
-
-            <h2 class="product-title">${product.name}</h2>
-            <p class="product-desc">${product.desc}</p>
-
-            <div class="pricing-area">
-              <div class="price-row">
-                ${product.oldPrice ? `<span class="old-price">${product.oldPrice}</span>` : ''}
-                ${product.newPrice ? `<span class="new-price">${product.newPrice}</span>` : ''}
-              </div>
-              ${product.discount ? `<span class="discount-pill">${product.discount}</span>` : ''}
-            </div>
-
-            <a href="${ctaHref}" class="${ctaClass}" target="_blank" rel="noopener noreferrer">
-              ${ctaText}
-            </a>
-          </div>
-        `;
-        grid.insertAdjacentHTML('beforeend', card);
-      });
-
-      updateMeta(productsToDisplay.length);
+      const fragment = document.createDocumentFragment();
+      list.forEach((product) => fragment.appendChild(buildCard(product)));
+      catalog.appendChild(fragment);
+      updateMeta(list.length);
     }
 
     function refreshView() {
-      displayProducts(getFilteredProducts());
+      renderCatalog(getFilteredProducts());
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('searchInput').addEventListener('input', refreshView);
+      const input = document.getElementById('searchInput');
+      input.addEventListener('input', refreshView);
 
-      document.querySelectorAll('.filter-tab').forEach(tab => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          activeStore = tab.dataset.store;
+      document.querySelectorAll('.chip').forEach((chip) => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.chip').forEach((c) => c.classList.remove('active'));
+          chip.classList.add('active');
+          activeStore = chip.dataset.store;
           refreshView();
         });
       });
