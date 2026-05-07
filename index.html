@@ -815,7 +815,7 @@
       <div class="section-header">
         <div>
           <div class="section-title">Ofertas em destaque</div>
-          <div class="section-caption">Seleção automática dos maiores descontos da vitrine</div>
+          <div class="section-caption">Seleção automática das 5 maiores ofertas por desconto</div>
         </div>
       </div>
       <div class="featured-grid" id="featuredGrid"></div>
@@ -5188,12 +5188,38 @@
             </linearGradient>
           </defs>
           <rect width="800" height="800" fill="url(#g)"/>
-          <g fill="#94a3b8">
-            <path d="M238 522h324v30H238zM291 300c0-60 49-109 109-109s109 49 109 109c0 24-8 47-22 65l-26 32h74c27 0 49 22 49 49v63H216v-63c0-27 22-49 49-49h74l-26-32c-14-18-22-41-22-65zm109-59c-32 0-59 27-59 59c0 13 4 26 12 36l47 61l47-61c8-10 12-23 12-36c0-32-27-59-59-59z"/>
-          </g>
-          <text x="400" y="610" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" fill="#64748b">Imagem indisponível</text>
+          <rect x="84" y="84" width="632" height="632" rx="34" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+          <circle cx="400" cy="292" r="88" fill="#e2e8f0"/>
+          <path d="M265 518c32-76 93-116 135-116s103 40 135 116" fill="none" stroke="#94a3b8" stroke-width="26" stroke-linecap="round"/>
+          <text x="400" y="610" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" fill="#475569">Imagem indisponível</text>
         </svg>
       `);
+
+    function brandedFallback(product) {
+      const store = escapeText(product?.store || 'Oferta');
+      const title = escapeText(product?.name || 'Produto').slice(0, 28);
+      const storeColor = normalizeStore(store) === 'shopee' ? '#ff6a3d' : '#fff159';
+      const storeText = normalizeStore(store) === 'shopee' ? '#ffffff' : '#111827';
+
+      return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(`
+        <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+          <defs>
+            <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+              <stop stop-color="#ffffff"/>
+              <stop offset="1" stop-color="#f8fafc"/>
+            </linearGradient>
+          </defs>
+          <rect width="800" height="800" fill="url(#bg)"/>
+          <rect x="50" y="50" width="700" height="700" rx="34" fill="#ffffff" stroke="#dbe4ef" stroke-width="4"/>
+          <rect x="88" y="88" width="220" height="58" rx="29" fill="${storeColor}"/>
+          <text x="198" y="126" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="800" fill="${storeText}">${store}</text>
+          <circle cx="400" cy="330" r="112" fill="#e2e8f0"/>
+          <path d="M248 564c40-98 111-148 152-148s112 50 152 148" fill="none" stroke="#94a3b8" stroke-width="30" stroke-linecap="round"/>
+          <text x="400" y="664" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#334155">${title}</text>
+          <text x="400" y="708" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#64748b">Imagem em atualização</text>
+        </svg>
+      `);
+    }
 
     function escapeText(value) {
       return String(value ?? '');
@@ -5234,7 +5260,7 @@
         const matchesStore = activeStore === 'all'
           ? true
           : activeStore === 'best'
-            ? parseDiscount(product.discount) >= 25
+            ? true
             : normalizeStore(product.store) === normalizeStore(activeStore);
 
         const matchesSearch =
@@ -5246,6 +5272,15 @@
       });
 
       const sorted = [...filtered];
+      if (activeStore === 'best') {
+        sorted.sort((a, b) => {
+          const byDiscount = parseDiscount(b.discount) - parseDiscount(a.discount);
+          if (byDiscount !== 0) return byDiscount;
+          return parsePrice(a.newPrice || a.oldPrice) - parsePrice(b.newPrice || b.oldPrice);
+        });
+        return sorted.slice(0, 5);
+      }
+
       if (activeSort === 'discount') {
         sorted.sort((a, b) => parseDiscount(b.discount) - parseDiscount(a.discount));
       } else if (activeSort === 'lowest') {
@@ -5262,7 +5297,7 @@
       const label = activeStore === 'all'
         ? 'todas as lojas'
         : activeStore === 'best'
-          ? 'melhores ofertas'
+          ? 'top 5 melhores ofertas'
           : activeStore;
       const text = `${count} oferta(s) disponíveis em ${label}`;
       document.getElementById('resultsMeta').textContent = text;
@@ -5291,7 +5326,7 @@
       img.referrerPolicy = 'no-referrer';
       img.onerror = () => {
         img.onerror = null;
-        img.src = PLACEHOLDER;
+        img.src = brandedFallback(product);
       };
       imageWrap.appendChild(img);
 
@@ -5384,10 +5419,10 @@
       const topDeals = [...products]
         .sort((a, b) => parseDiscount(b.discount) - parseDiscount(a.discount))
         .filter((p) => parseDiscount(p.discount) > 0)
-        .slice(0, 3);
+        .slice(0, 5);
 
       if (!topDeals.length) {
-        grid.innerHTML = '<div class="empty">Ainda não há ofertas com desconto suficiente para destacar.</div>';
+        grid.innerHTML = '<div class="empty">Ainda não há produtos suficientes com desconto para compor os destaques.</div>';
         return;
       }
 
@@ -5406,7 +5441,7 @@
         img.referrerPolicy = 'no-referrer';
         img.onerror = () => {
           img.onerror = null;
-          img.src = PLACEHOLDER;
+          img.src = brandedFallback(product);
         };
         thumb.appendChild(img);
 
