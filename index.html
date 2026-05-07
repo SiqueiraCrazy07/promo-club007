@@ -737,6 +737,16 @@
       background: #ff6a3d;
       border-color: #ff6a3d;
     }
+    .chip[data-store="best"] {
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    .chip.active[data-store="best"] {
+      background: #dc2626;
+      border-color: #dc2626;
+      color: #fff;
+    }
 
     @media (min-width: 820px) {
       .featured-grid {
@@ -773,7 +783,7 @@
     <div class="hero-inner">
       <div class="hero-badge">Vitrine Oficial • Promo.Club007</div>
       <h1 class="brand-title">PROMO.CLUB<span>007</span></h1>
-      <p class="hero-subtitle">Vitrine profissional com busca, filtros por loja, imagens tratadas para não deformar e navegação otimizada para celular.</p>
+      <p class="hero-subtitle">As melhores promoções organizadas para clique rápido, navegação mobile e maior conversão em links afiliados.</p>
       <div class="hero-stats">
         <span class="hero-stat">⚡ Visual rápido</span>
         <span class="hero-stat">🛍️ Filtros por loja</span>
@@ -792,6 +802,7 @@
 
         <div class="filters" role="tablist" aria-label="Filtrar por loja">
           <button class="chip active" data-store="all" type="button">Mostrar todos</button>
+          <button class="chip" data-store="best" type="button">Melhores ofertas</button>
           <button class="chip" data-store="Mercado Livre" type="button">Mercado Livre</button>
           <button class="chip" data-store="Shopee" type="button">Shopee</button>
         </div>
@@ -834,7 +845,7 @@
     <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2C22,19.4 19.4,22 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8C2,4.6 4.6,2 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4A3.6,3.6 0 0,0 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6A3.6,3.6 0 0,0 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
   </a>
 
-  <a href="https://wa.me/5500000000000" class="fab whatsapp" target="_blank" rel="noopener noreferrer nofollow" aria-label="WhatsApp">
+  <a href="https://chat.whatsapp.com/EZieRgbDe9bKkEujAwpWyd" class="fab whatsapp" target="_blank" rel="noopener noreferrer nofollow" aria-label="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.66 20.15 9.3 19.81 8.1 19.14L7.81 18.97L4.69 19.79L5.53 16.74L5.34 16.44C4.61 15.27 4.22 13.93 4.22 12.54V11.91C4.22 7.66 7.73 4.15 11.97 4.15H12.05"/></svg>
   </a>
 
@@ -5222,7 +5233,9 @@
       const filtered = products.filter((product) => {
         const matchesStore = activeStore === 'all'
           ? true
-          : normalizeStore(product.store) === normalizeStore(activeStore);
+          : activeStore === 'best'
+            ? parseDiscount(product.discount) >= 25
+            : normalizeStore(product.store) === normalizeStore(activeStore);
 
         const matchesSearch =
           escapeText(product.name).toLowerCase().includes(term) ||
@@ -5246,7 +5259,11 @@
     }
 
     function updateMeta(count) {
-      const label = activeStore === 'all' ? 'todas as lojas' : activeStore;
+      const label = activeStore === 'all'
+        ? 'todas as lojas'
+        : activeStore === 'best'
+          ? 'melhores ofertas'
+          : activeStore;
       const text = `${count} oferta(s) disponíveis em ${label}`;
       document.getElementById('resultsMeta').textContent = text;
     }
@@ -5337,7 +5354,7 @@
 
       const btn = document.createElement('a');
       btn.className = 'btn';
-      btn.textContent = hasLink ? 'Ver oferta' : 'Link indisponível';
+      btn.textContent = hasLink ? 'Comprar agora' : 'Link indisponível';
       btn.href = hasLink ? safeUrl(product.link) : '#';
       btn.target = '_blank';
       btn.rel = 'noopener noreferrer nofollow';
