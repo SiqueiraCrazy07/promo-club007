@@ -601,6 +601,7 @@
   async function initRenderLayer() {
     bindControls();
     await loadProducts();
+    renderFeatured();
     refreshView();
   }
 
