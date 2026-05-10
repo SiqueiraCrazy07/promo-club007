@@ -1,0 +1,80 @@
+name: Update offers
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-offers
+  cancel-in-progress: false
+
+jobs:
+  update-offers:
+    name: Google Sheets to products.json
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate automation workspace
+        shell: bash
+        run: |
+          test -f automation/package.json
+          test -f automation/package-lock.json
+          test ! -f service-account.json
+          test ! -f automation/service-account.json
+          test ! -f automation/config/service-account.json
+          test ! -f automation/config/.env
+
+      - name: Install automation dependencies
+        working-directory: automation
+        run: npm ci
+
+      - name: Prepare Google credentials
+        shell: bash
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          test -n "$GOOGLE_SERVICE_ACCOUNT_JSON"
+          printf '%s' "$GOOGLE_SERVICE_ACCOUNT_JSON" > "$RUNNER_TEMP/google-service-account.json"
+          chmod 600 "$RUNNER_TEMP/google-service-account.json"
+
+      - name: Generate products.json
+        working-directory: automation
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ runner.temp }}/google-service-account.json
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SHEET_RANGE: ${{ secrets.GOOGLE_SHEET_RANGE }}
+        run: npm run ingest
+
+      - name: Validate products.json
+        shell: bash
+        run: |
+          test -f automation/outputs/products.json
+          node -e "const fs=require('fs'); const data=JSON.parse(fs.readFileSync('automation/outputs/products.json','utf8')); const products=Array.isArray(data)?data:data.products; if(!Array.isArray(products)||products.length===0){throw new Error('products.json must contain a non-empty products array')} for (const [index, product] of products.entries()) { if (!product || typeof product !== 'object') throw new Error('invalid product at index '+index); if (!String(product.name || '').trim()) throw new Error('missing name at index '+index); if (!String(product.store || '').trim()) throw new Error('missing store at index '+index); if (!String(product.link || '').trim()) throw new Error('missing link at index '+index); if (!String(product.image || '').trim()) throw new Error('missing image at index '+index); } console.log('Validated products:', products.length);"
+
+      - name: Commit updated offers
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add automation/outputs/products.json
+          if git diff --cached --quiet; then
+            echo "No offer changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update offers data"
+          git push origin main

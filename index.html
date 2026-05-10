@@ -851,6 +851,7 @@
 
   <script src="data/products.js"></script>
   <script>
+    const PRODUCTS_JSON_URL = 'automation/outputs/products.json';
     let activeStore = 'all';
     let activeSort = 'relevance';
 
@@ -940,6 +941,59 @@
     function cardStoreClass(store) {
       const s = normalizeStore(store).replace(/\s+/g, '-');
       return s;
+    }
+
+    function normalizeProduct(product) {
+      if (!product || typeof product !== 'object') return null;
+
+      const normalized = {
+        name: escapeText(product.name).trim(),
+        desc: escapeText(product.desc),
+        oldPrice: escapeText(product.oldPrice),
+        newPrice: escapeText(product.newPrice),
+        discount: escapeText(product.discount),
+        link: escapeText(product.link),
+        image: escapeText(product.image),
+        store: escapeText(product.store).trim()
+      };
+
+      if (!normalized.name || !normalized.store) return null;
+      return normalized;
+    }
+
+    function extractProductsPayload(payload) {
+      if (Array.isArray(payload)) return payload;
+      if (payload && Array.isArray(payload.products)) return payload.products;
+      return [];
+    }
+
+    function validateProductsPayload(payload) {
+      return extractProductsPayload(payload)
+        .map(normalizeProduct)
+        .filter(Boolean);
+    }
+
+    async function loadProducts() {
+      const fallbackProducts = typeof products !== 'undefined' && Array.isArray(products) ? products : [];
+
+      try {
+        const response = await fetch(PRODUCTS_JSON_URL, { cache: 'no-cache' });
+        if (!response.ok) {
+          throw new Error(`products.json returned ${response.status}`);
+        }
+
+        const loadedProducts = validateProductsPayload(await response.json());
+        if (!loadedProducts.length) {
+          throw new Error('products.json has no valid products');
+        }
+
+        products = loadedProducts;
+      } catch (error) {
+        products = fallbackProducts;
+        console.warn('Usando fallback local data/products.js:', error);
+      }
+
+      return products;
     }
 
     function getFilteredProducts() {
@@ -1195,7 +1249,7 @@
       renderCatalog(getFilteredProducts());
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
       const input = document.getElementById('searchInput');
       const sortSelect = document.getElementById('sortSelect');
       input.addEventListener('input', refreshView);
@@ -1204,7 +1258,7 @@
         sortSelect.addEventListener('change', (event) => {
           activeSort = event.target.value;
           renderFeatured();
-      refreshView();
+          refreshView();
         });
       }
 
@@ -1217,6 +1271,7 @@
         });
       });
 
+      await loadProducts();
       refreshView();
     });
   </script>

@@ -1,0 +1,6 @@
+automation/node_modules/
+automation/config/.env
+automation/config/service-account.json
+automation/cache/*.json
+automation/logs/*.log
+automation/outputs/sample-output.json

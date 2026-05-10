@@ -1,0 +1,20 @@
+{
+  "name": "site-vitrine-offer-automation",
+  "version": "0.1.0",
+  "description": "Automacao inicial para ingestao, validacao e normalizacao de ofertas do Site Vitrine.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "ingest": "node ingest/google-sheets-ingest.js",
+    "ingest:sheets": "node ingest/google-sheets-ingest.js",
+    "validate": "node validators/offer-validator.js",
+    "normalize": "node normalizers/offer-normalizer.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "googleapis": "^144.0.0"
+  }
+}

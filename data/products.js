@@ -1,4 +1,4 @@
-const products = [
+var products = [
   {
 "name": "Relógio Casio Masculino Digital Esportivo Preto",
 "desc": "Relógio masculino digital esportivo, preto, prova d'água.",
