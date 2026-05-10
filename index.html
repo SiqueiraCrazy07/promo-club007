@@ -973,6 +973,12 @@
         .filter(Boolean);
     }
 
+    function reportDataSource(source, count) {
+      const info = { source, count };
+      window.__PROMO_CLUB_DATA_SOURCE__ = info;
+      console.info('[Promo.Club007] data source', info);
+    }
+
     async function loadProducts() {
       const fallbackProducts = typeof products !== 'undefined' && Array.isArray(products) ? products : [];
 
@@ -988,8 +994,10 @@
         }
 
         products = loadedProducts;
+        reportDataSource('products.json', products.length);
       } catch (error) {
         products = fallbackProducts;
+        reportDataSource('fallback', products.length);
         console.warn('Usando fallback local data/products.js:', error);
       }
 
