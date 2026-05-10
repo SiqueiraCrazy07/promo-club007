@@ -5,19 +5,26 @@
   window.store = {
     products: [],
     filtered: [],
-    source: null
+    source: null,
+    pagination: {
+      page: 1,
+      perPage: 24,
+      hasMore: true
+    }
   };
 
   const renderState = {
     activeStore: 'all',
     activeSort: 'relevance',
-    page: 1,
-    pageSize: null,
-    cache: new Map(),
+    filterCache: new Map(),
+    renderCache: new Map(),
     marketplaces: new Set(),
     lazyLoading: true,
     virtualized: false,
-    infiniteScroll: false
+    infiniteScroll: true,
+    renderedCount: 0,
+    isAppending: false,
+    scrollThreshold: 900
   };
 
   const PLACEHOLDER =
@@ -146,7 +153,8 @@
     window.store.filtered = products;
     window.store.source = source;
     window.products = products;
-    renderState.cache.clear();
+    resetPagination();
+    clearRenderCaches();
     updateMarketplaceIndex(products);
   }
 
@@ -233,34 +241,59 @@
     return sorted;
   }
 
-  function paginateProducts(products, pagination = renderState) {
-    if (!pagination.pageSize) return products;
-    const end = pagination.page * pagination.pageSize;
-    return products.slice(0, end);
+  function resetPagination() {
+    window.store.pagination.page = 1;
+    window.store.pagination.hasMore = true;
+    renderState.renderedCount = 0;
+  }
+
+  function clearRenderCaches() {
+    renderState.filterCache.clear();
+    renderState.renderCache.clear();
+  }
+
+  function getRenderCacheKey(product, index) {
+    return [
+      escapeText(product.link),
+      escapeText(product.name),
+      escapeText(product.store),
+      escapeText(product.newPrice || product.oldPrice),
+      index
+    ].join('|');
+  }
+
+  function getVisibleProducts(products) {
+    const end = window.store.pagination.page * window.store.pagination.perPage;
+    const visible = products.slice(0, end);
+    window.store.pagination.hasMore = visible.length < products.length;
+    return visible;
+  }
+
+  function nextPage() {
+    if (!window.store.pagination.hasMore || renderState.isAppending) return;
+    window.store.pagination.page += 1;
+    refreshView({ append: true });
   }
 
   function getFilteredProducts() {
     const criteria = {
       term: getSearchTerm(),
       store: renderState.activeStore,
-      sort: renderState.activeSort,
-      page: renderState.page,
-      pageSize: renderState.pageSize
+      sort: renderState.activeSort
     };
     const cacheKey = JSON.stringify(criteria);
 
-    if (renderState.cache.has(cacheKey)) {
-      window.store.filtered = renderState.cache.get(cacheKey);
+    if (renderState.filterCache.has(cacheKey)) {
+      window.store.filtered = renderState.filterCache.get(cacheKey);
       return window.store.filtered;
     }
 
     const filtered = filterProducts(window.store.products, criteria);
     const sorted = sortProducts(filtered, criteria.sort, criteria.store);
-    const paginated = paginateProducts(sorted, criteria);
 
-    window.store.filtered = paginated;
-    renderState.cache.set(cacheKey, paginated);
-    return paginated;
+    window.store.filtered = sorted;
+    renderState.filterCache.set(cacheKey, sorted);
+    return sorted;
   }
 
   function updateMeta(count) {
@@ -274,7 +307,12 @@
     if (meta) meta.textContent = text;
   }
 
-  function renderCard(product) {
+  function renderCard(product, index = 0) {
+    const cacheKey = getRenderCacheKey(product, index);
+    if (renderState.renderCache.has(cacheKey)) {
+      return renderState.renderCache.get(cacheKey);
+    }
+
     const hasLink = !!safeUrl(product.link);
     const card = document.createElement('article');
     card.className = 'card';
@@ -379,6 +417,7 @@
     card.appendChild(imageWrap);
     card.appendChild(body);
 
+    renderState.renderCache.set(cacheKey, card);
     return card;
   }
 
@@ -458,10 +497,16 @@
     });
   }
 
-  function renderCatalog(list) {
+  function renderCatalog(list, options = {}) {
     const catalog = document.getElementById('catalog');
     if (!catalog) return;
-    catalog.innerHTML = '';
+    const append = !!options.append;
+    const visible = getVisibleProducts(list);
+
+    if (!append) {
+      catalog.innerHTML = '';
+      renderState.renderedCount = 0;
+    }
 
     if (!list.length) {
       const empty = document.createElement('div');
@@ -472,19 +517,47 @@
       return;
     }
 
+    if (append && renderState.renderedCount >= visible.length) {
+      updateMeta(list.length);
+      return;
+    }
+
+    renderState.isAppending = true;
     const fragment = document.createDocumentFragment();
-    list.forEach((product) => fragment.appendChild(renderCard(product)));
+    visible
+      .slice(renderState.renderedCount)
+      .forEach((product, index) => {
+        fragment.appendChild(renderCard(product, renderState.renderedCount + index));
+      });
     catalog.appendChild(fragment);
-    updateMeta(list.length);
+    renderState.renderedCount = visible.length;
+    renderState.isAppending = false;
+    updateMeta(window.store.filtered.length);
   }
 
-  function refreshView() {
-    renderCatalog(getFilteredProducts());
+  function refreshView(options = {}) {
+    renderCatalog(getFilteredProducts(), options);
+  }
+
+  function resetAndRefreshView() {
+    resetPagination();
+    refreshView();
+  }
+
+  function shouldLoadNextPage() {
+    if (!renderState.infiniteScroll || !window.store.pagination.hasMore) return false;
+    const viewportBottom = window.innerHeight + window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight;
+    return documentHeight - viewportBottom <= renderState.scrollThreshold;
+  }
+
+  function handleScroll() {
+    if (shouldLoadNextPage()) nextPage();
   }
 
   function bindSearch() {
     const input = document.getElementById('searchInput');
-    if (input) input.addEventListener('input', refreshView);
+    if (input) input.addEventListener('input', resetAndRefreshView);
   }
 
   function bindSorting() {
@@ -493,8 +566,8 @@
 
     sortSelect.addEventListener('change', (event) => {
       renderState.activeSort = event.target.value;
-      renderState.page = 1;
-      renderState.cache.clear();
+      resetPagination();
+      renderState.filterCache.clear();
       renderFeatured();
       refreshView();
     });
@@ -506,17 +579,23 @@
         document.querySelectorAll('.chip').forEach((current) => current.classList.remove('active'));
         chip.classList.add('active');
         renderState.activeStore = chip.dataset.store;
-        renderState.page = 1;
-        renderState.cache.clear();
+        resetPagination();
+        renderState.filterCache.clear();
         refreshView();
       });
     });
+  }
+
+  function bindInfiniteScroll() {
+    if (!window.addEventListener) return;
+    window.addEventListener('scroll', handleScroll, { passive: true });
   }
 
   function bindControls() {
     bindSearch();
     bindSorting();
     bindFilters();
+    bindInfiniteScroll();
   }
 
   async function initRenderLayer() {
