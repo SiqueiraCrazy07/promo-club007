@@ -4549,12 +4549,22 @@
       "link": "https://s.shopee.com.br/LjuJS8MP6",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mc2tdmhllhol49",
       "store": "Shopee"
+    },
+    {
+      "name": "Monitor Gamer LED IPS 27\" Full HD 75Hz 5ms HDMI Design Slim Borda Infinita",
+      "desc": "Shopee",
+      "oldPrice": "R$ 1.205,16",
+      "newPrice": "R$ 698,99",
+      "discount": "42% OFF",
+      "link": "https://s.shopee.com.br/8fP41KoGaS",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mf024282pzwm91",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 455,
-    "acceptedCount": 455,
+    "totalRows": 456,
+    "acceptedCount": 456,
     "rejectedCount": 0
   },
   "rejected": []
