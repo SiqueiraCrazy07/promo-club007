@@ -5,6 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "collect:shopee": "node collectors/shopee/collect-shopee-offers.js",
     "ingest": "node ingest/google-sheets-ingest.js",
     "ingest:sheets": "node ingest/google-sheets-ingest.js",
     "validate": "node validators/offer-validator.js",

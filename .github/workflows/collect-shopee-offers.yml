@@ -1,0 +1,43 @@
+name: Collect Shopee offers
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 10 * * *"
+    - cron: "30 16 * * *"
+    - cron: "30 22 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: collect-shopee-offers
+  cancel-in-progress: false
+
+jobs:
+  collect-shopee-offers:
+    name: Shopee Affiliate API to Google Sheets
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install automation dependencies
+        working-directory: automation
+        run: npm ci
+
+      - name: Collect Shopee offers
+        working-directory: automation
+        env:
+          SHOPEE_APP_ID: ${{ secrets.SHOPEE_APP_ID }}
+          SHOPEE_SECRET: ${{ secrets.SHOPEE_SECRET }}
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+          GOOGLE_SHEET_NAME: ${{ secrets.GOOGLE_SHEET_NAME }}
+        run: npm run collect:shopee
