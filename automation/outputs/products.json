@@ -4649,12 +4649,42 @@
       "link": "https://s.shopee.com.br/9zuUaZanco",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mj3lg7faf01y81",
       "store": "Shopee"
+    },
+    {
+      "name": "Cadeira De Escritório Ergonômica LuvinCo Genebra B500 G500 Executiva Suporte Lombar Tela Mesh 2",
+      "desc": "Shopee",
+      "oldPrice": "R$ 999,67",
+      "newPrice": "R$ 599,80",
+      "discount": "40% OFF",
+      "link": "https://s.shopee.com.br/gMpgLtnMt",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mjk4dwgzn6ki96",
+      "store": "Shopee"
+    },
+    {
+      "name": "[Frete Grátis]2026 A11 MINI Smartwatch Feminino, Coloca Foto na Tela, NFC, Monitor Cardíaco, à",
+      "desc": "Shopee",
+      "oldPrice": "R$ 472,70",
+      "newPrice": "R$ 174,90",
+      "discount": "63% OFF",
+      "link": "https://s.shopee.com.br/30kkSeBrPV",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
+      "store": "Shopee"
+    },
+    {
+      "name": "Mini Processador De Alimentos Elétrico Turbo Triturador Alho Cebola Legumes Compacto Prático -",
+      "desc": "Shopee",
+      "oldPrice": "R$ 140,18",
+      "newPrice": "R$ 79,90",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/8KmGoRhaYW",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 465,
-    "acceptedCount": 465,
+    "totalRows": 468,
+    "acceptedCount": 468,
     "rejectedCount": 0
   },
   "rejected": []
