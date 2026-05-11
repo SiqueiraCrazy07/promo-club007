@@ -30,6 +30,66 @@ const MIN_DISCOUNT_PERCENT = Number(process.env.SHOPEE_MIN_DISCOUNT_PERCENT || 5
 const MIN_RATING = Number(process.env.SHOPEE_MIN_RATING || 4.2);
 const MIN_SALES = Number(process.env.SHOPEE_MIN_SALES || 1);
 const SIMILARITY_THRESHOLD = Number(process.env.SHOPEE_NAME_SIMILARITY_THRESHOLD || 0.86);
+const MIN_SCORE = Number(process.env.SHOPEE_MIN_SCORE || 45);
+const MIN_REAL_SAVINGS = Number(process.env.SHOPEE_MIN_REAL_SAVINGS || 3);
+
+const DEFAULT_BLOCKED_TERMS = [
+  "adulto",
+  "emagrecedor",
+  "remedio",
+  "medicamento",
+  "anvisa",
+  "cigarro",
+  "vape",
+  "arma",
+  "faca",
+  "replica",
+  "cassino",
+  "aposta",
+  "pirata",
+  "falsificado",
+  "1 linha",
+  "primeira linha",
+  "sem garantia",
+  "milagroso",
+  "cura",
+  "sexual",
+  "erotico"
+];
+
+const DEFAULT_PREFERRED_TERMS = [
+  "organizador",
+  "cozinha",
+  "casa",
+  "limpeza",
+  "smart",
+  "carregador",
+  "fone",
+  "garrafa",
+  "termica",
+  "beleza",
+  "skincare",
+  "kit",
+  "infantil",
+  "utilidade",
+  "oferta",
+  "promo",
+  "desconto"
+];
+
+const GENERIC_NAME_TERMS = [
+  "produto",
+  "oferta",
+  "promocao",
+  "barato",
+  "novo",
+  "top",
+  "original",
+  "generico",
+  "diversos",
+  "varios",
+  "aleatorio"
+];
 
 const SHEET_COLUMNS = [
   "envio_whatsapp",
@@ -92,6 +152,13 @@ function getKeywords() {
   return raw
     ? raw.split(",").map((keyword) => keyword.trim()).filter(Boolean)
     : DEFAULT_KEYWORDS;
+}
+
+function getTermList(envName, fallback) {
+  const raw = process.env[envName] || "";
+  return raw
+    ? raw.split(",").map((term) => normalizeName(term)).filter(Boolean)
+    : fallback.map((term) => normalizeName(term));
 }
 
 function stableStringifyPayload(query, variables) {
@@ -165,18 +232,68 @@ async function fetchShopeeOffers(keywords) {
 }
 
 function toNumber(value) {
-  const normalized = String(value ?? "")
-    .replace(/[^\d,.-]/g, "")
-    .replace(/\./g, "")
-    .replace(",", ".");
+  const raw = String(value ?? "").trim().replace(/[^\d,.-]/g, "");
+  if (!raw) return null;
+
+  const sign = raw.startsWith("-") ? "-" : "";
+  const unsigned = raw.replace(/-/g, "");
+  const lastDot = unsigned.lastIndexOf(".");
+  const lastComma = unsigned.lastIndexOf(",");
+  let normalized = unsigned;
+
+  if (lastDot >= 0 && lastComma >= 0) {
+    const decimalSeparator = lastDot > lastComma ? "." : ",";
+    const thousandSeparator = decimalSeparator === "." ? "," : ".";
+    normalized = unsigned
+      .replaceAll(thousandSeparator, "")
+      .replace(decimalSeparator, ".");
+  } else if (lastDot >= 0 || lastComma >= 0) {
+    const separator = lastDot >= 0 ? "." : ",";
+    const separatorIndex = lastDot >= 0 ? lastDot : lastComma;
+    const separatorCount = (unsigned.match(new RegExp(`\\${separator}`, "g")) || []).length;
+    const decimalDigits = unsigned.length - separatorIndex - 1;
+
+    if (separatorCount > 1) {
+      normalized = unsigned.replaceAll(separator, "");
+    } else if (decimalDigits === 3 && unsigned.slice(0, separatorIndex).length <= 3) {
+      normalized = unsigned.replace(separator, "");
+    } else {
+      normalized = unsigned.replace(separator, ".");
+    }
+  }
+
+  normalized = `${sign}${normalized}`;
   const number = Number(normalized);
   return Number.isFinite(number) ? number : null;
+}
+
+function clamp(value, min, max) {
+  return Math.min(Math.max(value, min), max);
+}
+
+function sum(values) {
+  return values.reduce((total, value) => total + value, 0);
 }
 
 function normalizeDiscount(value) {
   const number = toNumber(value);
   if (!Number.isFinite(number)) return 0;
   return number > 1 && number <= 100 ? number : number * 100;
+}
+
+function getPromoPrice(offer) {
+  return toNumber(offer.priceMin ?? offer.priceMax);
+}
+
+function getOriginalPrice(offer) {
+  return toNumber(offer.priceMax ?? offer.priceMin);
+}
+
+function getRealSavings(offer) {
+  const originalPrice = getOriginalPrice(offer);
+  const promoPrice = getPromoPrice(offer);
+  if (!Number.isFinite(originalPrice) || !Number.isFinite(promoPrice)) return 0;
+  return Math.max(0, originalPrice - promoPrice);
 }
 
 function formatPrice(value) {
@@ -211,6 +328,58 @@ function tokenSet(value) {
   );
 }
 
+function getMatchedTerms(text, terms) {
+  const normalizedText = normalizeName(text);
+  return terms.filter((term) => normalizedText.includes(term));
+}
+
+function getNameQuality(name) {
+  const normalized = normalizeName(name);
+  const tokens = normalized.split(" ").filter(Boolean);
+  const uniqueTokens = new Set(tokens);
+  const genericTokens = tokens.filter((token) => GENERIC_NAME_TERMS.includes(token));
+  const digitCount = (normalized.match(/\d/g) || []).length;
+
+  let score = 0;
+  const reasons = [];
+  const penalties = [];
+
+  if (tokens.length >= 4) {
+    score += 8;
+    reasons.push("nome_descritivo");
+  } else {
+    penalties.push("nome_curto");
+  }
+
+  if (uniqueTokens.size >= Math.min(tokens.length, 4)) {
+    score += 4;
+  } else {
+    penalties.push("nome_repetitivo");
+  }
+
+  if (digitCount <= 12) {
+    score += 3;
+  } else {
+    penalties.push("nome_com_numeros_excessivos");
+  }
+
+  if (genericTokens.length) {
+    score -= genericTokens.length * 4;
+    penalties.push("nome_generico");
+  }
+
+  if (normalized.length < 18) {
+    score -= 6;
+    penalties.push("nome_pouco_informativo");
+  }
+
+  return {
+    score: clamp(score, -12, 15),
+    reasons,
+    penalties
+  };
+}
+
 function jaccardSimilarity(a, b) {
   const left = tokenSet(a);
   const right = tokenSet(b);
@@ -235,9 +404,96 @@ function getOfferName(offer) {
 function reject(reason, offer) {
   return {
     reason,
+    score: offer?.qualityScore?.score ?? null,
     name: getOfferName(offer),
     link: getOfferLink(offer),
-    keyword: offer.keyword
+    keyword: offer.keyword,
+    details: offer?.qualityScore || null
+  };
+}
+
+function scoreOfferV2(offer, options = {}) {
+  const name = getOfferName(offer);
+  const textForTerms = `${name} ${offer.keyword || ""} ${offer.shopName || ""}`;
+  const promoPrice = getPromoPrice(offer);
+  const originalPrice = getOriginalPrice(offer);
+  const realSavings = getRealSavings(offer);
+  const discount = normalizeDiscount(offer.priceDiscountRate);
+  const rating = toNumber(offer.ratingStar);
+  const sales = toNumber(offer.sales);
+  const commission = toNumber(offer.commissionRate);
+  const imageUrl = String(offer.imageUrl || "").trim();
+  const blockedTerms = options.blockedTerms || getTermList("SHOPEE_BLOCKED_TERMS", DEFAULT_BLOCKED_TERMS);
+  const preferredTerms = options.preferredTerms || getTermList("SHOPEE_PREFERRED_TERMS", DEFAULT_PREFERRED_TERMS);
+  const matchedBlockedTerms = getMatchedTerms(textForTerms, blockedTerms);
+  const matchedPreferredTerms = getMatchedTerms(textForTerms, preferredTerms);
+  const nameQuality = getNameQuality(name);
+
+  const positive = {
+    discount: clamp(discount, 0, 60) * 0.55,
+    realSavings: clamp(realSavings, 0, 120) * 0.28,
+    promoPrice: Number.isFinite(promoPrice) ? clamp(18 - Math.abs(promoPrice - 89) / 8, 0, 18) : 0,
+    sales: Number.isFinite(sales) ? clamp(Math.log10(sales + 1) * 8, 0, 24) : 0,
+    rating: Number.isFinite(rating) ? clamp((rating - 3.8) * 12, 0, 15) : 0,
+    commission: Number.isFinite(commission) ? clamp(commission * 140, 0, 12) : 0,
+    image: imageUrl ? 6 : 0,
+    nameQuality: Math.max(0, nameQuality.score),
+    category: clamp(matchedPreferredTerms.length * 5, 0, 15)
+  };
+
+  const penalties = {
+    blockedTerms: matchedBlockedTerms.length ? 100 : 0,
+    lowPriceArtificialDiscount: Number.isFinite(promoPrice) && promoPrice < 15 && discount >= 35 ? 22 : 0,
+    noRealSavings: realSavings < MIN_REAL_SAVINGS ? 20 : 0,
+    sensitiveProduct: matchedBlockedTerms.length ? 40 : 0,
+    lowReputation: Number.isFinite(rating) && rating > 0 && rating < MIN_RATING ? 25 : 0,
+    lowSales: Number.isFinite(sales) && sales < MIN_SALES ? 12 : 0,
+    genericName: nameQuality.penalties.includes("nome_generico") ? 12 : 0,
+    poorName: nameQuality.score < 3 ? 10 : 0,
+    missingImage: imageUrl ? 0 : 25
+  };
+
+  const positiveScore = sum(Object.values(positive));
+  const penaltyScore = sum(Object.values(penalties));
+  const score = Math.round((positiveScore - penaltyScore) * 100) / 100;
+  const approvalReasons = [];
+  const rejectionReasons = [];
+
+  if (discount >= MIN_DISCOUNT_PERCENT) approvalReasons.push("desconto_relevante");
+  if (realSavings >= MIN_REAL_SAVINGS) approvalReasons.push("economia_real");
+  if (Number.isFinite(promoPrice) && promoPrice >= 15 && promoPrice <= 250) approvalReasons.push("preco_convertivel");
+  if (Number.isFinite(sales) && sales >= MIN_SALES) approvalReasons.push("vendas_validas");
+  if (Number.isFinite(rating) && rating >= MIN_RATING) approvalReasons.push("boa_avaliacao");
+  if (Number.isFinite(commission) && commission > 0) approvalReasons.push("comissao_presente");
+  if (imageUrl) approvalReasons.push("imagem_presente");
+  approvalReasons.push(...nameQuality.reasons);
+  if (matchedPreferredTerms.length) approvalReasons.push(`termos_preferidos:${matchedPreferredTerms.join("|")}`);
+
+  for (const [reason, value] of Object.entries(penalties)) {
+    if (value > 0) rejectionReasons.push(reason);
+  }
+  rejectionReasons.push(...nameQuality.penalties);
+  if (matchedBlockedTerms.length) rejectionReasons.push(`termos_bloqueados:${matchedBlockedTerms.join("|")}`);
+
+  return {
+    score,
+    positive,
+    penalties,
+    approvalReasons,
+    rejectionReasons,
+    metrics: {
+      discountPercent: Math.round(discount * 100) / 100,
+      realSavings: Math.round(realSavings * 100) / 100,
+      promoPrice,
+      originalPrice,
+      sales,
+      rating,
+      commission,
+      hasImage: !!imageUrl,
+      matchedPreferredTerms,
+      matchedBlockedTerms,
+      nameQuality: nameQuality.score
+    }
   };
 }
 
@@ -245,10 +501,12 @@ function passesQualityFilters(offer) {
   const name = getOfferName(offer);
   const link = getOfferLink(offer);
   const imageUrl = String(offer.imageUrl || "").trim();
-  const price = toNumber(offer.priceMin ?? offer.priceMax);
+  const price = getPromoPrice(offer);
   const discount = normalizeDiscount(offer.priceDiscountRate);
   const rating = toNumber(offer.ratingStar);
   const sales = toNumber(offer.sales);
+  const qualityScore = scoreOfferV2(offer);
+  offer.qualityScore = qualityScore;
 
   if (!name) return { ok: false, reason: "missing_name" };
   if (!link) return { ok: false, reason: "missing_affiliate_link" };
@@ -257,8 +515,11 @@ function passesQualityFilters(offer) {
   if (discount < MIN_DISCOUNT_PERCENT) return { ok: false, reason: "low_discount" };
   if (Number.isFinite(rating) && rating > 0 && rating < MIN_RATING) return { ok: false, reason: "low_rating" };
   if (Number.isFinite(sales) && sales < MIN_SALES) return { ok: false, reason: "low_sales" };
+  if (qualityScore.metrics.matchedBlockedTerms.length) return { ok: false, reason: "blocked_terms" };
+  if (qualityScore.metrics.realSavings < MIN_REAL_SAVINGS) return { ok: false, reason: "no_real_savings" };
+  if (qualityScore.score < MIN_SCORE) return { ok: false, reason: "low_quality_score" };
 
-  return { ok: true, reason: null };
+  return { ok: true, reason: "quality_score_passed", score: qualityScore };
 }
 
 function dedupeIncomingOffers(offers) {
@@ -290,20 +551,27 @@ function dedupeIncomingOffers(offers) {
   return { unique, rejected };
 }
 
-function scoreOffer(offer) {
-  const discount = normalizeDiscount(offer.priceDiscountRate);
-  const rating = toNumber(offer.ratingStar) || 0;
-  const sales = toNumber(offer.sales) || 0;
-  const commission = toNumber(offer.commissionRate) || 0;
-  return discount * 5 + rating * 3 + Math.min(sales, 1000) / 20 + commission * 100;
+function offerLogItem(offer) {
+  const qualityScore = offer.qualityScore || scoreOfferV2(offer);
+  return {
+    nome_produto: getOfferName(offer),
+    link_produto_filiado: getOfferLink(offer),
+    keyword: offer.keyword,
+    scoreFinal: qualityScore.score,
+    motivosAprovacao: qualityScore.approvalReasons,
+    motivosRejeicao: qualityScore.rejectionReasons,
+    metricas: qualityScore.metrics
+  };
 }
 
 function filterAndRankOffers(offers) {
   const accepted = [];
   const rejected = [];
+  const candidates = [];
 
   for (const offer of offers) {
     const quality = passesQualityFilters(offer);
+    candidates.push(offerLogItem(offer));
     if (!quality.ok) {
       rejected.push(reject(quality.reason, offer));
       continue;
@@ -313,8 +581,9 @@ function filterAndRankOffers(offers) {
 
   const deduped = dedupeIncomingOffers(accepted);
   return {
-    approved: deduped.unique.sort((a, b) => scoreOffer(b) - scoreOffer(a)),
-    rejected: [...rejected, ...deduped.rejected]
+    approved: deduped.unique.sort((a, b) => b.qualityScore.score - a.qualityScore.score),
+    rejected: [...rejected, ...deduped.rejected],
+    candidates: candidates.sort((a, b) => b.scoreFinal - a.scoreFinal)
   };
 }
 
@@ -452,16 +721,20 @@ async function main() {
     totalSelecionado: selected.length,
     totalRejeitado: rejected.length,
     motivosRejeicao: countRejectionReasons(rejected),
+    top10CandidatosAntesDoCorte: qualityResult.candidates.slice(0, 10),
     linhasAdicionadasPlanilha: insertedRows,
     planilha: {
       sheetName: sheetConfig.sheetName,
       columns: SHEET_COLUMNS
     },
-    selecionados: selected.map((offer) => ({
-      nome_produto: getOfferName(offer),
-      link_produto_filiado: getOfferLink(offer),
-      desconto_percentual: formatPercent(offer.priceDiscountRate),
-      keyword: offer.keyword
+    selecionados: selected.map(offerLogItem),
+    rejeitados: rejected.map((item) => ({
+      motivo: item.reason,
+      scoreFinal: item.score,
+      nome_produto: item.name,
+      link_produto_filiado: item.link,
+      keyword: item.keyword,
+      detalhes: item.details
     }))
   });
 }
@@ -479,5 +752,8 @@ export {
   jaccardSimilarity,
   offerToSheetRow,
   passesQualityFilters,
-  stableStringifyPayload
+  scoreOfferV2,
+  formatPrice,
+  stableStringifyPayload,
+  toNumber
 };

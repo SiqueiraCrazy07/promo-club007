@@ -68,6 +68,10 @@ npm run collect:shopee
 - `SHOPEE_MIN_RATING`: padrão `4.2`.
 - `SHOPEE_MIN_SALES`: padrão `1`.
 - `SHOPEE_RECENT_ROWS_LIMIT`: padrão `200`.
+- `SHOPEE_MIN_SCORE`: padrão `45`.
+- `SHOPEE_MIN_REAL_SAVINGS`: padrão `3`.
+- `SHOPEE_BLOCKED_TERMS`: termos bloqueados separados por vírgula.
+- `SHOPEE_PREFERRED_TERMS`: termos preferidos separados por vírgula.
 
 ## Logs
 
@@ -79,5 +83,14 @@ O job imprime:
 - total selecionado;
 - total rejeitado;
 - motivos de rejeição;
+- score final por candidato;
+- motivos de aprovação e rejeição;
+- top 10 candidatos antes do corte;
 - linhas adicionadas na planilha;
 - resumo das ofertas selecionadas.
+
+## Score de qualidade
+
+O ranking usa score v2, documentado em `docs/shopee-offer-quality-scoring.md`.
+
+Ele considera desconto, economia real em reais, preço promocional, vendas, avaliação, comissão, imagem, qualidade do nome e afinidade com termos preferidos. Também penaliza desconto artificial, termos sensíveis, reputação baixa, ausência de economia real e nomes genéricos.
