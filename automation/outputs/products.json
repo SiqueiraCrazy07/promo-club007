@@ -4609,12 +4609,52 @@
       "link": "https://s.shopee.com.br/7fWZ4DOhTI",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mh9pgceolcsl77",
       "store": "Shopee"
+    },
+    {
+      "name": "[Frete Grátis]2026 A11 MINI Smartwatch Feminino, Coloca Foto na Tela, NFC, Monitor Cardíaco, à",
+      "desc": "Shopee",
+      "oldPrice": "R$ 472,70",
+      "newPrice": "R$ 174,90",
+      "discount": "63% OFF",
+      "link": "https://s.shopee.com.br/8V5gbyTrGz",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
+      "store": "Shopee"
+    },
+    {
+      "name": "Secador Profissional Iconic (2150W / 2400W) - Lizz Pro",
+      "desc": "Shopee",
+      "oldPrice": "R$ 449,88",
+      "newPrice": "R$ 323,91",
+      "discount": "28% OFF",
+      "link": "https://s.shopee.com.br/3Vgw5LL9lK",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-ma1i1ng5med5a8",
+      "store": "Shopee"
+    },
+    {
+      "name": "Oferta especial 100 ml - Produto Natural - Prepare - se para o verão",
+      "desc": "Shopee",
+      "oldPrice": "R$ 44,00",
+      "newPrice": "R$ 19,00",
+      "discount": "57% OFF",
+      "link": "https://s.shopee.com.br/7ppzGWipK4",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820m3-mn6029z3q6tc63",
+      "store": "Shopee"
+    },
+    {
+      "name": "40 Apliques para Tubete Doces Bolo - Tema CEBOLINHA - Lembrancinhas Divertidas para Sua Festas",
+      "desc": "Shopee",
+      "oldPrice": "R$ 22,79",
+      "newPrice": "R$ 13,99",
+      "discount": "39% OFF",
+      "link": "https://s.shopee.com.br/9zuUaZanco",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mj3lg7faf01y81",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 461,
-    "acceptedCount": 461,
+    "totalRows": 465,
+    "acceptedCount": 465,
     "rejectedCount": 0
   },
   "rejected": []
