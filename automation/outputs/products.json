@@ -4559,12 +4559,62 @@
       "link": "https://s.shopee.com.br/7ppwd13uLO",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mgo0xoz2vq4kbc",
       "store": "Shopee"
+    },
+    {
+      "name": "RWX VEST Conjunto de Praia Infantil Masculino de Dinossauro Skatista Estilo Radical para o Verão! 2024 - i3066",
+      "desc": "Shopee",
+      "oldPrice": "R$ 89,98",
+      "newPrice": "R$ 54,98",
+      "discount": "39% OFF",
+      "link": "https://s.shopee.com.br/9UyDFaZJuj",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m0br7ndajyqoa4",
+      "store": "Shopee"
+    },
+    {
+      "name": "Mangueira De Silicone Para Bomba Eletrônica Galão",
+      "desc": "Shopee",
+      "oldPrice": "R$ 38,88",
+      "newPrice": "R$ 12,38",
+      "discount": "68% OFF",
+      "link": "https://s.shopee.com.br/8V5g3kLWmH",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-82618-mj8r82z1f8xve0",
+      "store": "Shopee"
+    },
+    {
+      "name": "Balde multifuncional e para organização de brinquedos com estampa de universo divertido",
+      "desc": "Shopee",
+      "oldPrice": "R$ 43,90",
+      "newPrice": "R$ 33,99",
+      "discount": "23% OFF",
+      "link": "https://s.shopee.com.br/7ppzGWO48L",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-824ia-mfliw6amu1an0a",
+      "store": "Shopee"
+    },
+    {
+      "name": "quadro decorativo infantil safari personalizado bichinhos 3 peças, safari, leão, leaozinho, lilás",
+      "desc": "Shopee",
+      "oldPrice": "R$ 20,61",
+      "newPrice": "R$ 11,34",
+      "discount": "45% OFF",
+      "link": "https://s.shopee.com.br/8fP6G3KtRO",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7rffo-m40nqc26qblt26",
+      "store": "Shopee"
+    },
+    {
+      "name": "Porta Chave de Parede sem Furo Decorativo Moderno Mdf preto Inspirador",
+      "desc": "Shopee",
+      "oldPrice": "R$ 24,69",
+      "newPrice": "R$ 17,95",
+      "discount": "27% OFF",
+      "link": "https://s.shopee.com.br/7fWZ4DOhTI",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mh9pgceolcsl77",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 456,
-    "acceptedCount": 456,
+    "totalRows": 461,
+    "acceptedCount": 461,
     "rejectedCount": 0
   },
   "rejected": []
