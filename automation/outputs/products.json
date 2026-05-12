@@ -4679,12 +4679,32 @@
       "link": "https://s.shopee.com.br/8KmGoRhaYW",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "Caixinha De Som Caixa Grande Potencia Led Bluetooth 2 Alto Falantes Heruz MP3",
+      "desc": "Shopee",
+      "oldPrice": "R$ 230,42",
+      "newPrice": "R$ 158,99",
+      "discount": "31% OFF",
+      "link": "https://s.shopee.com.br/7AaIE5gLkJ",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mjcuy8ifz6rqe0",
+      "store": "Shopee"
+    },
+    {
+      "name": "Jogo PREMIUM com 22 potes herméticos ACRÍLICOS qualyplas organizadores",
+      "desc": "Shopee",
+      "oldPrice": "R$ 431,40",
+      "newPrice": "R$ 336,49",
+      "discount": "22% OFF",
+      "link": "https://s.shopee.com.br/5L8fdcaAI0",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-majwvtvscmihc4",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 468,
-    "acceptedCount": 468,
+    "totalRows": 470,
+    "acceptedCount": 470,
     "rejectedCount": 0
   },
   "rejected": []
