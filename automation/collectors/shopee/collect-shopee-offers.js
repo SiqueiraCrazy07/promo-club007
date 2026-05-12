@@ -4,6 +4,14 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 import dotenv from "dotenv";
 import { google } from "googleapis";
+import {
+  balanceCategories as curatorBalanceCategories,
+  curateOffers,
+  dedupeIncomingOffers as curatorDedupeIncomingOffers,
+  offerLogItem as curatorOfferLogItem,
+  passesQualityFilters as curatorPassesQualityFilters,
+  scoreOfferV2 as curatorScoreOfferV2
+} from "./offer-curator.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -402,13 +410,25 @@ function getOfferName(offer) {
 }
 
 function reject(reason, offer) {
+  const quality = offer?.qualityScore || null;
+  const metrics = quality?.metrics || {};
+
   return {
     reason,
-    score: offer?.qualityScore?.score ?? null,
+    score: quality?.qualityScore ?? quality?.score ?? null,
     name: getOfferName(offer),
     link: getOfferLink(offer),
     keyword: offer.keyword,
-    details: offer?.qualityScore || null
+    category: quality?.category || "outros",
+    priceMin: offer.priceMin ?? offer.preco_promocional ?? null,
+    priceMax: offer.priceMax ?? offer.preco ?? null,
+    priceDiscountRate: offer.priceDiscountRate ?? offer.desconto_percentual ?? null,
+    realSavings: metrics.realSavings ?? getRealSavings(offer),
+    qualityScore: quality?.qualityScore ?? quality?.score ?? null,
+    conversionScore: metrics.conversionScore ?? null,
+    reputationScore: metrics.reputationScore ?? null,
+    spamScore: metrics.spamScore ?? null,
+    details: quality
   };
 }
 
@@ -498,93 +518,34 @@ function scoreOfferV2(offer, options = {}) {
 }
 
 function passesQualityFilters(offer) {
-  const name = getOfferName(offer);
-  const link = getOfferLink(offer);
-  const imageUrl = String(offer.imageUrl || "").trim();
-  const price = getPromoPrice(offer);
-  const discount = normalizeDiscount(offer.priceDiscountRate);
-  const rating = toNumber(offer.ratingStar);
-  const sales = toNumber(offer.sales);
-  const qualityScore = scoreOfferV2(offer);
-  offer.qualityScore = qualityScore;
-
-  if (!name) return { ok: false, reason: "missing_name" };
-  if (!link) return { ok: false, reason: "missing_affiliate_link" };
-  if (!imageUrl) return { ok: false, reason: "missing_image" };
-  if (!Number.isFinite(price) || price <= 0) return { ok: false, reason: "invalid_price" };
-  if (discount < MIN_DISCOUNT_PERCENT) return { ok: false, reason: "low_discount" };
-  if (Number.isFinite(rating) && rating > 0 && rating < MIN_RATING) return { ok: false, reason: "low_rating" };
-  if (Number.isFinite(sales) && sales < MIN_SALES) return { ok: false, reason: "low_sales" };
-  if (qualityScore.metrics.matchedBlockedTerms.length) return { ok: false, reason: "blocked_terms" };
-  if (qualityScore.metrics.realSavings < MIN_REAL_SAVINGS) return { ok: false, reason: "no_real_savings" };
-  if (qualityScore.score < MIN_SCORE) return { ok: false, reason: "low_quality_score" };
-
-  return { ok: true, reason: "quality_score_passed", score: qualityScore };
+  return curatorPassesQualityFilters(offer, {}, {
+    minDiscountPercent: MIN_DISCOUNT_PERCENT,
+    minRating: MIN_RATING,
+    minSales: MIN_SALES,
+    minScore: MIN_SCORE,
+    minRealSavings: MIN_REAL_SAVINGS,
+    similarityThreshold: SIMILARITY_THRESHOLD
+  });
 }
 
 function dedupeIncomingOffers(offers) {
-  const seenLinks = new Set();
-  const seenNames = [];
-  const unique = [];
-  const rejected = [];
-
-  for (const offer of offers) {
-    const link = getOfferLink(offer);
-    const name = getOfferName(offer);
-
-    if (seenLinks.has(link)) {
-      rejected.push(reject("duplicate_in_api_link", offer));
-      continue;
-    }
-
-    const similarName = seenNames.find((existingName) => jaccardSimilarity(existingName, name) >= SIMILARITY_THRESHOLD);
-    if (similarName) {
-      rejected.push(reject("duplicate_in_api_similar_name", offer));
-      continue;
-    }
-
-    seenLinks.add(link);
-    seenNames.push(name);
-    unique.push(offer);
-  }
-
-  return { unique, rejected };
+  return curatorDedupeIncomingOffers(offers, { similarityThreshold: SIMILARITY_THRESHOLD });
 }
 
 function offerLogItem(offer) {
-  const qualityScore = offer.qualityScore || scoreOfferV2(offer);
-  return {
-    nome_produto: getOfferName(offer),
-    link_produto_filiado: getOfferLink(offer),
-    keyword: offer.keyword,
-    scoreFinal: qualityScore.score,
-    motivosAprovacao: qualityScore.approvalReasons,
-    motivosRejeicao: qualityScore.rejectionReasons,
-    metricas: qualityScore.metrics
-  };
+  return curatorOfferLogItem(offer);
 }
 
 function filterAndRankOffers(offers) {
-  const accepted = [];
-  const rejected = [];
-  const candidates = [];
-
-  for (const offer of offers) {
-    const quality = passesQualityFilters(offer);
-    candidates.push(offerLogItem(offer));
-    if (!quality.ok) {
-      rejected.push(reject(quality.reason, offer));
-      continue;
-    }
-    accepted.push(offer);
-  }
-
-  const deduped = dedupeIncomingOffers(accepted);
-  return {
-    approved: deduped.unique.sort((a, b) => b.qualityScore.score - a.qualityScore.score),
-    rejected: [...rejected, ...deduped.rejected],
-    candidates: candidates.sort((a, b) => b.scoreFinal - a.scoreFinal)
-  };
+  return curateOffers(offers, {
+    maxOffers: Math.max(MAX_OFFERS_PER_RUN, offers.length),
+    minDiscountPercent: MIN_DISCOUNT_PERCENT,
+    minRating: MIN_RATING,
+    minSales: MIN_SALES,
+    minScore: MIN_SCORE,
+    minRealSavings: MIN_REAL_SAVINGS,
+    similarityThreshold: SIMILARITY_THRESHOLD
+  });
 }
 
 function getGoogleCredentials() {
@@ -710,7 +671,8 @@ async function main() {
   const existingRows = await readExistingRows(sheets, sheetConfig);
   const existing = readExistingOffers(existingRows);
   const duplicateResult = rejectExistingDuplicates(qualityResult.approved, existing);
-  const selected = duplicateResult.approved.slice(0, MAX_OFFERS_PER_RUN);
+  const balancedResult = curatorBalanceCategories(duplicateResult.approved, MAX_OFFERS_PER_RUN);
+  const selected = balancedResult.selected;
   const insertedRows = await appendOffers(sheets, sheetConfig, selected);
   const rejected = [...qualityResult.rejected, ...duplicateResult.rejected];
 
@@ -721,19 +683,28 @@ async function main() {
     totalSelecionado: selected.length,
     totalRejeitado: rejected.length,
     motivosRejeicao: countRejectionReasons(rejected),
-    top10CandidatosAntesDoCorte: qualityResult.candidates.slice(0, 10),
+    top20CandidatosAntesDoCorte: (qualityResult.top20Candidates || qualityResult.candidates || []).slice(0, 20),
     linhasAdicionadasPlanilha: insertedRows,
+    balanceamentoCategorias: balancedResult.categoryCounts,
     planilha: {
       sheetName: sheetConfig.sheetName,
       columns: SHEET_COLUMNS
     },
-    selecionados: selected.map(offerLogItem),
+    selecionados: selected.map(curatorOfferLogItem),
     rejeitados: rejected.map((item) => ({
       motivo: item.reason,
       scoreFinal: item.score,
       nome_produto: item.name,
       link_produto_filiado: item.link,
       keyword: item.keyword,
+      priceMin: item.priceMin,
+      priceMax: item.priceMax,
+      priceDiscountRate: item.priceDiscountRate,
+      realSavings: item.realSavings,
+      qualityScore: item.qualityScore,
+      conversionScore: item.conversionScore,
+      reputationScore: item.reputationScore,
+      spamScore: item.spamScore,
       detalhes: item.details
     }))
   });
@@ -751,8 +722,8 @@ export {
   filterAndRankOffers,
   jaccardSimilarity,
   offerToSheetRow,
-  passesQualityFilters,
-  scoreOfferV2,
+  curatorPassesQualityFilters as passesQualityFilters,
+  curatorScoreOfferV2 as scoreOfferV2,
   formatPrice,
   stableStringifyPayload,
   toNumber

@@ -8,7 +8,7 @@
     "collect:shopee": "node collectors/shopee/collect-shopee-offers.js",
     "ingest": "node ingest/google-sheets-ingest.js",
     "ingest:sheets": "node ingest/google-sheets-ingest.js",
-    "test:shopee": "node collectors/shopee/price-parser.test.mjs",
+    "test:shopee": "node collectors/shopee/price-parser.test.mjs && node collectors/shopee/offer-curator.test.mjs",
     "validate": "node validators/offer-validator.js",
     "normalize": "node normalizers/offer-normalizer.js"
   },
