@@ -4541,26 +4541,6 @@
       "store": "Shopee"
     },
     {
-      "name": "Monitor Gamer LED IPS 27\" Full HD 75Hz 5ms HDMI Design Slim Borda Infinita",
-      "desc": "Shopee",
-      "oldPrice": "R$ 1.205,16",
-      "newPrice": "R$ 698,99",
-      "discount": "42% OFF",
-      "link": "https://s.shopee.com.br/8fP41KoGaS",
-      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mf024282pzwm91",
-      "store": "Shopee"
-    },
-    {
-      "name": "Tela de Projeção 72\" (1,40x1,00m) Fosca 260g – Datashow com Cordão para Pendurar PREMIUM",
-      "desc": "Shopee",
-      "oldPrice": "R$ 259,57",
-      "newPrice": "R$ 122,00",
-      "discount": "53% OFF",
-      "link": "https://s.shopee.com.br/7ppwd13uLO",
-      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mgo0xoz2vq4kbc",
-      "store": "Shopee"
-    },
-    {
       "name": "RWX VEST Conjunto de Praia Infantil Masculino de Dinossauro Skatista Estilo Radical para o Verão! 2024 - i3066",
       "desc": "Shopee",
       "oldPrice": "R$ 89,98",
@@ -4713,8 +4693,8 @@
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 471,
-    "acceptedCount": 471,
+    "totalRows": 469,
+    "acceptedCount": 469,
     "rejectedCount": 0
   },
   "rejected": []
