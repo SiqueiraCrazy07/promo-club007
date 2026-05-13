@@ -4779,12 +4779,62 @@
       "link": "https://s.shopee.com.br/809PSpQar1",
       "image": "https://cf.shopee.com.br/file/sg-11134201-8261p-mj8qrefi0o3lbd",
       "store": "Shopee"
+    },
+    {
+      "name": "Cadeira De Escritorio Presidente Ergonomica Apoio Para Pés preto",
+      "desc": "Shopee",
+      "oldPrice": "R$ 2.036,00",
+      "newPrice": "R$ 509,00",
+      "discount": "75% OFF",
+      "link": "https://s.shopee.com.br/7fWdD03lxY",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820le-mmb91abbh3pg20",
+      "store": "Shopee"
+    },
+    {
+      "name": "Cadeira De Escritorio Ergonomica Cadeira Giratoria Secretaria Com Braço Regulavel Poltrona Exec",
+      "desc": "Shopee",
+      "oldPrice": "R$ 489,49",
+      "newPrice": "R$ 190,90",
+      "discount": "61% OFF",
+      "link": "https://s.shopee.com.br/8V5kCX0bGf",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mi3e1voktblt8a",
+      "store": "Shopee"
+    },
+    {
+      "name": "[Frete Grátis]2026 A11 MINI Smartwatch Feminino, Coloca Foto na Tela, NFC, Monitor Cardíaco, à",
+      "desc": "Shopee",
+      "oldPrice": "R$ 472,70",
+      "newPrice": "R$ 174,90",
+      "discount": "63% OFF",
+      "link": "https://s.shopee.com.br/4Awl2X8YU0",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
+      "store": "Shopee"
+    },
+    {
+      "name": "Cadeira Escritorio Giratoria Ergonomica Branca Preta Cinza Confortável Ajustável Lombar Profiss",
+      "desc": "Shopee",
+      "oldPrice": "R$ 598,17",
+      "newPrice": "R$ 358,90",
+      "discount": "40% OFF",
+      "link": "https://s.shopee.com.br/8AStnv1rwd",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lv-mlhx13u80glif5",
+      "store": "Shopee"
+    },
+    {
+      "name": "Kit 52 Placas 3D Autoadesivo Brick Pedra Flexível Autocolante 28cm x 7cm- 1M2",
+      "desc": "Shopee",
+      "oldPrice": "R$ 278,89",
+      "newPrice": "R$ 158,97",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/9zuXzLaVT9",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mksi1gzyp88yef",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 478,
-    "acceptedCount": 478,
+    "totalRows": 483,
+    "acceptedCount": 483,
     "rejectedCount": 0
   },
   "rejected": []
