@@ -190,6 +190,15 @@ function getOfferLink(offer) {
   return String(offer.offerLink || offer.productLink || offer.link_produto_filiado || "").trim();
 }
 
+function isValidHttpUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" || url.protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
 function getPromoPrice(offer) {
   return toNumber(offer.priceMin ?? offer.preco_promocional ?? offer.priceMax ?? offer.preco);
 }
@@ -334,6 +343,54 @@ function getConversionScore(offer, details) {
   return clamp(ticketScore + savingsScore + discountScore + commissionScore, 0, 100);
 }
 
+function getDynamicDiscountThreshold(details, options) {
+  const promoPrice = details.promoPrice;
+  const sales = details.sales;
+  const preferredMatches = details.preferredMatches || [];
+  const category = details.category || "outros";
+  let threshold = options.minDiscountPercent;
+
+  if (Number.isFinite(promoPrice)) {
+    if (promoPrice < 25) threshold += 7;
+    else if (promoPrice < 60) threshold += 3;
+    else if (promoPrice >= 350) threshold -= 3;
+    else if (promoPrice >= 180) threshold -= 2;
+  }
+
+  if (Number.isFinite(sales) && sales >= 250 && preferredMatches.length) threshold -= 2;
+  if (Number.isFinite(sales) && sales >= 800) threshold -= 1;
+  if (category !== "outros" && preferredMatches.length) threshold -= 1;
+
+  return clamp(Math.round(threshold * 100) / 100, 2, 18);
+}
+
+function getLowDiscountPenalty(discountPercent, dynamicDiscountThreshold, promoPrice) {
+  if (discountPercent >= dynamicDiscountThreshold) return 0;
+
+  const gap = dynamicDiscountThreshold - discountPercent;
+  const priceWeight = Number.isFinite(promoPrice) && promoPrice < 30 ? 2.2 : 1.35;
+  return clamp(Math.round(gap * priceWeight * 100) / 100, 0, 28);
+}
+
+function isLowDiscountException(quality, options) {
+  const metrics = quality.metrics;
+  const goodCommission = Number.isFinite(metrics.commission) && metrics.commission >= 0.035;
+  const relevantCategory = quality.category !== "outros" && metrics.preferredMatches.length > 0;
+  const strongPresentation = metrics.nameQuality >= 8 && metrics.imageQuality >= 8;
+  const premiumProduct = Number.isFinite(metrics.promoPrice) && metrics.promoPrice >= 180;
+  const viralProduct = Number.isFinite(metrics.sales) && metrics.sales >= 250 && relevantCategory;
+
+  return (
+    metrics.discountPercent < metrics.dynamicDiscountThreshold &&
+    quality.qualityScore >= options.minScore &&
+    metrics.reputationScore >= 65 &&
+    metrics.conversionScore >= 28 &&
+    strongPresentation &&
+    relevantCategory &&
+    (goodCommission || premiumProduct || viralProduct)
+  );
+}
+
 function getRepeatPenalty(offer, context = {}) {
   const name = getOfferName(offer);
   const historicalNames = context.historicalNames || [];
@@ -369,6 +426,14 @@ function scoreOfferV2(offer, context = {}, inputOptions = {}) {
   const reputationScore = getReputationScore(offer, categoryInfo);
   const conversionScore = getConversionScore(offer, { promoPrice, realSavings, discountPercent, commission });
   const repeatPenalty = getRepeatPenalty(offer, { ...context, category: categoryInfo.category });
+  const dynamicDiscountThreshold = getDynamicDiscountThreshold({
+    promoPrice,
+    sales,
+    preferredMatches,
+    category: categoryInfo.category
+  }, options);
+  const lowDiscountPenalty = getLowDiscountPenalty(discountPercent, dynamicDiscountThreshold, promoPrice);
+  const isBelowDynamicDiscount = discountPercent < dynamicDiscountThreshold;
 
   const positives = {
     discountPercent: clamp(discountPercent, 0, 60) * 0.3,
@@ -392,6 +457,7 @@ function scoreOfferV2(offer, context = {}, inputOptions = {}) {
     nomeRuim: nameQuality.score < 3 ? 12 : 0,
     excessoPromocional: nameQuality.penalties.includes("excesso_palavras_promocionais") ? 16 : 0,
     produtoSensivel: spam.blockedKeywordMatches.length || spam.blockedPatternMatches.length ? 100 : 0,
+    descontoBaixoDinamico: lowDiscountPenalty,
     repetitivo: repeatPenalty.score,
     spamCategoria: spam.score * 0.35,
     baixaPercepcaoValor: Number.isFinite(promoPrice) && promoPrice < 20 && realSavings < 8 ? 14 : 0,
@@ -404,6 +470,7 @@ function scoreOfferV2(offer, context = {}, inputOptions = {}) {
   const rejectionReasons = [];
 
   if (discountPercent >= options.minDiscountPercent) approvalReasons.push("desconto_relevante");
+  if (isBelowDynamicDiscount) approvalReasons.push("avaliado_com_desconto_baixo");
   if (hasShopeeDiscountRate && realSavings < options.minRealSavings) approvalReasons.push("desconto_shopee_valido");
   if (realSavings >= options.minRealSavings) approvalReasons.push("economia_real");
   if (conversionScore >= 45) approvalReasons.push("conversao_promissora");
@@ -417,7 +484,7 @@ function scoreOfferV2(offer, context = {}, inputOptions = {}) {
   }
   rejectionReasons.push(...nameQuality.penalties);
 
-  return {
+  const result = {
     qualityScore: score,
     score,
     category: categoryInfo.category,
@@ -434,6 +501,9 @@ function scoreOfferV2(offer, context = {}, inputOptions = {}) {
       rating,
       sales,
       commission,
+      dynamicDiscountThreshold,
+      passedDespiteLowDiscount: false,
+      approvedByException: false,
       hasImage: imageQuality.score > 0,
       nameQuality: nameQuality.score,
       imageQuality: imageQuality.score,
@@ -448,10 +518,22 @@ function scoreOfferV2(offer, context = {}, inputOptions = {}) {
     validBasics: {
       hasName: !!name,
       hasLink: !!link,
+      hasValidLink: isValidHttpUrl(link),
       hasPrice: Number.isFinite(promoPrice) && promoPrice > 0,
       hasImage: imageQuality.score > 0
     }
   };
+
+  result.metrics.approvedByException = isLowDiscountException(result, options);
+  result.metrics.passedDespiteLowDiscount =
+    result.metrics.discountPercent < result.metrics.dynamicDiscountThreshold &&
+    result.qualityScore >= options.minScore;
+
+  if (result.metrics.approvedByException) {
+    result.approvalReasons.push("excecao_desconto_baixo");
+  }
+
+  return result;
 }
 
 function reject(reason, offer, qualityDetails) {
@@ -484,18 +566,13 @@ function passesQualityFilters(offer, context = {}, inputOptions = {}) {
 
   if (!quality.validBasics.hasName) return { ok: false, reason: "missing_name", score: quality };
   if (!quality.validBasics.hasLink) return { ok: false, reason: "missing_affiliate_link", score: quality };
+  if (!quality.validBasics.hasValidLink) return { ok: false, reason: "invalid_affiliate_link", score: quality };
   if (!quality.validBasics.hasImage) return { ok: false, reason: "missing_image", score: quality };
   if (!quality.validBasics.hasPrice) return { ok: false, reason: "invalid_price", score: quality };
-  if (quality.metrics.discountPercent < options.minDiscountPercent) return { ok: false, reason: "low_discount", score: quality };
-  if (Number.isFinite(quality.metrics.rating) && quality.metrics.rating > 0 && quality.metrics.rating < options.minRating) {
-    return { ok: false, reason: "low_rating", score: quality };
-  }
-  if (Number.isFinite(quality.metrics.sales) && quality.metrics.sales < options.minSales) {
-    return { ok: false, reason: "low_sales", score: quality };
-  }
   if (quality.metrics.blockedKeywordMatches.length || quality.metrics.blockedPatternMatches.length) {
     return { ok: false, reason: "blocked_terms", score: quality };
   }
+  if (quality.metrics.spamScore >= 70) return { ok: false, reason: "spam", score: quality };
   if (quality.qualityScore < options.minScore) return { ok: false, reason: "low_quality_score", score: quality };
 
   return { ok: true, reason: "curator_v2_passed", score: quality };
@@ -514,6 +591,9 @@ function offerLogItem(offer) {
     scoreConversao: quality.metrics.conversionScore,
     scoreReputacao: quality.metrics.reputationScore,
     scoreSpam: quality.metrics.spamScore,
+    approvedByException: quality.metrics.approvedByException,
+    passedDespiteLowDiscount: quality.metrics.passedDespiteLowDiscount,
+    dynamicDiscountThreshold: quality.metrics.dynamicDiscountThreshold,
     motivosAprovacao: quality.approvalReasons,
     motivosRejeicao: quality.rejectionReasons,
     scoreDetalhado: {

@@ -56,6 +56,28 @@ const smallSavingsHighDiscount = offer({
   priceDiscountRate: "0.50",
   sales: "420"
 });
+const viralLowDiscount = offer({
+  productName: "Organizador Cozinha Premium Multiuso Resistente",
+  offerLink: "https://s.shopee.com.br/viral-low-discount",
+  priceMin: "89.00",
+  priceMax: "89.90",
+  priceDiscountRate: "0.01",
+  ratingStar: "4.9",
+  sales: "900",
+  commissionRate: "0.05",
+  keyword: "cozinha organizador"
+});
+const cheapLowDiscount = offer({
+  productName: "Organizador Cozinha Compacto Multiuso",
+  offerLink: "https://s.shopee.com.br/cheap-low-discount",
+  priceMin: "19.90",
+  priceMax: "20.50",
+  priceDiscountRate: "0.03",
+  ratingStar: "4.9",
+  sales: "900",
+  commissionRate: "0.05",
+  keyword: "cozinha organizador"
+});
 const electronicA = offer({
   productName: "Fone Bluetooth Smart Promo",
   offerLink: "https://s.shopee.com.br/fone-a",
@@ -96,6 +118,17 @@ const smallSavingsScore = scoreOfferV2(smallSavingsHighDiscount);
 assert("economia pequena com desconto alto nao rejeita por no_real_savings", smallSavingsResult.reason !== "no_real_savings");
 assert("economia pequena com desconto alto passa", smallSavingsResult.ok);
 assert("economia pequena mantem score positivo", smallSavingsScore.qualityScore >= 45);
+
+const viralLowDiscountResult = passesQualityFilters(viralLowDiscount);
+const viralLowDiscountScore = scoreOfferV2(viralLowDiscount);
+const cheapLowDiscountScore = scoreOfferV2(cheapLowDiscount);
+assert("desconto baixo nao gera hard reject", viralLowDiscountResult.reason !== "low_discount");
+assert("produto viral passa apesar de desconto baixo", viralLowDiscountResult.ok);
+assert("produto viral registra excecao por desconto baixo", viralLowDiscountScore.metrics.approvedByException);
+assert("produto viral registra passedDespiteLowDiscount", viralLowDiscountScore.metrics.passedDespiteLowDiscount);
+assert("threshold dinamico existe", typeof viralLowDiscountScore.metrics.dynamicDiscountThreshold === "number");
+assert("produto barato exige desconto dinamico maior", cheapLowDiscountScore.metrics.dynamicDiscountThreshold > viralLowDiscountScore.metrics.dynamicDiscountThreshold);
+assert("desconto baixo vira penalidade de score", viralLowDiscountScore.penalties.descontoBaixoDinamico > 0);
 
 const curated = curateOffers([
   strong,
