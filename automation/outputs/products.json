@@ -4829,12 +4829,72 @@
       "link": "https://s.shopee.com.br/9zuXzLaVT9",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mksi1gzyp88yef",
       "store": "Shopee"
+    },
+    {
+      "name": "Bottox Agle Argan Restore 1kg",
+      "desc": "Shopee",
+      "oldPrice": "R$ 98,99",
+      "newPrice": "R$ 98,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/60ONkmMySl",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lwfn7pmhxlrq48",
+      "store": "Shopee"
+    },
+    {
+      "name": "Brinquedo Pop It Eletrônico Mini Game Jogo Quick Fast Push Fidget Toy Anti-Stress",
+      "desc": "Shopee",
+      "oldPrice": "R$ 41,90",
+      "newPrice": "R$ 38,90",
+      "discount": "7% OFF",
+      "link": "https://s.shopee.com.br/70Guyc36fx",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lnsn8wzpmb7rcc",
+      "store": "Shopee"
+    },
+    {
+      "name": "KIT VARINHA + ÓCULOS | HP | FANTASIA | COSPLAY + KIT VARINHA E ÓCULOS REDONDO",
+      "desc": "Shopee",
+      "oldPrice": "R$ 26,47",
+      "newPrice": "R$ 26,47",
+      "discount": "",
+      "link": "https://s.shopee.com.br/1BJ7bDUFoy",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mg11iej7nz0k3d",
+      "store": "Shopee"
+    },
+    {
+      "name": "Porta Aliança Personalizado para Casamento Sagrada Familia",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,99",
+      "newPrice": "R$ 29,95",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2BBen38IYu",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-meyok6ivc3k6b0",
+      "store": "Shopee"
+    },
+    {
+      "name": "KIT 3 VIOLETA GENCIANA 30ML UNIPHAR",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,90",
+      "newPrice": "R$ 29,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/3B4CNZXlDN",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81zty-ml5au0dqdtdw01",
+      "store": "Shopee"
+    },
+    {
+      "name": "Ponteira Escapamento Aço Inox Saída 3 Polegadas Universal",
+      "desc": "Shopee",
+      "oldPrice": "R$ 67,48",
+      "newPrice": "R$ 67,48",
+      "discount": "",
+      "link": "https://s.shopee.com.br/1qYoORRiTA",
+      "image": "https://cf.shopee.com.br/file/sg-11134202-82602-mmi3kxhepo2079",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 483,
-    "acceptedCount": 483,
+    "totalRows": 489,
+    "acceptedCount": 489,
     "rejectedCount": 0
   },
   "rejected": []
