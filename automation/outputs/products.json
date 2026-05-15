@@ -5019,12 +5019,22 @@
       "link": "https://s.shopee.com.br/5VSBXMm1Vt",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m1k15cly7a2292",
       "store": "Shopee"
+    },
+    {
+      "name": "KIT DE OLEOS PREMIUM PARA CABELOS ORGANO ALECRIM E OJON MAIS MAMONA PURO FORTALECEDOR DOS FIOS TOPSS",
+      "desc": "Shopee",
+      "oldPrice": "R$ 399,99",
+      "newPrice": "R$ 399,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7Kto7RBize",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7rccz-m6gw95uuslui5b",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 502,
-    "acceptedCount": 502,
+    "totalRows": 503,
+    "acceptedCount": 503,
     "rejectedCount": 0
   },
   "rejected": []
