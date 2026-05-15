@@ -4741,16 +4741,6 @@
       "store": "Shopee"
     },
     {
-      "name": "Monitor Gamer LED IPS 27\" Full HD 75Hz 5ms HDMI Design Slim Borda Infinita",
-      "desc": "Shopee",
-      "oldPrice": "R$ 1.205,34",
-      "newPrice": "R$ 674,99",
-      "discount": "44% OFF",
-      "link": "https://s.shopee.com.br/9fHeOrmjsQ",
-      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mf024282pzwm91",
-      "store": "Shopee"
-    },
-    {
       "name": "Panela De Arroz Elétrica Riso PA6X Branco 127v ou 220v - Agratto",
       "desc": "Shopee",
       "oldPrice": "R$ 201,24",
@@ -4969,12 +4959,72 @@
       "link": "https://s.shopee.com.br/40dMR8aF3p",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
       "store": "Shopee"
+    },
+    {
+      "name": "Monitor Gamer LED IPS 27\" Full HD 75Hz 5ms HDMI Design Slim Borda Infinita",
+      "desc": "Shopee",
+      "oldPrice": "R$ 1.205,34",
+      "newPrice": "R$ 674,99",
+      "discount": "44% OFF",
+      "link": "https://s.shopee.com.br/8ASv04JCb2",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mf024282pzwm91",
+      "store": "Shopee"
+    },
+    {
+      "name": "Pulseira Infantil Bebê Figa Figuinha Folheada Ouro 18k + NF",
+      "desc": "Shopee",
+      "oldPrice": "R$ 39,01",
+      "newPrice": "R$ 25,49",
+      "discount": "35% OFF",
+      "link": "https://s.shopee.com.br/5flbjflOAw",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m65nb9p2ag8ied",
+      "store": "Shopee"
+    },
+    {
+      "name": "Kit de 4 pares babuche infantil menino. Escolar. Lucks calçados",
+      "desc": "Shopee",
+      "oldPrice": "R$ 76,46",
+      "newPrice": "R$ 76,46",
+      "discount": "",
+      "link": "https://s.shopee.com.br/60OS8Hk7Uu",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-majrwjclp7dbe9",
+      "store": "Shopee"
+    },
+    {
+      "name": "Pano Bate Mão em Formato de Pirulito com Alça e Alta Absorção",
+      "desc": "Shopee",
+      "oldPrice": "R$ 19,01",
+      "newPrice": "R$ 19,01",
+      "discount": "",
+      "link": "https://s.shopee.com.br/6VKijCREj8",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-824j4-mflko62zpr0r57",
+      "store": "Shopee"
+    },
+    {
+      "name": "Kit Progressiva Matizador Fioblond 2x1000ml",
+      "desc": "Shopee",
+      "oldPrice": "R$ 118,99",
+      "newPrice": "R$ 118,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/6fe8vVdBMn",
+      "image": "https://cf.shopee.com.br/file/804d247a18a9474eceb1395d8e0040cf",
+      "store": "Shopee"
+    },
+    {
+      "name": "Conjunto Infantil menino kit camiseta e bermuda 2 a 12 anos a pronta Entrega",
+      "desc": "Shopee",
+      "oldPrice": "R$ 50,00",
+      "newPrice": "R$ 42,75",
+      "discount": "14% OFF",
+      "link": "https://s.shopee.com.br/5VSBXMm1Vt",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m1k15cly7a2292",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 497,
-    "acceptedCount": 497,
+    "totalRows": 502,
+    "acceptedCount": 502,
     "rejectedCount": 0
   },
   "rejected": []
