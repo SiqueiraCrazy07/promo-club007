@@ -5029,12 +5029,22 @@
       "link": "https://s.shopee.com.br/7Kto7RBize",
       "image": "https://cf.shopee.com.br/file/sg-11134201-7rccz-m6gw95uuslui5b",
       "store": "Shopee"
+    },
+    {
+      "name": "Guia De Passeio Para Cachorro Grande Médio Porte Adestramento cães oferta",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,99",
+      "newPrice": "R$ 29,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/20sHldZoEo",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-ltzio3zc9n514e",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 503,
-    "acceptedCount": 503,
+    "totalRows": 504,
+    "acceptedCount": 504,
     "rejectedCount": 0
   },
   "rejected": []
