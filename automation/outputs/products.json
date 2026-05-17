@@ -5039,12 +5039,22 @@
       "link": "https://s.shopee.com.br/20sHldaQcd",
       "image": "https://cf.shopee.com.br/file/sg-11134201-7rd5y-m7zg2sk3mlrdc0",
       "store": "Shopee"
+    },
+    {
+      "name": "Saia Jeans Evangélicas Feminina Midi Moda Lycra",
+      "desc": "Shopee",
+      "oldPrice": "R$ 59,34",
+      "newPrice": "R$ 59,34",
+      "discount": "",
+      "link": "https://s.shopee.com.br/50Vy5TfRxN",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820m6-mnbmbqqofapu43",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 504,
-    "acceptedCount": 504,
+    "totalRows": 505,
+    "acceptedCount": 505,
     "rejectedCount": 0
   },
   "rejected": []
