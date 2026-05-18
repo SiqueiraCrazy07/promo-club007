@@ -5069,12 +5069,22 @@
       "link": "https://s.shopee.com.br/5q55PEFhFB",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "Organizador de Cabos com Fixação Extra Forte – Preto ou Branco",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,90",
+      "newPrice": "R$ 14,90",
+      "discount": "50% OFF",
+      "link": "https://s.shopee.com.br/W3Z7gYOvc",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820ld-mo25ohfp6hoic5",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 507,
-    "acceptedCount": 507,
+    "totalRows": 508,
+    "acceptedCount": 508,
     "rejectedCount": 0
   },
   "rejected": []
