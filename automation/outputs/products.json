@@ -5139,12 +5139,32 @@
       "link": "https://s.shopee.com.br/8AT3qpt3zf",
       "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-lgiugq9ir3lqe2",
       "store": "Shopee"
+    },
+    {
+      "name": "Brinco Infantil Argola Click Argolinha Criança Antialérgico Abelha Abelhinha Banhado Ouro 18k Top",
+      "desc": "Shopee",
+      "oldPrice": "R$ 24,89",
+      "newPrice": "R$ 24,89",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2BBrZPfHTe",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mac23n9fgcc96e",
+      "store": "Shopee"
+    },
+    {
+      "name": "Bule de Vidro que Vai ao Fogo com alta resistência a calor e super elegante",
+      "desc": "Shopee",
+      "oldPrice": "R$ 39,90",
+      "newPrice": "R$ 39,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/3B4NtdzW9A",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mdyoc8idnlz543",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 514,
-    "acceptedCount": 514,
+    "totalRows": 516,
+    "acceptedCount": 516,
     "rejectedCount": 0
   },
   "rejected": []
