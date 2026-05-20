@@ -5109,12 +5109,42 @@
       "link": "https://s.shopee.com.br/W3cF8tt0y",
       "image": "https://cf.shopee.com.br/file/br-11134207-81zui-mkxtyvsew2rnbd",
       "store": "Shopee"
+    },
+    {
+      "name": "Kit premium com 25 Potes Herméticos Acrílicos 4 Tamanhos Organização",
+      "desc": "Shopee",
+      "oldPrice": "R$ 299,90",
+      "newPrice": "R$ 239,92",
+      "discount": "20% OFF",
+      "link": "https://s.shopee.com.br/qgT2URxgD",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mg77fykw1oude6",
+      "store": "Shopee"
+    },
+    {
+      "name": "Mochila Infantil Menino Rodinha Escolar Gamecraft Brave Yepp Blocks Reforçada Kit Com Lancheira Térmica e Estojo Duplo",
+      "desc": "Shopee",
+      "oldPrice": "R$ 99,90",
+      "newPrice": "R$ 99,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/5L8sTd8rsB",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mc5b4ag6oekl4e",
+      "store": "Shopee"
+    },
+    {
+      "name": "Shampoo Anticaspa Malbec Club 250ml",
+      "desc": "Shopee",
+      "oldPrice": "R$ 79,90",
+      "newPrice": "R$ 79,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/8AT3qpt3zf",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-lgiugq9ir3lqe2",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 511,
-    "acceptedCount": 511,
+    "totalRows": 514,
+    "acceptedCount": 514,
     "rejectedCount": 0
   },
   "rejected": []
