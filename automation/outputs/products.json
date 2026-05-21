@@ -5189,12 +5189,42 @@
       "link": "https://s.shopee.com.br/2qRYcPR4od",
       "image": "https://cf.shopee.com.br/file/br-11134207-820ls-mm67ryd9ih3b2d",
       "store": "Shopee"
+    },
+    {
+      "name": "GOKOCO Escova Secadora 5 Em 1 GD031 Conjunto De Secador De Cabelo Multifuncional De Alta Veloci",
+      "desc": "Shopee",
+      "oldPrice": "R$ 997,50",
+      "newPrice": "R$ 399,00",
+      "discount": "60% OFF",
+      "link": "https://s.shopee.com.br/AUr0wZdaNS",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mfmdne8btzi878",
+      "store": "Shopee"
+    },
+    {
+      "name": "[Frete Grátis]2026 A11 MINI Smartwatch Feminino, Coloca Foto na Tela, NFC, Monitor Cardíaco, à",
+      "desc": "Shopee",
+      "oldPrice": "R$ 472,70",
+      "newPrice": "R$ 174,90",
+      "discount": "63% OFF",
+      "link": "https://s.shopee.com.br/5fllBg0mzX",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
+      "store": "Shopee"
+    },
+    {
+      "name": "Mini Processador De Alimentos Elétrico Turbo Triturador Alho Cebola Legumes Compacto Prático -",
+      "desc": "Shopee",
+      "oldPrice": "R$ 140,16",
+      "newPrice": "R$ 79,89",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/8AT6AGMTQu",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 519,
-    "acceptedCount": 519,
+    "totalRows": 522,
+    "acceptedCount": 522,
     "rejectedCount": 0
   },
   "rejected": []
