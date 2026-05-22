@@ -5219,12 +5219,22 @@
       "link": "https://s.shopee.com.br/8AT6AGMTQu",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "[Frete Grátis]2026 A11 MINI Smartwatch Feminino, Coloca Foto na Tela, NFC, Monitor Cardíaco, à",
+      "desc": "Shopee",
+      "oldPrice": "R$ 472,70",
+      "newPrice": "R$ 174,90",
+      "discount": "63% OFF",
+      "link": "https://s.shopee.com.br/9zumLKjowA",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 522,
-    "acceptedCount": 522,
+    "totalRows": 523,
+    "acceptedCount": 523,
     "rejectedCount": 0
   },
   "rejected": []
