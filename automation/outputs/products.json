@@ -5249,12 +5249,22 @@
       "link": "https://s.shopee.com.br/1gFfcBo4an",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
       "store": "Shopee"
+    },
+    {
+      "name": "Filtro refil Original De Água Acqua Pure Purificador Electrolux Pc01b Pc01x Pe15b Pe15x Pe15p",
+      "desc": "Shopee",
+      "oldPrice": "R$ 141,63",
+      "newPrice": "R$ 92,06",
+      "discount": "35% OFF",
+      "link": "https://s.shopee.com.br/6pxmAMeYvO",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mieq2guqb5s176",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 525,
-    "acceptedCount": 525,
+    "totalRows": 526,
+    "acceptedCount": 526,
     "rejectedCount": 0
   },
   "rejected": []
