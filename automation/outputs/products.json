@@ -5229,12 +5229,22 @@
       "link": "https://s.shopee.com.br/9zumLKjowA",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
       "store": "Shopee"
+    },
+    {
+      "name": "Colcha Cobre Leito Vários Tamanhos Piquet Estampado 3 Peças",
+      "desc": "Shopee",
+      "oldPrice": "R$ 135,00",
+      "newPrice": "R$ 99,90",
+      "discount": "26% OFF",
+      "link": "https://s.shopee.com.br/LkHEK6lDb",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820ma-ml6a5w41na4kca",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 523,
-    "acceptedCount": 523,
+    "totalRows": 524,
+    "acceptedCount": 524,
     "rejectedCount": 0
   },
   "rejected": []
