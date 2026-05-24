@@ -5259,12 +5259,32 @@
       "link": "https://s.shopee.com.br/6pxmAMeYvO",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mieq2guqb5s176",
       "store": "Shopee"
+    },
+    {
+      "name": "Mini Processador De Alimentos Elétrico Turbo Triturador Alho Cebola Legumes Compacto Prático -",
+      "desc": "Shopee",
+      "oldPrice": "R$ 140,18",
+      "newPrice": "R$ 79,90",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/3VhLOO0P5c",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
+      "store": "Shopee"
+    },
+    {
+      "name": "Relógio Eletrônico Infantil Com Projetor De Imagens Para Meninas",
+      "desc": "Shopee",
+      "oldPrice": "R$ 39,90",
+      "newPrice": "R$ 29,90",
+      "discount": "25% OFF",
+      "link": "https://s.shopee.com.br/70HDYrmUEB",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lqc9m064bgh33a",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 526,
-    "acceptedCount": 526,
+    "totalRows": 528,
+    "acceptedCount": 528,
     "rejectedCount": 0
   },
   "rejected": []
