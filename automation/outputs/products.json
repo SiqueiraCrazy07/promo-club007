@@ -5309,12 +5309,22 @@
       "link": "https://s.shopee.com.br/6L1ZEk3tDg",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m7s6qq7o0g1u52",
       "store": "Shopee"
+    },
+    {
+      "name": "Mini Processador De Alimentos Elétrico Turbo Triturador Alho Cebola Legumes Compacto Prático -",
+      "desc": "Shopee",
+      "oldPrice": "R$ 140,18",
+      "newPrice": "R$ 79,90",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/gNEnrLFLp",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 531,
-    "acceptedCount": 531,
+    "totalRows": 532,
+    "acceptedCount": 532,
     "rejectedCount": 0
   },
   "rejected": []
