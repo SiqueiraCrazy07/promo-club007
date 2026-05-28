@@ -5319,12 +5319,42 @@
       "link": "https://s.shopee.com.br/gNEnrLFLp",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "Mini Processador De Alimentos Elétrico Turbo Triturador Alho Cebola Legumes Compacto Prático -",
+      "desc": "Shopee",
+      "oldPrice": "R$ 140,16",
+      "newPrice": "R$ 79,89",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/902OK671kr",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
+      "store": "Shopee"
+    },
+    {
+      "name": "KIT COMBO 2 CHINELOS OFERTA Chinelo Infantil DIVERTIDAMENTE Filme Personagens Desenho sandalia de dedo Menina Menino",
+      "desc": "Shopee",
+      "oldPrice": "R$ 44,90",
+      "newPrice": "R$ 39,70",
+      "discount": "12% OFF",
+      "link": "https://s.shopee.com.br/1qZE1vb10F",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m6h6drart2dj7a",
+      "store": "Shopee"
+    },
+    {
+      "name": "Triângulo de Emergência Automotivo Eletrônico com Iluminação e Alerta LED e Carregamento Solar",
+      "desc": "Shopee",
+      "oldPrice": "R$ 134,99",
+      "newPrice": "R$ 134,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/1LcxR0P6Kw",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-81zwb-mmvwecysr6yq9a",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 532,
-    "acceptedCount": 532,
+    "totalRows": 535,
+    "acceptedCount": 535,
     "rejectedCount": 0
   },
   "rejected": []
