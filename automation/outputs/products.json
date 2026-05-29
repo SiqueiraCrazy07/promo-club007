@@ -5359,12 +5359,22 @@
       "link": "https://s.shopee.com.br/1BJXEhdYM3",
       "image": "https://cf.shopee.com.br/file/br-11134207-81zu2-ml5csd2bb8qvc3",
       "store": "Shopee"
+    },
+    {
+      "name": "Baby Doll Feminino Renda e Microfibra Elegante Confortável Para Dormir Curtinho Linha Noite Oferta",
+      "desc": "Shopee",
+      "oldPrice": "R$ 36,90",
+      "newPrice": "R$ 36,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/3B4cGHr24h",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mg70g93tvbb886",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 536,
-    "acceptedCount": 536,
+    "totalRows": 537,
+    "acceptedCount": 537,
     "rejectedCount": 0
   },
   "rejected": []
