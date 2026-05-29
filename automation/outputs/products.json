@@ -5369,12 +5369,22 @@
       "link": "https://s.shopee.com.br/3B4cGHr24h",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mg70g93tvbb886",
       "store": "Shopee"
+    },
+    {
+      "name": "Calça Legging para Academia Feminina com Cintura Alta e Recortes Laterais Coloridos Fitness Oferta",
+      "desc": "Shopee",
+      "oldPrice": "R$ 49,90",
+      "newPrice": "R$ 49,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/5AphZ4EQSZ",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mgw85cguqjnofd",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 537,
-    "acceptedCount": 537,
+    "totalRows": 538,
+    "acceptedCount": 538,
     "rejectedCount": 0
   },
   "rejected": []
