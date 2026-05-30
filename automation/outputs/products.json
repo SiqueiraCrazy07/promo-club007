@@ -5379,12 +5379,22 @@
       "link": "https://s.shopee.com.br/5AphZ4EQSZ",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mgw85cguqjnofd",
       "store": "Shopee"
+    },
+    {
+      "name": "Tênis infantil para meninas. Confortável. Lucks calçados",
+      "desc": "Shopee",
+      "oldPrice": "R$ 33,56",
+      "newPrice": "R$ 33,56",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7AanPxjGWM",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mci2s0ux8hmad0",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 538,
-    "acceptedCount": 538,
+    "totalRows": 539,
+    "acceptedCount": 539,
     "rejectedCount": 0
   },
   "rejected": []
