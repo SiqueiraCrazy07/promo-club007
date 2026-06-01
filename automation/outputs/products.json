@@ -5439,12 +5439,22 @@
       "link": "https://s.shopee.com.br/9KfJykvncv",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lkxm0xrdkbxu53",
       "store": "Shopee"
+    },
+    {
+      "name": "Escova Secadora e Alisadora Rotativa Rotating Hyaluronic Conair Bivolt",
+      "desc": "Shopee",
+      "oldPrice": "R$ 999,87",
+      "newPrice": "R$ 799,90",
+      "discount": "20% OFF",
+      "link": "https://s.shopee.com.br/17dalZiPG",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7rffi-m3gulrau6qn4cb",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 544,
-    "acceptedCount": 544,
+    "totalRows": 545,
+    "acceptedCount": 545,
     "rejectedCount": 0
   },
   "rejected": []
