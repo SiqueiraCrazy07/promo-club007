@@ -5449,12 +5449,32 @@
       "link": "https://s.shopee.com.br/17dalZiPG",
       "image": "https://cf.shopee.com.br/file/sg-11134201-7rffi-m3gulrau6qn4cb",
       "store": "Shopee"
+    },
+    {
+      "name": "Mola de Silicone para Alicate de Cutícula Universal - Kits 10/20/30",
+      "desc": "Shopee",
+      "oldPrice": "R$ 49,00",
+      "newPrice": "R$ 19,00",
+      "discount": "61% OFF",
+      "link": "https://s.shopee.com.br/6L1kCtaKkr",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lz-mlwl5n9ash6s0c",
+      "store": "Shopee"
+    },
+    {
+      "name": "Mola de Silicone Profissional para Alicate de Cutícula Universal + Protetores de Ponta (Brinde)",
+      "desc": "Shopee",
+      "oldPrice": "R$ 35,15",
+      "newPrice": "R$ 11,01",
+      "discount": "69% OFF",
+      "link": "https://s.shopee.com.br/6VLAPCZhPs",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mj79om62al8jff",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 545,
-    "acceptedCount": 545,
+    "totalRows": 547,
+    "acceptedCount": 547,
     "rejectedCount": 0
   },
   "rejected": []
