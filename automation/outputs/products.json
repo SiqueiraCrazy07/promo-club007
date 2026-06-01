@@ -5409,12 +5409,42 @@
       "link": "https://s.shopee.com.br/809wJdZfBA",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "Aspirador de Pó Vertical 2 em 1 Mondial Turbo Cycle Vermelho e Preto 1500W AP-40-R",
+      "desc": "Shopee",
+      "oldPrice": "R$ 248,61",
+      "newPrice": "R$ 198,89",
+      "discount": "20% OFF",
+      "link": "https://s.shopee.com.br/7fX6JlflGl",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lv-mlxinte6vwg611",
+      "store": "Shopee"
+    },
+    {
+      "name": "Spray Perfumado Para Cabelos Cuide-se Bem Feira Cachos de Uva 100ml",
+      "desc": "Shopee",
+      "oldPrice": "R$ 155,00",
+      "newPrice": "R$ 155,00",
+      "discount": "",
+      "link": "https://s.shopee.com.br/9UykB3vAHw",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mbmt6cfvm0e0ab",
+      "store": "Shopee"
+    },
+    {
+      "name": "Spray Capilar Match Lab Multibenefícios 150ml",
+      "desc": "Shopee",
+      "oldPrice": "R$ 145,20",
+      "newPrice": "R$ 145,20",
+      "discount": "",
+      "link": "https://s.shopee.com.br/9KfJykvncv",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lkxm0xrdkbxu53",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 541,
-    "acceptedCount": 541,
+    "totalRows": 544,
+    "acceptedCount": 544,
     "rejectedCount": 0
   },
   "rejected": []
