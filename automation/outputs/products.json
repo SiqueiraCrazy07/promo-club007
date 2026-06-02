@@ -5469,12 +5469,22 @@
       "link": "https://s.shopee.com.br/6VLAPCZhPs",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mj79om62al8jff",
       "store": "Shopee"
+    },
+    {
+      "name": "Lavadora Alta Pressão Lav1600 Vonder",
+      "desc": "Shopee",
+      "oldPrice": "R$ 423,83",
+      "newPrice": "R$ 305,16",
+      "discount": "28% OFF",
+      "link": "https://s.shopee.com.br/4qCxKuJjxs",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mf48dkn40dfp22",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 547,
-    "acceptedCount": 547,
+    "totalRows": 548,
+    "acceptedCount": 548,
     "rejectedCount": 0
   },
   "rejected": []
