@@ -5479,12 +5479,22 @@
       "link": "https://s.shopee.com.br/4qCxKuJjxs",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mf48dkn40dfp22",
       "store": "Shopee"
+    },
+    {
+      "name": "Puxador Air Fryer Mondial NAF03 NAF05 3,2L Alça Cesto Preto + Parafusos",
+      "desc": "Shopee",
+      "oldPrice": "R$ 109,42",
+      "newPrice": "R$ 75,50",
+      "discount": "31% OFF",
+      "link": "https://s.shopee.com.br/gNNB2x07r",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lq-mm7mkmm1nrifcb",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 548,
-    "acceptedCount": 548,
+    "totalRows": 549,
+    "acceptedCount": 549,
     "rejectedCount": 0
   },
   "rejected": []
