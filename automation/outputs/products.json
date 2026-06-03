@@ -5489,12 +5489,22 @@
       "link": "https://s.shopee.com.br/gNNB2x07r",
       "image": "https://cf.shopee.com.br/file/br-11134207-820lq-mm7mkmm1nrifcb",
       "store": "Shopee"
+    },
+    {
+      "name": "Conjunto Verão kit Infantil juvenil camisa e bermuda Lançamento 2 a 12 anos",
+      "desc": "Shopee",
+      "oldPrice": "R$ 47,41",
+      "newPrice": "R$ 47,41",
+      "discount": "",
+      "link": "https://s.shopee.com.br/17jUCqlPa",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m1lg6zztge5mdc",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 549,
-    "acceptedCount": 549,
+    "totalRows": 550,
+    "acceptedCount": 550,
     "rejectedCount": 0
   },
   "rejected": []
