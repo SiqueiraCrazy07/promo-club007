@@ -5509,12 +5509,22 @@
       "link": "https://s.shopee.com.br/5q5Wv5VvUe",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "Balde de Gelo com separação entre garrafa e gelo Branco Bebida Festa para Vinho",
+      "desc": "Shopee",
+      "oldPrice": "R$ 22,49",
+      "newPrice": "R$ 22,49",
+      "discount": "",
+      "link": "https://s.shopee.com.br/5fmAnVgpHl",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820ma-mopq9sji7rb438",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 551,
-    "acceptedCount": 551,
+    "totalRows": 552,
+    "acceptedCount": 552,
     "rejectedCount": 0
   },
   "rejected": []
