@@ -5539,12 +5539,22 @@
       "link": "https://s.shopee.com.br/1VwgX3KCvM",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "RK Royal Kludge RKR75 Blackberry Teclado Mecânico Com Fio Junta Portuguesa",
+      "desc": "Shopee",
+      "oldPrice": "R$ 797,18",
+      "newPrice": "R$ 310,90",
+      "discount": "61% OFF",
+      "link": "https://s.shopee.com.br/3qKbJJTjQL",
+      "image": "https://cf.shopee.com.br/file/cn-11134207-820l4-mlxa8rxct0jp68",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 554,
-    "acceptedCount": 554,
+    "totalRows": 555,
+    "acceptedCount": 555,
     "rejectedCount": 0
   },
   "rejected": []
