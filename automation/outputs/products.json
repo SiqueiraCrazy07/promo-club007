@@ -5589,12 +5589,22 @@
       "link": "https://s.shopee.com.br/50WcHw1Hc5",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
       "store": "Shopee"
+    },
+    {
+      "name": "Aspirador De Pó Vertical Vonder APV 1350 Turbo 1350W Filtro HEPA 2 Em 1 Portátil com Selo Inmet",
+      "desc": "Shopee",
+      "oldPrice": "R$ 234,22",
+      "newPrice": "R$ 149,90",
+      "discount": "36% OFF",
+      "link": "https://s.shopee.com.br/9fIRRkJR8W",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820m5-mo024uhwh14y31",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 559,
-    "acceptedCount": 559,
+    "totalRows": 560,
+    "acceptedCount": 560,
     "rejectedCount": 0
   },
   "rejected": []
