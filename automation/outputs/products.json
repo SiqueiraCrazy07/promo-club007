@@ -5599,12 +5599,22 @@
       "link": "https://s.shopee.com.br/9fIRRkJR8W",
       "image": "https://cf.shopee.com.br/file/br-11134207-820m5-mo024uhwh14y31",
       "store": "Shopee"
+    },
+    {
+      "name": "Kit OX Mari Maria Vita Glow - Sérum + Máscara de Tratamento",
+      "desc": "Shopee",
+      "oldPrice": "R$ 71,99",
+      "newPrice": "R$ 71,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7VDyg5ULW5",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820la-mn3cskog62v6dd",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 560,
-    "acceptedCount": 560,
+    "totalRows": 561,
+    "acceptedCount": 561,
     "rejectedCount": 0
   },
   "rejected": []
