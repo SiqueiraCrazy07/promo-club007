@@ -5679,12 +5679,22 @@
       "link": "https://s.shopee.com.br/1gGEpI9IrL",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-miaci9g3yuwxd1",
       "store": "Shopee"
+    },
+    {
+      "name": "Fantasia Maria Bonita Infantil | P, M e G | Material: Oxford | São João, Festa Junina, Quadrilha, Dança, Arraiá, Vestido",
+      "desc": "Shopee",
+      "oldPrice": "R$ 88,48",
+      "newPrice": "R$ 88,48",
+      "discount": "",
+      "link": "https://s.shopee.com.br/qhBWos11E",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lx-mp1m6xbv9pfl0f",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 568,
-    "acceptedCount": 568,
+    "totalRows": 569,
+    "acceptedCount": 569,
     "rejectedCount": 0
   },
   "rejected": []
