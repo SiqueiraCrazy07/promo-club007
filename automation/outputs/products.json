@@ -5739,12 +5739,22 @@
       "link": "https://s.shopee.com.br/1LdUgfCalc",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "progressiva de quiabo Alisa até cabelo afro litro",
+      "desc": "Shopee",
+      "oldPrice": "R$ 140,79",
+      "newPrice": "R$ 140,79",
+      "discount": "",
+      "link": "https://s.shopee.com.br/1LdVEUjSST",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-lhgisfclh3q563",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 574,
-    "acceptedCount": 574,
+    "totalRows": 575,
+    "acceptedCount": 575,
     "rejectedCount": 0
   },
   "rejected": []
