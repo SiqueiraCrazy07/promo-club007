@@ -5759,12 +5759,32 @@
       "link": "https://s.shopee.com.br/2g8sHDDtMh",
       "image": "https://cf.shopee.com.br/file/br-11134207-820le-mmsxibgs1czo87",
       "store": "Shopee"
+    },
+    {
+      "name": "[Frete Grátis]2026 A11 MINI Smartwatch Feminino, Coloca Foto na Tela, NFC, Monitor Cardíaco, à",
+      "desc": "Shopee",
+      "oldPrice": "R$ 483,95",
+      "newPrice": "R$ 183,90",
+      "discount": "62% OFF",
+      "link": "https://s.shopee.com.br/9AMO0hAJVa",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
+      "store": "Shopee"
+    },
+    {
+      "name": "Chapéu Cowboy Infantil | Courino Peluciado | Vaquejada, Vaqueira, Unissex | São João, Festa Junina, Rodeio, Evento, Look",
+      "desc": "Shopee",
+      "oldPrice": "R$ 39,24",
+      "newPrice": "R$ 39,24",
+      "discount": "",
+      "link": "https://s.shopee.com.br/Lkzbly2ay",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820m4-mozieh9b3w1v82",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 576,
-    "acceptedCount": 576,
+    "totalRows": 578,
+    "acceptedCount": 578,
     "rejectedCount": 0
   },
   "rejected": []
