@@ -5749,12 +5749,22 @@
       "link": "https://s.shopee.com.br/1LdVEUjSST",
       "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-lhgisfclh3q563",
       "store": "Shopee"
+    },
+    {
+      "name": "Cadeira Gamer Ergonômica Nitro Escritório Couro Sintético Reclinável Altura Ajustável Apoio Pés",
+      "desc": "Shopee",
+      "oldPrice": "R$ 999,80",
+      "newPrice": "R$ 499,90",
+      "discount": "50% OFF",
+      "link": "https://s.shopee.com.br/2g8sHDDtMh",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820le-mmsxibgs1czo87",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 575,
-    "acceptedCount": 575,
+    "totalRows": 576,
+    "acceptedCount": 576,
     "rejectedCount": 0
   },
   "rejected": []
