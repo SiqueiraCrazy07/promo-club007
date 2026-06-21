@@ -5859,12 +5859,42 @@
       "link": "https://s.shopee.com.br/6L2AdsBqts",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mhj6j5dcml1f41",
       "store": "Shopee"
+    },
+    {
+      "name": "Mini Processador De Alimentos Elétrico Turbo Triturador Alho Cebola Legumes Compacto Prático -",
+      "desc": "Shopee",
+      "oldPrice": "R$ 140,18",
+      "newPrice": "R$ 79,90",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/AAExzc14IU",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
+      "store": "Shopee"
+    },
+    {
+      "name": "Kit Brasil Verde Amarelo Azul Pacote 50 Unidades Decoração Festa Copa Látex Premium",
+      "desc": "Shopee",
+      "oldPrice": "R$ 69,99",
+      "newPrice": "R$ 44,99",
+      "discount": "36% OFF",
+      "link": "https://s.shopee.com.br/gNsnuK5od",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820li-mopuiv1d3vnq0b",
+      "store": "Shopee"
+    },
+    {
+      "name": "Balão PIC PIC Bexiga Bola Festa Látex 9″ Polegadas Redondo Granfesta – Pacote com 50 Unidades",
+      "desc": "Shopee",
+      "oldPrice": "R$ 18,99",
+      "newPrice": "R$ 18,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/qhJ0DJSTe",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lg-mlwgv7zwh91i89",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 586,
-    "acceptedCount": 586,
+    "totalRows": 589,
+    "acceptedCount": 589,
     "rejectedCount": 0
   },
   "rejected": []
