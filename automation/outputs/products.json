@@ -5819,12 +5819,52 @@
       "link": "https://s.shopee.com.br/8fQ90eeYhi",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkaoj4298j5t3d",
       "store": "Shopee"
+    },
+    {
+      "name": "- Kit 3 a 10 Potes Herméticos 2L Premium Com Medidor Organizador De Alimentos Mantimentos Arroz",
+      "desc": "Shopee",
+      "oldPrice": "R$ 156,90",
+      "newPrice": "R$ 112,97",
+      "discount": "28% OFF",
+      "link": "https://s.shopee.com.br/4Axk35snpo",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820ma-mlnfmyims4joa9",
+      "store": "Shopee"
+    },
+    {
+      "name": "Kits de 5 a 9 unids Pote Hermético 2L Premium Com Medidor Organizador De Alimentos Mantimentos",
+      "desc": "Shopee",
+      "oldPrice": "R$ 156,89",
+      "newPrice": "R$ 112,96",
+      "discount": "28% OFF",
+      "link": "https://s.shopee.com.br/40eJqmtRAn",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820m7-moijcuv5igao62",
+      "store": "Shopee"
+    },
+    {
+      "name": "Caneta Câmera 1080P Mini Câmera CCTV Gravador De Voz Portá WiFi Portátil Cam Detecção Com Áudio",
+      "desc": "Shopee",
+      "oldPrice": "R$ 155,00",
+      "newPrice": "R$ 105,40",
+      "discount": "32% OFF",
+      "link": "https://s.shopee.com.br/2LW5rkhEmR",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7rasy-ma2bj9w2mfmxbc",
+      "store": "Shopee"
+    },
+    {
+      "name": "Saco organizador com formato redondo para organização e super compacto",
+      "desc": "Shopee",
+      "oldPrice": "R$ 19,99",
+      "newPrice": "R$ 19,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/6L2AdsBqts",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mhj6j5dcml1f41",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 582,
-    "acceptedCount": 582,
+    "totalRows": 586,
+    "acceptedCount": 586,
     "rejectedCount": 0
   },
   "rejected": []
