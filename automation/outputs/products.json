@@ -5889,12 +5889,22 @@
       "link": "https://s.shopee.com.br/qhJ0DJSTe",
       "image": "https://cf.shopee.com.br/file/br-11134207-820lg-mlwgv7zwh91i89",
       "store": "Shopee"
+    },
+    {
+      "name": "Balão PIC PIC Bexiga Bola Látex 16″ Polegadas Platino – Pacote com 12 Unidades",
+      "desc": "Shopee",
+      "oldPrice": "R$ 46,99",
+      "newPrice": "R$ 46,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/6L2Fvp8GIT",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820m2-mn0ghcyf3xms61",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 589,
-    "acceptedCount": 589,
+    "totalRows": 590,
+    "acceptedCount": 590,
     "rejectedCount": 0
   },
   "rejected": []
