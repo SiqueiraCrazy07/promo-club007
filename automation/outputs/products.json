@@ -5899,12 +5899,22 @@
       "link": "https://s.shopee.com.br/6L2Fvp8GIT",
       "image": "https://cf.shopee.com.br/file/br-11134207-820m2-mn0ghcyf3xms61",
       "store": "Shopee"
+    },
+    {
+      "name": "Balão PIC PIC Bola Bexiga Látex 8″ Polegadas p/ Festa – Pacote com 50 Unidades",
+      "desc": "Shopee",
+      "oldPrice": "R$ 16,99",
+      "newPrice": "R$ 16,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/60PRVn527O",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lv-mmx7te3q3ocg1b",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 590,
-    "acceptedCount": 590,
+    "totalRows": 591,
+    "acceptedCount": 591,
     "rejectedCount": 0
   },
   "rejected": []
