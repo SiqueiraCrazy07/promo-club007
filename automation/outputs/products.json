@@ -5909,12 +5909,22 @@
       "link": "https://s.shopee.com.br/60PRVn527O",
       "image": "https://cf.shopee.com.br/file/br-11134207-820lv-mmx7te3q3ocg1b",
       "store": "Shopee"
+    },
+    {
+      "name": "Kit 3 Sungas Boxer Masculino Estampada Moda Praia e Piscina",
+      "desc": "Shopee",
+      "oldPrice": "R$ 57,32",
+      "newPrice": "R$ 57,32",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7VEGWksWB4",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mb1jnl2a0jjtd5",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 591,
-    "acceptedCount": 591,
+    "totalRows": 592,
+    "acceptedCount": 592,
     "rejectedCount": 0
   },
   "rejected": []
