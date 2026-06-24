@@ -5919,12 +5919,22 @@
       "link": "https://s.shopee.com.br/7VEGWksWB4",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mb1jnl2a0jjtd5",
       "store": "Shopee"
+    },
+    {
+      "name": "RK Royal Kludge RKR75 Teclado Mecânico Preto Com Fio E Junta Portuguesa",
+      "desc": "Shopee",
+      "oldPrice": "R$ 597,88",
+      "newPrice": "R$ 310,90",
+      "discount": "48% OFF",
+      "link": "https://s.shopee.com.br/gNwGfcoin",
+      "image": "https://cf.shopee.com.br/file/cn-11134207-820l4-mlxaiiwsbnk5b6",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 592,
-    "acceptedCount": 592,
+    "totalRows": 593,
+    "acceptedCount": 593,
     "rejectedCount": 0
   },
   "rejected": []
