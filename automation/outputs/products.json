@@ -5929,12 +5929,72 @@
       "link": "https://s.shopee.com.br/gNwGfcoin",
       "image": "https://cf.shopee.com.br/file/cn-11134207-820l4-mlxaiiwsbnk5b6",
       "store": "Shopee"
+    },
+    {
+      "name": "Mini Processador De Alimentos Elétrico Turbo Triturador Alho Cebola Legumes Compacto Prático -",
+      "desc": "Shopee",
+      "oldPrice": "R$ 140,18",
+      "newPrice": "R$ 79,90",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/70I10WeK70",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
+      "store": "Shopee"
+    },
+    {
+      "name": "Plástico Toalha De Mesa de 4, 6, 8, 10, 12, 14, 16, 18 e 20 Lugares Transparente Térmico Impermeável",
+      "desc": "Shopee",
+      "oldPrice": "R$ 125,90",
+      "newPrice": "R$ 25,90",
+      "discount": "79% OFF",
+      "link": "https://s.shopee.com.br/2LWBaDe3HK",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820mh-mot9nln0ecqub8",
+      "store": "Shopee"
+    },
+    {
+      "name": "Passadeira Emborrachada Antiderrapante Soft 43cm De Largura Tapete por Metro Cozinha Banheiro Lanvan",
+      "desc": "Shopee",
+      "oldPrice": "R$ 169,99",
+      "newPrice": "R$ 32,90",
+      "discount": "81% OFF",
+      "link": "https://s.shopee.com.br/2qSSB8c9GT",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-me29awgydvr5fc",
+      "store": "Shopee"
+    },
+    {
+      "name": "Plástico Toalha De Mesa, Copa Do Mundo, Bandeira Do Brasil De 4, 6, 8, 10, 12 até 20 Lugares Impermeável",
+      "desc": "Shopee",
+      "oldPrice": "R$ 42,99",
+      "newPrice": "R$ 42,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2VpbmWdPwN",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-81zw2-mmy6266lpdza10",
+      "store": "Shopee"
+    },
+    {
+      "name": "Gancho Adesivo Forte Sem Furo | Cozinha Banheiro Parede Multiuso incolor",
+      "desc": "Shopee",
+      "oldPrice": "R$ 33,99",
+      "newPrice": "R$ 19,99",
+      "discount": "41% OFF",
+      "link": "https://s.shopee.com.br/2BClNuegcH",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821g1-mha0yst8v57294",
+      "store": "Shopee"
+    },
+    {
+      "name": "Esponja Mágica Melamina Premium | Tira Riscos, Limpa Parede e Tênis - Super Limpeza",
+      "desc": "Shopee",
+      "oldPrice": "R$ 38,99",
+      "newPrice": "R$ 9,90",
+      "discount": "75% OFF",
+      "link": "https://s.shopee.com.br/2g91ypcmbQ",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-8227q-mheb6psa3uof2c",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 593,
-    "acceptedCount": 593,
+    "totalRows": 599,
+    "acceptedCount": 599,
     "rejectedCount": 0
   },
   "rejected": []
