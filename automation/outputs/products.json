@@ -5989,12 +5989,62 @@
       "link": "https://s.shopee.com.br/2g91ypcmbQ",
       "image": "https://cf.shopee.com.br/file/sg-11134201-8227q-mheb6psa3uof2c",
       "store": "Shopee"
+    },
+    {
+      "name": "Tapete Passadeira Emborrachada Antiderrapante Soft 43cm Largura Tapete Metro Cozinha Banheiro confor",
+      "desc": "Shopee",
+      "oldPrice": "R$ 166,99",
+      "newPrice": "R$ 39,49",
+      "discount": "76% OFF",
+      "link": "https://s.shopee.com.br/1qZuzIkQKx",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820m7-mlecgh8tx4w5f5",
+      "store": "Shopee"
+    },
+    {
+      "name": "Toalhas de Mesa Transparente Cristal 0,20 mm plástico flexível PVC Casa, Escritório, Sítio E Eventos",
+      "desc": "Shopee",
+      "oldPrice": "R$ 93,99",
+      "newPrice": "R$ 29,90",
+      "discount": "68% OFF",
+      "link": "https://s.shopee.com.br/3B5IZkasaZ",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820mf-mpra3dkpnriae1",
+      "store": "Shopee"
+    },
+    {
+      "name": "Toalha de Mesa de Plástico Térmica Para 4,6, 8 e 10 Lugares Transparente Impermeável Cozinha Cristal",
+      "desc": "Shopee",
+      "oldPrice": "R$ 99,90",
+      "newPrice": "R$ 39,90",
+      "discount": "60% OFF",
+      "link": "https://s.shopee.com.br/1Vx4aglh0r",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lf-mot9nln05xc6f5",
+      "store": "Shopee"
+    },
+    {
+      "name": "Tapete Passadeira Antiderrapante Emborrachada Soft 43cm Preto 2 Metros",
+      "desc": "Shopee",
+      "oldPrice": "R$ 145,99",
+      "newPrice": "R$ 56,99",
+      "discount": "61% OFF",
+      "link": "https://s.shopee.com.br/40ePZHXhto",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-8262t-mkjk2z7k4lxk78",
+      "store": "Shopee"
+    },
+    {
+      "name": "Chaleira Jarra Elétrica Térmica 2 Litros 1000W Inox Prateada 110V Ferve Água Rápido",
+      "desc": "Shopee",
+      "oldPrice": "R$ 149,99",
+      "newPrice": "R$ 89,99",
+      "discount": "40% OFF",
+      "link": "https://s.shopee.com.br/20tLBbjn00",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-81zv4-mj0qvzmojhmo1a",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 599,
-    "acceptedCount": 599,
+    "totalRows": 604,
+    "acceptedCount": 604,
     "rejectedCount": 0
   },
   "rejected": []
