@@ -6039,12 +6039,72 @@
       "link": "https://s.shopee.com.br/20tLBbjn00",
       "image": "https://cf.shopee.com.br/file/sg-11134201-81zv4-mj0qvzmojhmo1a",
       "store": "Shopee"
+    },
+    {
+      "name": "Plugue De Carregamento Wi-Fi Câmera Escondida APP Remota HD 1080P Câmera CCTV Mini Tomada Com Á",
+      "desc": "Shopee",
+      "oldPrice": "R$ 145,90",
+      "newPrice": "R$ 89,00",
+      "discount": "39% OFF",
+      "link": "https://s.shopee.com.br/1qZuqyPrxG",
+      "image": "https://cf.shopee.com.br/file/cn-11134207-820l4-mny3f56xis5haa",
+      "store": "Shopee"
+    },
+    {
+      "name": "Tapete Porta Entrada Capacho Emborrachado, Para Cozinha, Entrada De Porta De Sala, Sítio, Casa e Apartamento",
+      "desc": "Shopee",
+      "oldPrice": "R$ 146,99",
+      "newPrice": "R$ 49,49",
+      "discount": "66% OFF",
+      "link": "https://s.shopee.com.br/2LWBaDiWK6",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-82635-mm0yt0p2pybpbc",
+      "store": "Shopee"
+    },
+    {
+      "name": "Termômetro Culinário Tipo Espeto Digital De Cozinha Profissional Carne Chocolate Bolo",
+      "desc": "Shopee",
+      "oldPrice": "R$ 84,99",
+      "newPrice": "R$ 29,49",
+      "discount": "65% OFF",
+      "link": "https://s.shopee.com.br/4VagACVnsx",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-8260p-mjmgsv7a60w4aa",
+      "store": "Shopee"
+    },
+    {
+      "name": "Toalha De Mesa de 4, 6, 8, 10, 12, 14, 16, 18 e 20 Lugares Transparente Térmico Impermeável grosso",
+      "desc": "Shopee",
+      "oldPrice": "R$ 199,98",
+      "newPrice": "R$ 50,19",
+      "discount": "75% OFF",
+      "link": "https://s.shopee.com.br/4AxplaX4Yr",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820mg-mplm96tw7zlu77",
+      "store": "Shopee"
+    },
+    {
+      "name": "Escova Eletrica Limpeza 3 em 1 Sem Fio Recarregavel USB Banheiro Cozinha Potente G",
+      "desc": "Shopee",
+      "oldPrice": "R$ 114,99",
+      "newPrice": "R$ 64,99",
+      "discount": "43% OFF",
+      "link": "https://s.shopee.com.br/2BClNuj9f3",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-8262k-mjowpq1oadqc70",
+      "store": "Shopee"
+    },
+    {
+      "name": "Tapete De Porta Bem Vindo 60x40 Boucle Antiderrapante Capacho Entrada Casa Lavável Luxo Premium",
+      "desc": "Shopee",
+      "oldPrice": "R$ 37,90",
+      "newPrice": "R$ 37,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/3Vi8yMZbuf",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mji1deb3dziae8",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 604,
-    "acceptedCount": 604,
+    "totalRows": 610,
+    "acceptedCount": 610,
     "rejectedCount": 0
   },
   "rejected": []
