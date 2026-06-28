@@ -6119,12 +6119,22 @@
       "link": "https://s.shopee.com.br/1gGb2GHHqa",
       "image": "https://cf.shopee.com.br/file/sg-11134201-821e7-mgzr9ch5b6rxde",
       "store": "Shopee"
+    },
+    {
+      "name": "Vestido Fantasia da Juvenil menina halloweem e carnaval",
+      "desc": "Shopee",
+      "oldPrice": "R$ 32,80",
+      "newPrice": "R$ 32,80",
+      "discount": "",
+      "link": "https://s.shopee.com.br/9fIsf7Ig7C",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lr51xl0i5szxc1",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 612,
-    "acceptedCount": 612,
+    "totalRows": 613,
+    "acceptedCount": 613,
     "rejectedCount": 0
   },
   "rejected": []
