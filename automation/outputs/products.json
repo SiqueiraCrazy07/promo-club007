@@ -6129,12 +6129,22 @@
       "link": "https://s.shopee.com.br/9fIsf7Ig7C",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lr51xl0i5szxc1",
       "store": "Shopee"
+    },
+    {
+      "name": "TINTA AERO GLITTER | SPRAY | PARA CORPO, ROSTO E CABELOS | FESTA FANTASIA | CARNAVAL | COPA | 125ML | BRILHO | BRILHINHO",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,55",
+      "newPrice": "R$ 29,55",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7VERgxMOTW",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztn-ml2hx68i44xv74",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 613,
-    "acceptedCount": 613,
+    "totalRows": 614,
+    "acceptedCount": 614,
     "rejectedCount": 0
   },
   "rejected": []
