@@ -6139,12 +6139,22 @@
       "link": "https://s.shopee.com.br/7VERgxMOTW",
       "image": "https://cf.shopee.com.br/file/br-11134207-81ztn-ml2hx68i44xv74",
       "store": "Shopee"
+    },
+    {
+      "name": "Mola de silicone para Alicate",
+      "desc": "Shopee",
+      "oldPrice": "R$ 48,84",
+      "newPrice": "R$ 19,31",
+      "discount": "60% OFF",
+      "link": "https://s.shopee.com.br/W4hiQ8XHy",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mbfp6lt9z2wobc",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 614,
-    "acceptedCount": 614,
+    "totalRows": 615,
+    "acceptedCount": 615,
     "rejectedCount": 0
   },
   "rejected": []
