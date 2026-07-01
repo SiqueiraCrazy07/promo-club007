@@ -6149,12 +6149,22 @@
       "link": "https://s.shopee.com.br/W4hiQ8XHy",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mbfp6lt9z2wobc",
       "store": "Shopee"
+    },
+    {
+      "name": "Dream Brand Collection 100ml n*027 fixaçao 12hrs",
+      "desc": "Shopee",
+      "oldPrice": "R$ 159,99",
+      "newPrice": "R$ 159,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/5VTOZHyip1",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820mf-mn6etz2c82rkfd",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 615,
-    "acceptedCount": 615,
+    "totalRows": 616,
+    "acceptedCount": 616,
     "rejectedCount": 0
   },
   "rejected": []
