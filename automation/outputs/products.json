@@ -6159,12 +6159,22 @@
       "link": "https://s.shopee.com.br/5VTOZHyip1",
       "image": "https://cf.shopee.com.br/file/br-11134207-820mf-mn6etz2c82rkfd",
       "store": "Shopee"
+    },
+    {
+      "name": "Vestido fantasia da infantil e juvenil sucesso de venda veste 4 6 8 10 12 14 anos é de qualidade vem pra nova temporada",
+      "desc": "Shopee",
+      "oldPrice": "R$ 34,00",
+      "newPrice": "R$ 34,00",
+      "discount": "",
+      "link": "https://s.shopee.com.br/3ViNJo8td2",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lrsufzpmle0434",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 616,
-    "acceptedCount": 616,
+    "totalRows": 617,
+    "acceptedCount": 617,
     "rejectedCount": 0
   },
   "rejected": []
