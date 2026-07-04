@@ -6169,12 +6169,22 @@
       "link": "https://s.shopee.com.br/3ViNJo8td2",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lrsufzpmle0434",
       "store": "Shopee"
+    },
+    {
+      "name": "Suporte Celular Proteção Sol Chuva Estilo Capacete Moto Bike 6Polegada LE106",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,89",
+      "newPrice": "R$ 26,89",
+      "discount": "10% OFF",
+      "link": "https://s.shopee.com.br/5fmtSMSJrX",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mfzqklc7ykn402",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 617,
-    "acceptedCount": 617,
+    "totalRows": 618,
+    "acceptedCount": 618,
     "rejectedCount": 0
   },
   "rejected": []
