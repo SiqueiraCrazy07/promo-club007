@@ -6179,12 +6179,22 @@
       "link": "https://s.shopee.com.br/5fmtSMSJrX",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mfzqklc7ykn402",
       "store": "Shopee"
+    },
+    {
+      "name": "Shampoo Antiressíduos Matcha & Hortelã 300ml",
+      "desc": "Shopee",
+      "oldPrice": "R$ 58,90",
+      "newPrice": "R$ 58,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2qSk3sV6ub",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-ljr2ddnxu4y243",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 618,
-    "acceptedCount": 618,
+    "totalRows": 619,
+    "acceptedCount": 619,
     "rejectedCount": 0
   },
   "rejected": []
