@@ -6199,12 +6199,32 @@
       "link": "https://s.shopee.com.br/LlR50eW4n",
       "image": "https://cf.shopee.com.br/file/br-11134207-820lg-moj016p25s7a05",
       "store": "Shopee"
+    },
+    {
+      "name": "Calça Legging Feminina Academia Suplex com Bolsos Cós Alto e Recortes Coloridos nas Laterais Oferta",
+      "desc": "Shopee",
+      "oldPrice": "R$ 49,90",
+      "newPrice": "R$ 49,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/1BKYwH2Ij9",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mgp2kshu7qio56",
+      "store": "Shopee"
+    },
+    {
+      "name": "RWX VEST CONJUNTO INFANTIL DE PRAIA MASCULINO DE MANGA LONGA E CALÇA DE BANHO - I3061",
+      "desc": "Shopee",
+      "oldPrice": "R$ 64,98",
+      "newPrice": "R$ 64,98",
+      "discount": "",
+      "link": "https://s.shopee.com.br/BS1kR1qUu",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m20y707oc7vo10",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 620,
-    "acceptedCount": 620,
+    "totalRows": 622,
+    "acceptedCount": 622,
     "rejectedCount": 0
   },
   "rejected": []
