@@ -6189,12 +6189,22 @@
       "link": "https://s.shopee.com.br/2qSk3sV6ub",
       "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-ljr2ddnxu4y243",
       "store": "Shopee"
+    },
+    {
+      "name": "Enfeite De Milho | 40Cm | Plástico | 1 Unidade | Festa Junina, São João, Caipira | Cenários, Decoração",
+      "desc": "Shopee",
+      "oldPrice": "R$ 34,28",
+      "newPrice": "R$ 34,28",
+      "discount": "",
+      "link": "https://s.shopee.com.br/LlR50eW4n",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lg-moj016p25s7a05",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 619,
-    "acceptedCount": 619,
+    "totalRows": 620,
+    "acceptedCount": 620,
     "rejectedCount": 0
   },
   "rejected": []
