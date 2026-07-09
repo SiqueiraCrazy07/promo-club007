@@ -6219,12 +6219,52 @@
       "link": "https://s.shopee.com.br/BS1kR1qUu",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m20y707oc7vo10",
       "store": "Shopee"
+    },
+    {
+      "name": "Perfume infantil Brand Collection 25ml- N°420 cheiroso",
+      "desc": "Shopee",
+      "oldPrice": "R$ 61,00",
+      "newPrice": "R$ 61,00",
+      "discount": "",
+      "link": "https://s.shopee.com.br/1qaJINXt1F",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820ld-mpba4z7mg5xif9",
+      "store": "Shopee"
+    },
+    {
+      "name": "perfume dream collection 100ml masculino",
+      "desc": "Shopee",
+      "oldPrice": "R$ 165,00",
+      "newPrice": "R$ 165,00",
+      "discount": "",
+      "link": "https://s.shopee.com.br/3LP758SAyU",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m4oxater3vwh77",
+      "store": "Shopee"
+    },
+    {
+      "name": "Dream collection 100ml- 402 Lançamento (frasco igual a foto)",
+      "desc": "Shopee",
+      "oldPrice": "R$ 159,99",
+      "newPrice": "R$ 159,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/3ViXHRRXdX",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lw26rgwmcjue0d",
+      "store": "Shopee"
+    },
+    {
+      "name": "perfume feminino dream collection 80ml (frasco igual a foto)",
+      "desc": "Shopee",
+      "oldPrice": "R$ 165,00",
+      "newPrice": "R$ 165,00",
+      "discount": "",
+      "link": "https://s.shopee.com.br/1gGt64YWMC",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m1hrwl3t7snl89",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 622,
-    "acceptedCount": 622,
+    "totalRows": 626,
+    "acceptedCount": 626,
     "rejectedCount": 0
   },
   "rejected": []
