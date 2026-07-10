@@ -6259,12 +6259,22 @@
       "link": "https://s.shopee.com.br/1gGt64YWMC",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m1hrwl3t7snl89",
       "store": "Shopee"
+    },
+    {
+      "name": "PERFUME FEMININO DREAM COLLECTION 90ml (frasco igual a foto)",
+      "desc": "Shopee",
+      "oldPrice": "R$ 142,00",
+      "newPrice": "R$ 142,00",
+      "discount": "",
+      "link": "https://s.shopee.com.br/LlVVcdb44",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m2yptvrg7pat43",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 626,
-    "acceptedCount": 626,
+    "totalRows": 627,
+    "acceptedCount": 627,
     "rejectedCount": 0
   },
   "rejected": []
