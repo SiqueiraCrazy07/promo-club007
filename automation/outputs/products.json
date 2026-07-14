@@ -6269,12 +6269,22 @@
       "link": "https://s.shopee.com.br/LlVVcdb44",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m2yptvrg7pat43",
       "store": "Shopee"
+    },
+    {
+      "name": "KIT PERSONALIZADO CEREJINHA/LEMBRANCINHA CEREJA/FESTA",
+      "desc": "Shopee",
+      "oldPrice": "R$ 200,00",
+      "newPrice": "R$ 60,00",
+      "discount": "70% OFF",
+      "link": "https://s.shopee.com.br/2LWhRDBm7L",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820l6-mpc984g51xc617",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 627,
-    "acceptedCount": 627,
+    "totalRows": 628,
+    "acceptedCount": 628,
     "rejectedCount": 0
   },
   "rejected": []
