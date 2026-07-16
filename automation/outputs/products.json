@@ -6289,12 +6289,22 @@
       "link": "https://s.shopee.com.br/70IYazQN3I",
       "image": "https://cf.shopee.com.br/file/br-11134207-820l6-mpcltelngtfmbf",
       "store": "Shopee"
+    },
+    {
+      "name": "KIT PERSONALIZADO PODEROSO CHEFINHO/LEMBRANCINHA/FESTA",
+      "desc": "Shopee",
+      "oldPrice": "R$ 170,00",
+      "newPrice": "R$ 51,00",
+      "discount": "70% OFF",
+      "link": "https://s.shopee.com.br/4VbENzHbL4",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820l5-mpcaaoxui9s100",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 629,
-    "acceptedCount": 629,
+    "totalRows": 630,
+    "acceptedCount": 630,
     "rejectedCount": 0
   },
   "rejected": []
