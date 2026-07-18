@@ -6299,12 +6299,42 @@
       "link": "https://s.shopee.com.br/4VbENzHbL4",
       "image": "https://cf.shopee.com.br/file/br-11134207-820l5-mpcaaoxui9s100",
       "store": "Shopee"
+    },
+    {
+      "name": "Blusa Fitness Feminina Academia com Capuz Dry Fit Corrida Caminhada Fresquinha Confortável Oferta",
+      "desc": "Shopee",
+      "oldPrice": "R$ 34,90",
+      "newPrice": "R$ 34,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2VqDBnTvZh",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m3cdmmpr78e01b",
+      "store": "Shopee"
+    },
+    {
+      "name": "Condicionador Matcha & Alecrim 500ml Haskell",
+      "desc": "Shopee",
+      "oldPrice": "R$ 67,69",
+      "newPrice": "R$ 67,69",
+      "discount": "",
+      "link": "https://s.shopee.com.br/gOZo9sWwP",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-ljr2ddnxwy2y7d",
+      "store": "Shopee"
+    },
+    {
+      "name": "Shampoo Quina Rosa 1L Haskell",
+      "desc": "Shopee",
+      "oldPrice": "R$ 118,90",
+      "newPrice": "R$ 118,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7Ac2Me72of",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-lk007f2akq03c9",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 630,
-    "acceptedCount": 630,
+    "totalRows": 633,
+    "acceptedCount": 633,
     "rejectedCount": 0
   },
   "rejected": []
