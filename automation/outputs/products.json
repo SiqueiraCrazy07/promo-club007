@@ -6329,12 +6329,62 @@
       "link": "https://s.shopee.com.br/7Ac2Me72of",
       "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-lk007f2akq03c9",
       "store": "Shopee"
+    },
+    {
+      "name": "Moletom Infantil em Algodão Premium Estampado Casa Magica da Gabi",
+      "desc": "Shopee",
+      "oldPrice": "R$ 56,90",
+      "newPrice": "R$ 56,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/9pcsiQHbjd",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820mh-mnvvk8uz8ttwb6",
+      "store": "Shopee"
+    },
+    {
+      "name": "Moletom Infantil Feminino Gabby’s Dollhouse (Rosa Bebê | Casa Mágica da Gabby | Blusa de Frio)",
+      "desc": "Shopee",
+      "oldPrice": "R$ 108,00",
+      "newPrice": "R$ 90,00",
+      "discount": "17% OFF",
+      "link": "https://s.shopee.com.br/LlnOxrm0v",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mjhk9g9dm87667",
+      "store": "Shopee"
+    },
+    {
+      "name": "Crianças A Casa Da Coruja Lu z Noceda Cseta Pulôver Com Capuz TOH Cosplay Csetas De Manga Curta Halloween Topo",
+      "desc": "Shopee",
+      "oldPrice": "R$ 245,46",
+      "newPrice": "R$ 119,46",
+      "discount": "51% OFF",
+      "link": "https://s.shopee.com.br/AKZ9JLFhim",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-82591-mqmj7exjr37l8d",
+      "store": "Shopee"
+    },
+    {
+      "name": "Moletom Infantil menina Desenho Infantil Gaby casa magica delicado flanelado 2 a 12",
+      "desc": "Shopee",
+      "oldPrice": "R$ 42,66",
+      "newPrice": "R$ 42,66",
+      "discount": "",
+      "link": "https://s.shopee.com.br/9Kgc7VJVkY",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lu-mq3d2x23shs1f4",
+      "store": "Shopee"
+    },
+    {
+      "name": "Moletom Infantil Gaby Casa Magica Desenho Infantil Delicado Moleton Flanelado 2 ao 12",
+      "desc": "Shopee",
+      "oldPrice": "R$ 42,66",
+      "newPrice": "R$ 42,66",
+      "discount": "",
+      "link": "https://s.shopee.com.br/9V02JoIsPb",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lc-mq7o3uat3u2p2c",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 633,
-    "acceptedCount": 633,
+    "totalRows": 638,
+    "acceptedCount": 638,
     "rejectedCount": 0
   },
   "rejected": []
