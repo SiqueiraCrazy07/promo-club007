@@ -6399,12 +6399,62 @@
       "link": "https://s.shopee.com.br/60QA9OEKpR",
       "image": "https://cf.shopee.com.br/file/br-11134207-820lg-mq6g3ptdkz5v77",
       "store": "Shopee"
+    },
+    {
+      "name": "Kit 3 Mini Brinquedo Pop It Up Fidget Toy Game Brinquedo Anti Stress Eletrônico",
+      "desc": "Shopee",
+      "oldPrice": "R$ 27,99",
+      "newPrice": "R$ 27,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/80BGy4Yz12",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-maacsznbeb3qcd",
+      "store": "Shopee"
+    },
+    {
+      "name": "100 Adesivos Personalizados - 3x3cm, 4x4cm, 5x5cm, 6x6cm com CORTE ELETRÔNICO",
+      "desc": "Shopee",
+      "oldPrice": "R$ 123,06",
+      "newPrice": "R$ 32,00",
+      "discount": "74% OFF",
+      "link": "https://s.shopee.com.br/1LeN1oyMXc",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mctjnlkvc56a46",
+      "store": "Shopee"
+    },
+    {
+      "name": "Suporte Babá Eletrônica Compatível Câmera Vb603 Base 7 Cm",
+      "desc": "Shopee",
+      "oldPrice": "R$ 24,00",
+      "newPrice": "R$ 24,00",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2VqKPxtvAp",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-me7hp1d5v85d32",
+      "store": "Shopee"
+    },
+    {
+      "name": "Shampoo Liso Com Forca 300ml Haskell",
+      "desc": "Shopee",
+      "oldPrice": "R$ 55,99",
+      "newPrice": "R$ 55,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/9ANBaUSilu",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-ljzmrfzd3tie30",
+      "store": "Shopee"
+    },
+    {
+      "name": "Shampoo Mandioca 500ml Haskell",
+      "desc": "Shopee",
+      "oldPrice": "R$ 68,39",
+      "newPrice": "R$ 68,39",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7fYQZSeeVo",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-ljon6zh7gw3ufe",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 640,
-    "acceptedCount": 640,
+    "totalRows": 645,
+    "acceptedCount": 645,
     "rejectedCount": 0
   },
   "rejected": []
