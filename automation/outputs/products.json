@@ -6469,12 +6469,22 @@
       "link": "https://s.shopee.com.br/qi81gPo5J",
       "image": "https://cf.shopee.com.br/file/sg-11134201-7rfge-m3066mfb0wfic4",
       "store": "Shopee"
+    },
+    {
+      "name": "Carrinho Organizador Multifuncional Grande para Brinquedos com Alça e Rodinhas",
+      "desc": "Shopee",
+      "oldPrice": "R$ 43,99",
+      "newPrice": "R$ 43,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/8fQzjuRHFt",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mhj6j5dcnzlvcd",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 647,
-    "acceptedCount": 647,
+    "totalRows": 648,
+    "acceptedCount": 648,
     "rejectedCount": 0
   },
   "rejected": []
