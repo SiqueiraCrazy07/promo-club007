@@ -6449,12 +6449,22 @@
       "link": "https://s.shopee.com.br/7fYQZSeeVo",
       "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-ljon6zh7gw3ufe",
       "store": "Shopee"
+    },
+    {
+      "name": "Sandália Molekinha Infantil Menina Salto Bloco Baixo Glitter Rosado Festa Elegante",
+      "desc": "Shopee",
+      "oldPrice": "R$ 100,73",
+      "newPrice": "R$ 100,73",
+      "discount": "",
+      "link": "https://s.shopee.com.br/8V7XwHZ4xz",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-821dg-mh96f3v3lk3u78",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 645,
-    "acceptedCount": 645,
+    "totalRows": 646,
+    "acceptedCount": 646,
     "rejectedCount": 0
   },
   "rejected": []
