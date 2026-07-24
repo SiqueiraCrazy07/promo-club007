@@ -6479,12 +6479,52 @@
       "link": "https://s.shopee.com.br/8fQzjuRHFt",
       "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mhj6j5dcnzlvcd",
       "store": "Shopee"
+    },
+    {
+      "name": "Shampoo Quina Rosa 300ml Haskell",
+      "desc": "Shopee",
+      "oldPrice": "R$ 53,01",
+      "newPrice": "R$ 53,01",
+      "discount": "",
+      "link": "https://s.shopee.com.br/19129XNYW",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7qukw-lk01nsgh6f1f58",
+      "store": "Shopee"
+    },
+    {
+      "name": "Pedal Eletronico Do Acelerador Prisma 2015",
+      "desc": "Shopee",
+      "oldPrice": "R$ 80,08",
+      "newPrice": "R$ 80,08",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2LWwZ73f0W",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7rav7-mamtot9f019y97",
+      "store": "Shopee"
+    },
+    {
+      "name": "Goma Texturizadora, Modelador de Cachos, Finalizador Crespo e Curva&Cola Se Curve 4 Finalizadores Kit Haskell",
+      "desc": "Shopee",
+      "oldPrice": "R$ 334,44",
+      "newPrice": "R$ 334,44",
+      "discount": "",
+      "link": "https://s.shopee.com.br/9zwMwWvJGP",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m9fz34fn5jy173",
+      "store": "Shopee"
+    },
+    {
+      "name": "Pedal Eletronico Do Acelerador Fox 2015 2016 2017 Msi",
+      "desc": "Shopee",
+      "oldPrice": "R$ 100,32",
+      "newPrice": "R$ 100,32",
+      "discount": "",
+      "link": "https://s.shopee.com.br/80BJJWi5Vj",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7raub-man2nrtyx7dc01",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 648,
-    "acceptedCount": 648,
+    "totalRows": 652,
+    "acceptedCount": 652,
     "rejectedCount": 0
   },
   "rejected": []
