@@ -6529,12 +6529,22 @@
       "link": "https://s.shopee.com.br/9fJY8AhhMq",
       "image": "https://cf.shopee.com.br/file/br-11134207-820ly-mqgdodk51r0i18",
       "store": "Shopee"
+    },
+    {
+      "name": "Finalizador Vem de Glicólico 150ml Oh My",
+      "desc": "Shopee",
+      "oldPrice": "R$ 20,58",
+      "newPrice": "R$ 20,58",
+      "discount": "",
+      "link": "https://s.shopee.com.br/8AUkLPj9Ae",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m8esy7scnbipcb",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 653,
-    "acceptedCount": 653,
+    "totalRows": 654,
+    "acceptedCount": 654,
     "rejectedCount": 0
   },
   "rejected": []
