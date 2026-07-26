@@ -6539,12 +6539,52 @@
       "link": "https://s.shopee.com.br/8AUkLPj9Ae",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m8esy7scnbipcb",
       "store": "Shopee"
+    },
+    {
+      "name": "Conjunto Infantil Verão Masculino Cool Dino Roar 1 ao 3 anos",
+      "desc": "Shopee",
+      "oldPrice": "R$ 31,90",
+      "newPrice": "R$ 31,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/4VbV9LLJp3",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7renv-m1vwpy80er7j62",
+      "store": "Shopee"
+    },
+    {
+      "name": "Kit 3 Conjunto moleton infantil feminina de inverno com calça infantil de moleton peluciado roupas infantis baratas.",
+      "desc": "Shopee",
+      "oldPrice": "R$ 98,90",
+      "newPrice": "R$ 98,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/30mhMaR1rs",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lvg5uvgzd3dded",
+      "store": "Shopee"
+    },
+    {
+      "name": "Conjunto Fantasia Infantil Menino Marvel Homem Aranha",
+      "desc": "Shopee",
+      "oldPrice": "R$ 45,00",
+      "newPrice": "R$ 45,00",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2qTElDTz9q",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lrsv21hz4zl0b5",
+      "store": "Shopee"
+    },
+    {
+      "name": "Conjunto Infantil Masculino Silk Game On Tam 2 ao 14 anos",
+      "desc": "Shopee",
+      "oldPrice": "R$ 36,90",
+      "newPrice": "R$ 31,90",
+      "discount": "14% OFF",
+      "link": "https://s.shopee.com.br/3B67YtQOWv",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7rdvx-m0axm64h88w071",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 654,
-    "acceptedCount": 654,
+    "totalRows": 658,
+    "acceptedCount": 658,
     "rejectedCount": 0
   },
   "rejected": []
