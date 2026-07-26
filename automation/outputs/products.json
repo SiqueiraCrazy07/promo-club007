@@ -6579,12 +6579,32 @@
       "link": "https://s.shopee.com.br/3B67YtQOWv",
       "image": "https://cf.shopee.com.br/file/sg-11134201-7rdvx-m0axm64h88w071",
       "store": "Shopee"
+    },
+    {
+      "name": "quadro decorativo infantil safari personalizado bichinhos 3 peças, safari, leão, leaozinho, lilás",
+      "desc": "Shopee",
+      "oldPrice": "R$ 20,61",
+      "newPrice": "R$ 11,34",
+      "discount": "45% OFF",
+      "link": "https://s.shopee.com.br/70IoWrP0b6",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7rffo-m40nqc26qblt26",
+      "store": "Shopee"
+    },
+    {
+      "name": "RWX VEST Conjunto de Praia Infantil Masculino de Dinossauro Skatista Estilo Radical para o Verão! 2024 - i3066",
+      "desc": "Shopee",
+      "oldPrice": "R$ 59,98",
+      "newPrice": "R$ 59,98",
+      "discount": "",
+      "link": "https://s.shopee.com.br/196B5PZV0",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m0br7ndajyqoa4",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 658,
-    "acceptedCount": 658,
+    "totalRows": 660,
+    "acceptedCount": 660,
     "rejectedCount": 0
   },
   "rejected": []
