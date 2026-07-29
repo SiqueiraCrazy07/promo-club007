@@ -6599,12 +6599,22 @@
       "link": "https://s.shopee.com.br/196B5PZV0",
       "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-m0br7ndajyqoa4",
       "store": "Shopee"
+    },
+    {
+      "name": "Mochila Infantil Menino Rodinha Escolar Yepp Gamecraft Brave Blocks Kit Bolsa Masculina Reforçada Com Lancheira e Estojo",
+      "desc": "Shopee",
+      "oldPrice": "R$ 99,90",
+      "newPrice": "R$ 99,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/4VbZz3LQdq",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-mc5b9m4q22sn9d",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 660,
-    "acceptedCount": 660,
+    "totalRows": 661,
+    "acceptedCount": 661,
     "rejectedCount": 0
   },
   "rejected": []
