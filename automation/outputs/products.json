@@ -6719,12 +6719,32 @@
       "link": "https://s.shopee.com.br/4LIKwdSgBL",
       "image": "https://cf.shopee.com.br/file/br-11134207-820lg-mldwetnx7bpg72",
       "store": "Shopee"
+    },
+    {
+      "name": "10 Unid. Seringa Para caneta Pressurizada Hyaluron Pen Intraderme 0.5ml",
+      "desc": "Shopee",
+      "oldPrice": "R$ 69,97",
+      "newPrice": "R$ 69,97",
+      "discount": "",
+      "link": "https://s.shopee.com.br/5VUH7qrInR",
+      "image": "https://cf.shopee.com.br/file/br-11134207-7r98o-lph12p3xfueq83",
+      "store": "Shopee"
+    },
+    {
+      "name": "Kit Placa Pix Personalizada Qr Code + Placa Campainha Identificação Balcão Acrílico Espelhado",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,90",
+      "newPrice": "R$ 29,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7psDUYYMtD",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-8261x-mk1b7gxmy51g5c",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 672,
-    "acceptedCount": 672,
+    "totalRows": 674,
+    "acceptedCount": 674,
     "rejectedCount": 0
   },
   "rejected": []
