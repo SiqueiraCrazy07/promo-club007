@@ -6759,12 +6759,32 @@
       "link": "https://s.shopee.com.br/gP3JjcgR4",
       "image": "https://cf.shopee.com.br/file/sg-11134201-8259v-mfs9or6yquq74e",
       "store": "Shopee"
+    },
+    {
+      "name": "KIT FESTA PERSONALIZADO MINIONS",
+      "desc": "Shopee",
+      "oldPrice": "R$ 160,00",
+      "newPrice": "R$ 64,00",
+      "discount": "60% OFF",
+      "link": "https://s.shopee.com.br/7fYoVl9PK0",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81ztc-mkcspltkr3sz36",
+      "store": "Shopee"
+    },
+    {
+      "name": "Display Pix Pagamento + Placa Campainha Acrílico Espelhado Balcão Caixa",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,90",
+      "newPrice": "R$ 29,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/50Y3KrJYjH",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-825zo-mk1b7orq2zurda",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 676,
-    "acceptedCount": 676,
+    "totalRows": 678,
+    "acceptedCount": 678,
     "rejectedCount": 0
   },
   "rejected": []
