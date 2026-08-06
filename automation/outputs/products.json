@@ -6739,12 +6739,32 @@
       "link": "https://s.shopee.com.br/7psDUYYMtD",
       "image": "https://cf.shopee.com.br/file/sg-11134201-8261x-mk1b7gxmy51g5c",
       "store": "Shopee"
+    },
+    {
+      "name": "Kit Sinalização De Balcão: Placa Pix Qr Code + Placa Campainha Acrílico Espelhado",
+      "desc": "Shopee",
+      "oldPrice": "R$ 29,90",
+      "newPrice": "R$ 29,90",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7VFN5wZdZ7",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-8260z-mk1b7wnbx6v554",
+      "store": "Shopee"
+    },
+    {
+      "name": "RWX VEST Conjunto Praia Infantil Dinossauro Divertido – Conforto e Proteção para os Pequenos! 2025 I3630",
+      "desc": "Shopee",
+      "oldPrice": "R$ 59,98",
+      "newPrice": "R$ 59,98",
+      "discount": "",
+      "link": "https://s.shopee.com.br/gP3JjcgR4",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-8259v-mfs9or6yquq74e",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 674,
-    "acceptedCount": 674,
+    "totalRows": 676,
+    "acceptedCount": 676,
     "rejectedCount": 0
   },
   "rejected": []
