@@ -6779,12 +6779,62 @@
       "link": "https://s.shopee.com.br/50Y3KrJYjH",
       "image": "https://cf.shopee.com.br/file/sg-11134201-825zo-mk1b7orq2zurda",
       "store": "Shopee"
+    },
+    {
+      "name": "Morte Súbita Lola Máscara Super Hidratante 450g | Vegana | Hidratação | Nutrição",
+      "desc": "Shopee",
+      "oldPrice": "R$ 49,99",
+      "newPrice": "R$ 49,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2gAA4eqX4g",
+      "image": "https://cf.shopee.com.br/file/br-11134207-81z1k-mi065kcyspvq83",
+      "store": "Shopee"
+    },
+    {
+      "name": "Kit Cronograma Capilar Bio Extratus Máscara Shitake 250g, Banho creme Umectante 250g Antiqueda 250g",
+      "desc": "Shopee",
+      "oldPrice": "R$ 129,99",
+      "newPrice": "R$ 129,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/2qTaGxptjj",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lq-mqv8d0l55urk00",
+      "store": "Shopee"
+    },
+    {
+      "name": "Óculos de Sol Porto Original Hexagonal Premium Oldstyle Retrô Classico uv400 Feminino Masculino",
+      "desc": "Shopee",
+      "oldPrice": "R$ 57,99",
+      "newPrice": "R$ 49,99",
+      "discount": "14% OFF",
+      "link": "https://s.shopee.com.br/70J9EceIX5",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820lt-mmuhu643ugw4ab",
+      "store": "Shopee"
+    },
+    {
+      "name": "Oculos de Sol Redondo Premium Flexivel Blogueira Moderno Luxo uv400 Feminino Masculino",
+      "desc": "Shopee",
+      "oldPrice": "R$ 57,99",
+      "newPrice": "R$ 57,99",
+      "discount": "",
+      "link": "https://s.shopee.com.br/7AcZQvdfC6",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820ln-mn4rvueics8xa9",
+      "store": "Shopee"
+    },
+    {
+      "name": "Oculos de Sol Oval Premium Exclusivo Tendencia Original Moderno Futurista uv400 Masculino Feminino",
+      "desc": "Shopee",
+      "oldPrice": "R$ 57,99",
+      "newPrice": "R$ 49,99",
+      "discount": "14% OFF",
+      "link": "https://s.shopee.com.br/7VFPpXcOWC",
+      "image": "https://cf.shopee.com.br/file/br-11134207-820ly-mlhyjca61vk765",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 678,
-    "acceptedCount": 678,
+    "totalRows": 683,
+    "acceptedCount": 683,
     "rejectedCount": 0
   },
   "rejected": []
