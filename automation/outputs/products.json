@@ -6829,12 +6829,22 @@
       "link": "https://s.shopee.com.br/7VFPpXcOWC",
       "image": "https://cf.shopee.com.br/file/br-11134207-820ly-mlhyjca61vk765",
       "store": "Shopee"
+    },
+    {
+      "name": "Kit Econômico com 2 Garrafas Divertidas Acompanha Alça e Figurinhas",
+      "desc": "Shopee",
+      "oldPrice": "R$ 19,49",
+      "newPrice": "R$ 19,49",
+      "discount": "",
+      "link": "https://s.shopee.com.br/1VyDTRRqTu",
+      "image": "https://cf.shopee.com.br/file/sg-11134201-7rava-mabhsiw9dnvlfb",
+      "store": "Shopee"
     }
   ],
   "metadata": {
     "source": "google-sheets",
-    "totalRows": 683,
-    "acceptedCount": 683,
+    "totalRows": 684,
+    "acceptedCount": 684,
     "rejectedCount": 0
   },
   "rejected": []
